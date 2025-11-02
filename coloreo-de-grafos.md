@@ -97,6 +97,8 @@ Algunos tipos de grafos tienen características particulares que nos permiten sa
 
 Esto es el famoso **Teorema de los Cuatro Colores**: cualquier mapa puede colorearse con solo 4 colores de manera que regiones vecinas tengan colores diferentes. ¡Fue uno de los primeros teoremas matemáticos demostrados usando computadoras!
 
+*Para más información sobre este fascinante teorema: [Four Color Theorem - Wikipedia](https://es.wikipedia.org/wiki/Teorema_de_los_cuatro_colores)*
+
 #### Grafos Completos (Kn)
 
 **¿Qué son?** Son grafos donde cada vértice está conectado con todos los demás vértices.
