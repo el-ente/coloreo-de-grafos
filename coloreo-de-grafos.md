@@ -322,6 +322,26 @@ A continuación presentamos los algoritmos más importantes y utilizados en la p
 #### 6. Backtracking
 #### 7. Branch and Bound
 
+### La Historia y Características de Cada Algoritmo
+
+Los algoritmos de coloreo de grafos han evolucionado durante décadas, cada uno surgiendo para resolver limitaciones específicas de sus predecesores. Comprender su desarrollo histórico nos ayuda a apreciar por qué cada uno tiene sus fortalezas particulares.
+
+**El Algoritmo Greedy Básico** es el punto de partida natural. Como muchas ideas fundamentales en matemáticas, no tiene un "inventor" específico porque surge de manera obvia del problema mismo. Su estrategia es directa: toma los vértices en cualquier orden y asigna a cada uno el primer color disponible que no entre en conflicto con sus vecinos. Es como llenar asientos en un teatro sin plan específico, simplemente sentando a cada persona en la primera butaca libre que encuentres. Aunque puede desperdiciar muchos colores, su simplicidad lo hace invaluable como base para algoritmos más sofisticados.
+
+**Welsh-Powell**, desarrollado en 1967 por los matemáticos D.J.A. Welsh y M.B. Powell en Oxford, introdujo una mejora crucial: el orden importa. Su insight fue que los vértices con más conexiones son inherentemente más difíciles de colorear, así que es mejor atenderlos primero cuando aún tenemos todas las opciones disponibles. Es como organizar una cena donde primero ubicas a los invitados más exigentes o populares, y después acomodas a los demás alrededor. Esta simple reordenación mejoró dramáticamente los resultados sin añadir complejidad significativa.
+
+**Largest First** es esencialmente la misma estrategia que Welsh-Powell, pero el nombre enfatiza la filosofía subyacente: procesar primero los elementos "más grandes" o más conectados. La terminología se popularizó en los años 70 y 80 cuando los investigadores estudiaban sistemáticamente diferentes criterios de ordenamiento.
+
+**DSATUR**, creado por Daniel Brélaz en 1979 durante su trabajo doctoral en Grenoble, Francia, revolucionó el campo al introducir la toma de decisiones dinámicas. En lugar de determinar todo el orden al inicio, DSATUR evalúa constantemente qué vértice se ha vuelto más "urgente" de colorear. Su concepto de "grado de saturación" cuenta cuántos colores diferentes ya usan los vecinos de un vértice sin colorear. Es una estrategia adaptativa, como un médico en emergencias que constantemente reevalúa qué paciente necesita atención más urgente según cómo evoluciona la situación.
+
+**RLF (Recursive Largest First)**, desarrollado por Frank Leighton en MIT en 1972, adoptó una filosofía completamente diferente. En lugar de colorear vértice por vértice, RLF piensa en términos de conjuntos independientes completos. Encuentra el grupo más grande posible de vértices que no se conectan entre sí, les asigna el mismo color, los retira del problema, y repite. Es como formar equipos deportivos: en lugar de asignar jugadores uno por uno, formas el equipo más grande posible de personas compatibles, luego repites con los restantes.
+
+Los **algoritmos exactos** representan un enfoque fundamentalmente diferente. **Backtracking**, formalizado como técnica general por D.H. Lehmer en los años 50, explora sistemáticamente todas las posibilidades mediante una estrategia de "probar y retroceder". Es como explorar un laberinto: avanzas hasta encontrar un callejón sin salida, entonces retrocedes al último punto donde tenías opciones sin explorar y pruebas un camino diferente. Su gran virtud es la garantía absoluta: si existe una solución con k colores, backtracking la encontrará.
+
+**Branch and Bound**, desarrollado por A.H. Land y A.G. Doig en 1960, mejoró backtracking añadiendo "sentido común" económico. Usa cotas para evitar explorar ramas que no pueden llevar a mejores soluciones. Es backtracking con un mapa que te dice "en esta zona no hay nada mejor que lo que ya tienes", permitiéndote evitar búsquedas inútiles. Esta optimización puede reducir el tiempo de búsqueda de años a minutos en muchos casos prácticos.
+
+Cada algoritmo refleja una filosofía diferente sobre cómo abordar la complejidad: velocidad versus calidad, decisiones tempranas versus adaptabilidad, aproximación versus exactitud. La riqueza de este conjunto de herramientas nos permite elegir la estrategia más apropiada para cada situación específica.
+
 
 ## Variantes del Problema de Coloreo
 
