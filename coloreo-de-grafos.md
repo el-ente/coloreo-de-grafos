@@ -323,3 +323,109 @@ A continuación presentamos los algoritmos más importantes y utilizados en la p
 #### 7. Branch and Bound
 
 En las siguientes secciones detallaremos cada algoritmo con ejemplos paso a paso, análisis de complejidad y casos de uso específicos.
+
+## Variantes del Problema de Coloreo
+
+El problema clásico de coloreo de vértices es solo el punto de partida. En aplicaciones reales, surgen variantes que requieren enfoques especializados y presentan desafíos únicos.
+
+### Coloreo de Aristas (Edge Coloring)
+
+En lugar de colorear vértices, asignamos colores a las **aristas** del grafo. Dos aristas que comparten un vértice no pueden tener el mismo color.
+
+**¿Cuándo es útil?**
+En planificación de horarios donde las aristas representan reuniones y los vértices son personas. Cada persona puede participar en máximo una reunión simultáneamente.
+
+**Propiedades matemáticas:**
+- **Número cromático de aristas**: χ'(G)
+- **Cota de Vizing**: χ'(G) ∈ {Δ(G), Δ(G) + 1}
+- Los grafos se clasifican como **Clase 1** (χ'(G) = Δ(G)) o **Clase 2** (χ'(G) = Δ(G) + 1)
+
+### Coloreo de Listas (List Coloring)
+
+Cada vértice tiene una **lista predefinida** de colores permitidos. Solo podemos usar colores de esa lista específica para ese vértice.
+
+**Aplicación práctica:**
+Asignación de aulas universitarias donde cada curso tiene restricciones específicas: laboratorios requieren equipamiento especial, seminarios necesitan aulas pequeñas, conferencias requieren auditorios.
+
+**Número cromático de listas χₗ(G):**
+El mínimo k tal que si cada vértice tiene una lista de k colores arbitrarios, siempre podemos encontrar un coloreo válido.
+
+### Coloreo Equitativo (Equitable Coloring)
+
+Los colores deben distribuirse de manera **equilibrada**: la diferencia entre el número de vértices de cualquier par de colores no puede exceder 1.
+
+**¿Por qué es importante?**
+En balanceo de carga computacional, cada color representa un servidor. Un coloreo equitativo garantiza que ningún servidor esté sobrecargado.
+
+### Coloreo con Restricciones de Distancia
+
+Generalizamos la restricción: vértices a distancia k o menos no pueden compartir colores.
+
+**Variantes principales:**
+- **Coloreo a distancia 2**: Evita conflictos entre vecinos de vecinos
+- **T-coloring**: Diferentes distancias requieren diferentes separaciones mínimas entre colores
+
+**Aplicación en telecomunicaciones:**
+En redes celulares, la interferencia no se limita a torres adyacentes, sino que afecta a torres en un radio más amplio.
+
+### Coloreo Dinámico
+
+El grafo **evoluciona con el tiempo**: se agregan y eliminan vértices y aristas continuamente, y debemos mantener un coloreo válido con mínimos cambios.
+
+**Desafío principal:**
+Minimizar el número de vértices que deben cambiar de color cuando se modifica la estructura del grafo.
+
+**Aplicación real:**
+Gestión de espectro radioeléctrico donde constantemente aparecen y desaparecen dispositivos de la red.
+
+### Coloreo Precoloreo (Precoloring Extension)
+
+Algunos vértices ya tienen **colores asignados fijos** y debemos extender este coloreo parcial al resto del grafo.
+
+**Escenario típico:**
+Replanificación de horarios donde algunas actividades críticas ya están programadas y no pueden moverse.
+
+**Complejidad adicional:**
+Incluso si el grafo sin restricciones es fácil de colorear, el precoloreo puede hacerlo NP-completo.
+
+### Coloreo Circular (Circular Coloring)
+
+Los colores se organizan en un **círculo** y la distancia angular mínima entre colores de vértices adyacentes debe ser al menos d.
+
+**Ventaja conceptual:**
+Permite **números cromáticos no enteros**, proporcionando una medida más fina de la dificultad de coloreo.
+
+**Aplicación:**
+Asignación de frecuencias donde las frecuencias forman un espectro continuo y circular.
+
+### Coloreo Multi-objetivo
+
+Optimizar **múltiples criterios** simultáneamente:
+- Minimizar número total de colores
+- Balancear tamaños de clases de color
+- Maximizar robustez ante cambios
+- Minimizar conflictos "suaves" (preferencias, no restricciones estrictas)
+
+**Realidad práctica:**
+Los problemas del mundo real raramente tienen un único objetivo. Las soluciones deben balancear múltiples consideraciones, a menudo conflictivas.
+
+### Coloreo de Grafos Dirigidos
+
+Para **digrafos**, donde las aristas tienen dirección:
+
+**Coloreo acíclico:**
+El subgrafo inducido por cada color debe ser acíclico (sin ciclos dirigidos).
+
+**Aplicación:**
+Planificación de tareas con dependencias, donde cada color representa un lote de ejecución paralela.
+
+### Importancia de las Variantes
+
+Estas variantes no son meras curiosidades teóricas. Cada una surge de **limitaciones reales** del coloreo clásico:
+
+- **Restricciones adicionales** en las aplicaciones
+- **Objetivos múltiples** en lugar de optimización simple  
+- **Entornos dinámicos** que cambian constantemente
+- **Recursos limitados** o con características especiales
+
+La riqueza de estas variantes demuestra la **versatilidad fundamental** del paradigma de coloreo y su capacidad para modelar una amplia gama de problemas de optimización combinatoria.
