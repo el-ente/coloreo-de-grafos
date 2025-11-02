@@ -130,4 +130,77 @@ Esto es el famoso **Teorema de los Cuatro Colores**: cualquier mapa puede colore
 - **Garantías:** Te dan límites superiores seguros para el número de colores
 - **Algoritmos eficientes:** Para estos casos especiales existen algoritmos rápidos y simples
 
-Este documento explorará los diferentes algoritmos, técnicas y aplicaciones del coloreo de grafos, desde enfoques exactos hasta heurísticas eficientes para grafos de gran tamaño.
+## Algoritmos de Coloreo
+
+### ¿Qué son los algoritmos de coloreo?
+
+Imagina que tienes un rompecabezas gigante donde debes pintar cada pieza, pero con una regla estricta: **dos piezas que se tocan no pueden tener el mismo color**. Los **algoritmos de coloreo** son las diferentes estrategias o "recetas" que podemos seguir para resolver este rompecabezas de manera sistemática.
+
+### ¿Por qué necesitamos diferentes estrategias?
+
+No existe una estrategia única que funcione perfectamente en todas las situaciones. Es como cocinar: no usas la misma técnica para hacer una ensalada que para hornear un pastel. Cada algoritmo tiene sus **fortalezas y debilidades**:
+
+**Ejemplo cotidiano:** Imagina que organizas los horarios de un hospital:
+- **Estrategia rápida:** Asignar el primer turno disponible a cada doctor (rápido, pero puede desperdiciar turnos)
+- **Estrategia perfecta:** Probar todas las combinaciones posibles (óptimo, pero tomaría días calcular)
+- **Estrategia inteligente:** Empezar por los doctores más ocupados (buen balance entre velocidad y eficiencia)
+
+### Los tres enfoques fundamentales
+
+#### 1. Algoritmos Codiciosos (Greedy)
+**Estrategia:** Tomar decisiones localmente óptimas sin reconsiderar elecciones previas.
+
+**¿Cómo funcionan?**
+- Van vértice por vértice en algún orden predefinido
+- Para cada vértice, eligen el primer color disponible (el más pequeño numericamente)
+- Nunca reconsideran decisiones previas
+
+**Ventaja clave:** Extremadamente rápidos, tiempo lineal en muchos casos.
+
+#### 2. Algoritmos Exactos
+**Estrategia:** Exploración exhaustiva del espacio de soluciones para garantizar optimalidad.
+
+**¿Cómo funcionan?**
+- Exploran sistemáticamente todas las posibilidades
+- Usan técnicas como **backtracking** para manejar el espacio de búsqueda
+- Garantizan encontrar la solución óptima
+
+**Ventaja clave:** Solución garantizadamente óptima, crucial cuando la calidad es prioritaria.
+
+#### 3. Heurísticas Inteligentes
+**Estrategia:** Aplicar conocimiento del dominio para guiar la búsqueda hacia mejores soluciones.
+
+**¿Cómo funcionan?**
+- Aplican reglas basadas en propiedades estructurales del grafo
+- Combinan velocidad con calidad mediante criterios de selección inteligentes
+- No garantizan optimalidad, pero mejoran significativamente sobre enfoques codiciosos básicos
+
+**Ventaja clave:** Balance práctico entre tiempo de cómputo y calidad de solución.
+
+### ¿Cuándo usar cada enfoque?
+
+La elección del algoritmo depende de tus **prioridades**:
+
+**Si necesitas velocidad sobre todo:**
+- Usa algoritmos codiciosos
+- Perfectos para aplicaciones en tiempo real
+- Ejemplo: Asignación de frecuencias de radio durante una emergencia
+
+**Si necesitas la mejor solución posible:**
+- Usa algoritmos exactos
+- Ideales cuando el costo de una solución subóptima es alto
+- Ejemplo: Planificación de turnos en cirugías críticas
+
+**Si buscas un balance:**
+- Usa heurísticas inteligentes
+- La opción más común en la práctica
+- Ejemplo: Optimización de horarios escolares
+
+### Implicaciones prácticas
+
+En el mundo real, la elección del algoritmo puede significar la diferencia entre:
+- **Minutos vs. horas** de tiempo de cálculo
+- **Soluciones buenas vs. soluciones óptimas**
+- **Sistemas que responden instantáneamente vs. sistemas que requieren espera**
+
+En las siguientes secciones exploraremos cada tipo de algoritmo en detalle, con ejemplos prácticos y código que puedes implementar.
