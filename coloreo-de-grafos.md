@@ -203,4 +203,24 @@ En el mundo real, la elección del algoritmo puede significar la diferencia entr
 - **Soluciones buenas vs. soluciones óptimas**
 - **Sistemas que responden instantáneamente vs. sistemas que requieren espera**
 
-En las siguientes secciones exploraremos cada tipo de algoritmo en detalle, con ejemplos prácticos y código que puedes implementar.
+## Algoritmos Principales
+
+A continuación presentamos los algoritmos más importantes y utilizados en la práctica para el coloreo de grafos, organizados por tipo y complejidad.
+
+### Algoritmos Codiciosos (Greedy)
+
+#### 1. Algoritmo Greedy Básico
+#### 2. Welsh-Powell
+#### 3. Largest First (LF)
+
+### Heurísticas Avanzadas
+
+#### 4. DSATUR (Degree of Saturation)
+#### 5. RLF (Recursive Largest First)
+
+### Algoritmos Exactos
+
+#### 6. Backtracking
+#### 7. Branch and Bound
+
+En las siguientes secciones detallaremos cada algoritmo con ejemplos paso a paso, análisis de complejidad y casos de uso específicos.
