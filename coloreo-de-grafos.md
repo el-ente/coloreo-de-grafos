@@ -451,4 +451,4 @@ La riqueza de estas variantes demuestra la **versatilidad fundamental** del para
 
 ## Implementaciones Prácticas
 
-Para estudiar cómo funciona cada tipo de algoritmo en la práctica, implementaremos tres enfoques representativos: un **algoritmo de fuerza bruta** (backtracking), un **algoritmo codicioso** (first-fit) y una **heurística inteligente** (Welsh-Powell). Cada uno nos mostrará diferentes trade-offs entre tiempo de ejecución, calidad de la solución y complejidad del código.
+Ver [Implementaciones Prácticas](./implementaciones/implementaciones.md)
