@@ -6,3 +6,4 @@ Para estudiar cómo funciona cada tipo de algoritmo en la práctica, implementar
 
 - [Algoritmo de Fuerza Bruta (Backtracking)](./fuerza-bruta.md)
 - [Algoritmo Codicioso (First-Fit)](./codicioso.md)
+- [Heurística Welsh-Powell](./welsh-powell.md)
