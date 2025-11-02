@@ -203,6 +203,31 @@ En el mundo real, la elección del algoritmo puede significar la diferencia entr
 - **Soluciones buenas vs. soluciones óptimas**
 - **Sistemas que responden instantáneamente vs. sistemas que requieren espera**
 
+### Heurísticas y Metaheurísticas
+
+#### ¿Qué son las heurísticas?
+
+Las **heurísticas** son "reglas inteligentes" que nos ayudan a tomar buenas decisiones rápidamente, sin explorar todas las posibilidades. 
+
+**Analogía simple:** Imagina que buscas estacionamiento en el centro de la ciudad. Podrías revisar cada calle (exhaustivo pero lento), o aplicar la regla "buscar primero cerca de mi destino" (heurística: buena decisión, rápida).
+
+En coloreo de grafos, las heurísticas nos permiten **manejar problemas grandes** donde los algoritmos exactos serían demasiado lentos.
+
+#### ¿Qué son las metaheurísticas?
+
+Las **metaheurísticas** son "estrategias para aplicar heurísticas". Si las heurísticas son tácticas específicas, las metaheurísticas son la estrategia general.
+
+**Ejemplos conocidos:**
+- **Algoritmos Genéticos**: Imitan la evolución natural
+- **Simulated Annealing**: Basado en el enfriamiento de metales
+- **Tabu Search**: Evita repetir decisiones recientes
+
+#### ¿Cuándo usar cada tipo?
+
+**Heurísticas:** Para problemas cotidianos donde necesitas respuestas rápidas y razonablemente buenas.
+
+**Metaheurísticas:** Para problemas complejos donde tienes tiempo para buscar soluciones de alta calidad.
+
 ## Algoritmos Principales
 
 A continuación presentamos los algoritmos más importantes y utilizados en la práctica para el coloreo de grafos, organizados por tipo y complejidad.
