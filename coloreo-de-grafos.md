@@ -322,7 +322,6 @@ A continuación presentamos los algoritmos más importantes y utilizados en la p
 #### 6. Backtracking
 #### 7. Branch and Bound
 
-En las siguientes secciones detallaremos cada algoritmo con ejemplos paso a paso, análisis de complejidad y casos de uso específicos.
 
 ## Variantes del Problema de Coloreo
 
