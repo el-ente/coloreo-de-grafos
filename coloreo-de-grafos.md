@@ -448,3 +448,7 @@ Estas variantes no son meras curiosidades teóricas. Cada una surge de **limitac
 - **Recursos limitados** o con características especiales
 
 La riqueza de estas variantes demuestra la **versatilidad fundamental** del paradigma de coloreo y su capacidad para modelar una amplia gama de problemas de optimización combinatoria.
+
+## Implementaciones Prácticas
+
+Para estudiar cómo funciona cada tipo de algoritmo en la práctica, implementaremos tres enfoques representativos: un **algoritmo de fuerza bruta** (backtracking), un **algoritmo codicioso** (first-fit) y una **heurística inteligente** (Welsh-Powell). Cada uno nos mostrará diferentes trade-offs entre tiempo de ejecución, calidad de la solución y complejidad del código.
