@@ -228,6 +228,80 @@ Las **metaheurísticas** son "estrategias para aplicar heurísticas". Si las heu
 
 **Metaheurísticas:** Para problemas complejos donde tienes tiempo para buscar soluciones de alta calidad.
 
+## Cotas Superiores e Inferiores
+
+### ¿Por qué necesitamos cotas?
+
+Antes de aplicar cualquier algoritmo de coloreo, es fundamental tener una **estimación realista** del número cromático χ(G). Las cotas nos proporcionan límites teóricos que nos permiten:
+- **Evaluar la calidad** de nuestras soluciones
+- **Decidir cuándo parar** de buscar mejores coloreos
+- **Elegir el algoritmo más apropiado** según la dificultad esperada
+
+### Cotas Inferiores
+
+Las **cotas inferiores** establecen el mínimo número de colores que necesitaremos, independientemente del algoritmo utilizado.
+
+#### Cota del Clique: ω(G)
+
+Un **clique** es un subconjunto de vértices completamente conectados entre sí. Si encontramos un clique de tamaño k, necesitamos al menos k colores diferentes.
+
+**χ(G) ≥ ω(G)**
+
+En redes de telecomunicaciones, si 5 torres de radio están todas dentro del rango de interferencia mutua, necesitaremos al menos 5 frecuencias diferentes.
+
+#### Cota Fraccionaria: |V|/α(G)
+
+Donde α(G) es el **número de independencia** (el mayor conjunto de vértices no adyacentes). Esta cota es especialmente útil en grafos densos.
+
+**χ(G) ≥ ⌈|V|/α(G)⌉**
+
+### Cotas Superiores
+
+Las **cotas superiores** garantizan que nunca necesitaremos más de cierto número de colores.
+
+#### Cota del Grado Máximo: Δ(G) + 1
+
+Si el vértice con más conexiones tiene grado Δ(G), entonces podemos colorear el grafo con máximo Δ(G) + 1 colores.
+
+**χ(G) ≤ Δ(G) + 1**
+
+Esta cota es constructiva: el algoritmo greedy básico la garantiza.
+
+#### Teorema de Brooks: Δ(G)
+
+Para la mayoría de grafos conectados, podemos mejorar la cota anterior:
+
+**χ(G) ≤ Δ(G)**
+
+**Excepciones importantes:**
+- Grafos completos: χ(Kn) = n
+- Ciclos impares: χ(C2k+1) = 3
+
+#### Cota de Welsh-Powell
+
+Basada en la secuencia de grados ordenada de forma decreciente, proporciona estimaciones más precisas para grafos específicos.
+
+### Aplicaciones Prácticas
+
+**En optimización de compiladores:**
+- Cota inferior: número de variables que se usan simultáneamente
+- Cota superior: número total de registros disponibles
+
+**En planificación de horarios:**
+- Cota inferior: máximo número de actividades que coinciden en tiempo
+- Cota superior: número total de franjas horarias disponibles
+
+**En asignación de frecuencias:**
+- Cota inferior: tamaño del mayor grupo de interferencia mutua
+- Cota superior: total de frecuencias en el espectro disponible
+
+### Importancia en la Práctica
+
+Las cotas no solo son herramientas teóricas, sino guías esenciales para la toma de decisiones:
+- Si tu solución está cerca de la cota inferior, probablemente es óptima
+- Si está cerca de la cota superior, hay margen considerable de mejora
+- La diferencia entre cotas indica la dificultad inherente del problema
+
 ## Algoritmos Principales
 
 A continuación presentamos los algoritmos más importantes y utilizados en la práctica para el coloreo de grafos, organizados por tipo y complejidad.
