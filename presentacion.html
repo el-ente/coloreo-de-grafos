@@ -81,7 +81,15 @@
                 <h3>Grafos Bipartitos</h3>
                 <p>Se dividen en dos grupos sin conexiones internas. Solo necesitan 2 colores.</p>
                 <div class="example">
-                    <strong>Ejemplo:</strong> Redes sociales – amigos de amigos.
+                    <strong>Ejemplo:</strong> Estudiantes y cursos – estudiantes conectados a cursos que toman.
+                </div>
+                <div class="mermaid">
+                    graph LR;
+                    A1[A] --> B1[B];
+                    A1 --> B2[C];
+                    A2[D] --> B1;
+                    A2 --> B2;
+                    A2 --> B3[E];
                 </div>
             </section>
 
@@ -90,6 +98,13 @@
                 <p>Como mapas en papel plano. Máximo 4 colores bastan.</p>
                 <div class="example">
                     <strong>Ejemplo:</strong> Colorear un mapa de países.
+                </div>
+                <div class="mermaid">
+                    graph TD;
+                    A --> B;
+                    A --> C;
+                    B --> D;
+                    C --> D;
                 </div>
             </section>
 
@@ -150,6 +165,7 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
     <script>
         Reveal.initialize({
             hash: true,
@@ -162,6 +178,7 @@
             width: 1280,
             height: 720
         });
+        mermaid.initialize({ startOnLoad: true });
     </script>
 </body>
 </html>
