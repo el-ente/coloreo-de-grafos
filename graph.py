@@ -89,16 +89,7 @@ class Graph:
         self.nodes.add(node)
     
     def add_edge(self, node1, node2):
-        """
-        Connect two nodes with an undirected edge.
-        
-        Args:
-            node1: First node
-            node2: Second node
-            
-        Raises:
-            ValueError: If either node doesn't exist or trying to create self-loop
-        """
+        """Connect two nodes with an undirected edge."""
         if node1 not in self.nodes:
             raise ValueError(f"Node {node1} not in graph")
         
@@ -108,11 +99,9 @@ class Graph:
         if node1 == node2:
             raise ValueError("Self-loops are not allowed")
         
-        # Evitar aristas duplicadas
+        # Directamente agregar si no existe
         if node2 not in self.adjacency_list[node1]:
             self.adjacency_list[node1].append(node2)
-        
-        if node1 not in self.adjacency_list[node2]:
             self.adjacency_list[node2].append(node1)
     
     def get_neighbors(self, node):
@@ -199,6 +188,12 @@ class Graph:
             raise ValueError(f"Node {node2} not in graph")
         
         return node2 in self.adjacency_list[node1]
+    
+    def get_max_degree(self):
+        """Get the maximum degree in the graph."""
+        if not self.nodes:
+            return 0
+        return max(self.get_degree(node) for node in self.nodes)
     
     def __repr__(self):
         """Return a readable representation of the graph."""
