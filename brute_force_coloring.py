@@ -79,31 +79,38 @@ class BruteForceColoring:
         return {}
     
     def _find_valid_coloring_with_k_colors(self, nodes, k):
-        """
-        Search for a valid coloring using exactly k colors.
+        """Search using backtracking (more efficient than product)."""
+        coloring = {}
         
-        Generates all possible ways to assign k colors to the nodes
-        and returns the first valid assignment found.
-        
-        Args:
-            nodes: List of nodes to color
-            k: Number of colors available (0, 1, ..., k-1)
+        def backtrack(node_index):
+            if node_index == len(nodes):
+                return True
             
-        Returns:
-            Dictionary {node: color} if valid coloring found, None otherwise
-        """
-        # Generar todos los productos cartesianos: cada nodo puede tener
-        # un color de 0 a k-1
-        # Ejemplo con k=2: (0,0), (0,1), (1,0), (1,1)
-        for color_combination in product(range(k), repeat=len(nodes)):
-            # Crear un diccionario asignando colores a nodos
-            candidate_coloring = dict(zip(nodes, color_combination))
+            node = nodes[node_index]
             
-            # Verificar si esta asignación es una coloración válida
-            if self._is_safe_coloring(candidate_coloring):
-                return candidate_coloring
+            # Intentar asignar cada color
+            for color in range(k):
+                coloring[node] = color
+                
+                # Verificar si es seguro (solo con vecinos ya coloreados)
+                if self._is_safe_partial_coloring(node, coloring):
+                    if backtrack(node_index + 1):
+                        return True
+                
+                del coloring[node]
+            
+            return False
         
+        if backtrack(0):
+            return coloring
         return None
+    
+    def _is_safe_partial_coloring(self, node, coloring):
+        """Check only against already colored neighbors."""
+        for neighbor in self.graph.get_neighbors(node):
+            if neighbor in coloring and coloring[neighbor] == coloring[node]:
+                return False
+        return True
     
     def _is_safe_coloring(self, coloring):
         """
@@ -126,17 +133,11 @@ class BruteForceColoring:
         return True
     
     def is_valid_coloring(self, coloring):
-        """
-        Check if a given coloring is valid.
+        """Check if a given coloring is valid."""
+        # Verificar que todos los nodos están coloreados
+        if set(coloring.keys()) != set(self.graph.get_nodes()):
+            raise ValueError("Coloring must include all nodes")
         
-        This is a public method for validating external colorings.
-        
-        Args:
-            coloring: Dictionary mapping nodes to colors
-            
-        Returns:
-            True if the coloring is valid, False otherwise
-        """
         return self._is_safe_coloring(coloring)
     
     def get_chromaticity(self):
