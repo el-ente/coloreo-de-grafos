@@ -1,0 +1,274 @@
+"""
+Welsh-Powell Graph Coloring Algorithm.
+
+This module implements the Welsh-Powell heuristic, an improved greedy
+algorithm that colors high-degree nodes first to achieve better results
+than naive first-fit approaches.
+"""
+
+from graph import Node, Graph
+
+
+def get_sorted_nodes_by_degree(graph):
+    """
+    Sort graph nodes in descending order by degree.
+    
+    Helper function that encapsulates the sorting logic,
+    making the main algorithm more readable. In case of ties
+    in degree, nodes are sorted lexicographically by ID to
+    ensure deterministic results.
+    
+    Args:
+        graph: Graph object
+        
+    Returns:
+        list: Nodes sorted by degree (highest first), with ties
+              broken by node ID
+              
+    Example:
+        >>> graph = Graph()
+        >>> # ... add nodes ...
+        >>> sorted_nodes = get_sorted_nodes_by_degree(graph)
+        >>> sorted_nodes[0]  # Node with highest degree
+    """
+    nodes = list(graph.get_nodes())
+    # Ordenar por: 1) grado descendente, 2) ID ascendente (lexicográfico)
+    return sorted(nodes, key=lambda n: (-graph.get_degree(n), str(n.id)))
+
+
+def get_first_available_color(neighbor_colors):
+    """
+    Find the smallest positive integer not in the set.
+    
+    This implements the "first-fit" strategy: given a set of
+    colors already used by neighbors, find the smallest color
+    number (starting from 1) that is not in the set.
+    
+    Args:
+        neighbor_colors: Set of integers representing used colors
+        
+    Returns:
+        int: First available color (starting from 1)
+        
+    Example:
+        >>> get_first_available_color({1, 2, 4})
+        3
+        >>> get_first_available_color({2, 3})
+        1
+        >>> get_first_available_color(set())
+        1
+    """
+    color = 1
+    while color in neighbor_colors:
+        color += 1
+    return color
+
+
+def validate_coloring(graph, coloring):
+    """
+    Verify that a coloring is valid (no adjacent nodes share colors).
+    
+    This is an educational tool to understand and verify the constraint
+    being satisfied by the coloring algorithm. Useful for testing and
+    debugging.
+    
+    Args:
+        graph: Graph object
+        coloring: Dictionary mapping nodes to colors
+        
+    Returns:
+        tuple: (is_valid: bool, errors: list of str)
+               is_valid is True if coloring is valid
+               errors contains descriptions of any violations found
+               
+    Example:
+        >>> is_valid, errors = validate_coloring(graph, coloring)
+        >>> if not is_valid:
+        ...     for error in errors:
+        ...         print(error)
+    """
+    errors = []
+    
+    # Verificar que todos los nodos tienen un color asignado
+    for node in graph.get_nodes():
+        if node not in coloring:
+            errors.append(f"Node {node.id} has no color assigned")
+    
+    # Verificar que no hay vecinos con el mismo color
+    for node in graph.get_nodes():
+        if node not in coloring:
+            continue
+            
+        node_color = coloring[node]
+        for neighbor in graph.get_neighbors(node):
+            if neighbor in coloring and coloring[neighbor] == node_color:
+                # Evitar duplicados reportando solo una vez por arista
+                if str(node.id) < str(neighbor.id):
+                    errors.append(
+                        f"Adjacent nodes {node.id} and {neighbor.id} "
+                        f"both have color {node_color}"
+                    )
+    
+    is_valid = len(errors) == 0
+    return (is_valid, errors)
+
+
+def welsh_powell_coloring(graph):
+    """
+    Color a graph using the Welsh-Powell heuristic.
+    
+    This algorithm improves upon greedy first-fit by coloring
+    high-degree nodes first, which are more constrained and
+    harder to color later in the process. The intuition is that
+    nodes with many neighbors have fewer color options available,
+    so they should be colored early.
+    
+    Algorithm steps:
+    1. Calculate the degree of each node
+    2. Sort nodes in descending order by degree
+    3. Apply first-fit greedy coloring in this order
+    4. Return the resulting coloring
+    
+    Time Complexity: O(n² + m) where n = nodes, m = edges
+    Space Complexity: O(n) for storing coloring and sorted list
+    
+    Args:
+        graph: A Graph object with nodes and edges
+        
+    Returns:
+        dict: A dictionary mapping each node to its assigned color (int)
+              Colors start from 1 (not 0)
+              
+    Raises:
+        ValueError: If graph is None or empty
+        
+    Example:
+        >>> graph = Graph()
+        >>> # ... add nodes and edges ...
+        >>> coloring = welsh_powell_coloring(graph)
+        >>> coloring[node_a]
+        1
+    """
+    # Validación inicial
+    if graph is None:
+        raise ValueError("Graph cannot be None")
+    
+    if not graph.get_nodes():
+        raise ValueError("Graph cannot be empty")
+    
+    # Paso 1 y 2: Obtener nodos ordenados por grado descendente
+    sorted_nodes = get_sorted_nodes_by_degree(graph)
+    
+    # Paso 3: Coloreo greedy en el orden establecido
+    coloring = {}
+    
+    for node in sorted_nodes:
+        # Obtener colores de vecinos ya coloreados
+        neighbor_colors = set()
+        for neighbor in graph.get_neighbors(node):
+            if neighbor in coloring:
+                neighbor_colors.add(coloring[neighbor])
+        
+        # Asignar el primer color disponible
+        color = get_first_available_color(neighbor_colors)
+        coloring[node] = color
+    
+    # Paso 4: Retornar el coloreo completo
+    return coloring
+
+
+# ============================================================================
+# Ejemplo de uso / Usage example
+# ============================================================================
+
+if __name__ == "__main__":
+    # Crear grafo de ejemplo (ciclo de 5 nodos)
+    print("=" * 60)
+    print("Welsh-Powell Coloring Algorithm - Educational Example")
+    print("=" * 60)
+    
+    graph = Graph()
+    
+    # Crear nodos para un ciclo C5: v1-v2-v3-v4-v5-v1
+    nodes = [Node(f"v{i}") for i in range(1, 6)]
+    for node in nodes:
+        graph.add_node(node)
+    
+    # Crear ciclo
+    print("\nCreating cycle graph C5:")
+    graph.add_edge(nodes[0], nodes[1])  # v1-v2
+    graph.add_edge(nodes[1], nodes[2])  # v2-v3
+    graph.add_edge(nodes[2], nodes[3])  # v3-v4
+    graph.add_edge(nodes[3], nodes[4])  # v4-v5
+    graph.add_edge(nodes[4], nodes[0])  # v5-v1
+    
+    print(f"  Edges: v1-v2-v3-v4-v5-v1")
+    print(f"  {graph}")
+    
+    # Aplicar Welsh-Powell
+    print("\n" + "-" * 60)
+    print("Applying Welsh-Powell Algorithm")
+    print("-" * 60)
+    
+    coloring = welsh_powell_coloring(graph)
+    
+    # Mostrar resultados ordenados por ID
+    print("\nColoring Results:")
+    for node in sorted(coloring.keys(), key=lambda n: n.id):
+        degree = graph.get_degree(node)
+        color = coloring[node]
+        neighbors = [n.id for n in graph.get_neighbors(node)]
+        print(f"  {node.id} (degree {degree}, neighbors: {neighbors}): Color {color}")
+    
+    # Estadísticas
+    num_colors = len(set(coloring.values()))
+    print(f"\nStatistics:")
+    print(f"  Total colors used: {num_colors}")
+    print(f"  Chromatic number for C5: 3 (odd cycle)")
+    print(f"  Result: {'✓ OPTIMAL' if num_colors == 3 else '✗ SUBOPTIMAL'}")
+    
+    # Validar corrección
+    print("\n" + "-" * 60)
+    print("Validating Coloring")
+    print("-" * 60)
+    
+    is_valid, errors = validate_coloring(graph, coloring)
+    
+    if is_valid:
+        print("✓ Coloring is VALID")
+        print("  No adjacent nodes share the same color")
+    else:
+        print("✗ Coloring is INVALID")
+        for error in errors:
+            print(f"  ERROR: {error}")
+    
+    # Ejemplo adicional: grafo completo K4
+    print("\n" + "=" * 60)
+    print("Additional Example: Complete Graph K4")
+    print("=" * 60)
+    
+    graph_k4 = Graph()
+    k4_nodes = [Node(f"k{i}") for i in range(1, 5)]
+    for node in k4_nodes:
+        graph_k4.add_node(node)
+    
+    # Conectar todos con todos (grafo completo)
+    for i in range(len(k4_nodes)):
+        for j in range(i + 1, len(k4_nodes)):
+            graph_k4.add_edge(k4_nodes[i], k4_nodes[j])
+    
+    print(f"  {graph_k4}")
+    
+    coloring_k4 = welsh_powell_coloring(graph_k4)
+    
+    print("\nColoring Results:")
+    for node in sorted(coloring_k4.keys(), key=lambda n: n.id):
+        print(f"  {node.id} (degree {graph_k4.get_degree(node)}): Color {coloring_k4[node]}")
+    
+    num_colors_k4 = len(set(coloring_k4.values()))
+    print(f"\nTotal colors used: {num_colors_k4}")
+    print(f"Chromatic number for K4: 4 (complete graph)")
+    print(f"Result: {'✓ OPTIMAL' if num_colors_k4 == 4 else '✗ SUBOPTIMAL'}")
+    
+    is_valid_k4, _ = validate_coloring(graph_k4, coloring_k4)
+    print(f"Valid coloring: {'✓ YES' if is_valid_k4 else '✗ NO'}")
