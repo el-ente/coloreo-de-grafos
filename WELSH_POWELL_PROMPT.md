@@ -31,24 +31,31 @@ class Graph:
 ## Especificación del Algoritmo Welsh-Powell
 
 ### Descripción Conceptual
-Welsh-Powell es una **heurística codiciosa** que mejora el coloreo básico mediante un ordenamiento inteligente: colorear primero los vértices con mayor grado (más conexiones), dejando los vértices más flexibles para el final.
+Welsh-Powell es una **heurística codiciosa** que mejora el coloreo básico mediante un ordenamiento inteligente: colorear primero los nodos con mayor grado (más conexiones), dejando los nodos más flexibles para el final.
 
 ### Pasos del Algoritmo
-1. **Calcular grados**: Determinar el grado de cada vértice en el grafo
-2. **Ordenar vértices**: Ordenar de mayor a menor grado
-3. **Aplicar first-fit**: Para cada vértice en orden:
+1. **Calcular grados**: Determinar el grado de cada nodo en el grafo
+2. **Ordenar nodos**: Ordenar de mayor a menor grado
+3. **Aplicar first-fit**: Para cada nodo en orden:
    - Examinar colores de vecinos ya coloreados
    - Asignar el primer color disponible (menor número positivo)
 4. **Retornar resultado**: Diccionario {nodo: color}
 
 ### Complejidad
-- **Tiempo**: O(n² + m) donde n = vértices, m = aristas
+- **Tiempo**: O(n² + m) donde n = nodos, m = aristas
 - **Espacio**: O(n) para almacenar coloreo y ordenamiento
 
 ## Requisitos de Implementación
 
 ### Archivo a Crear
 **Nombre**: `welsh_powell_coloring.py`
+
+### Imports Requeridos
+```python
+from graph import Node, Graph
+```
+
+Estos imports permiten usar las clases existentes del proyecto sin reimplementarlas.
 
 ### Función Principal
 ```python
@@ -57,7 +64,7 @@ def welsh_powell_coloring(graph):
     Color a graph using the Welsh-Powell heuristic.
     
     This algorithm improves upon greedy first-fit by coloring
-    high-degree vertices first, which are more constrained and
+    high-degree nodes first, which are more constrained and
     harder to color later in the process.
     
     Args:
@@ -82,15 +89,16 @@ def welsh_powell_coloring(graph):
 ### Algoritmo Paso a Paso
 
 1. **Validación inicial**:
-   - Verificar que el grafo no sea None
-   - Verificar que el grafo tenga nodos
+   - Verificar que el grafo no sea None: `if graph is None: raise ValueError("Graph cannot be None")`
+   - Verificar que el grafo tenga nodos: `if not graph.get_nodes(): raise ValueError("Graph cannot be empty")`
    - Lanzar ValueError con mensajes descriptivos si fallan
 
 2. **Cálculo y ordenamiento**:
    - Obtener todos los nodos del grafo
    - Calcular el grado de cada nodo usando `graph.get_degree()`
    - Ordenar nodos en orden **descendente** por grado
-   - En caso de empate en grados, mantener orden estable
+   - **En caso de empate en grados**: ordenar por ID lexicográficamente para garantizar resultados deterministas
+   - Ejemplo: `sorted(nodes, key=lambda n: (-graph.get_degree(n), str(n.id)))`
 
 3. **Coloreo greedy**:
    - Inicializar diccionario vacío para almacenar coloreo
@@ -113,18 +121,24 @@ def welsh_powell_coloring(graph):
 
 **Lógica de asignación de color**:
 ```python
-# Ejemplo de cómo encontrar el primer color disponible
+# Opción 1: Simple y clara (RECOMENDADA para proyecto educativo)
 color = 1
 while color in neighbor_colors:
     color += 1
 # color ahora contiene el primer entero positivo no usado
+
+# Opción 2: Más Pythónica (alternativa válida)
+color = next((c for c in range(1, len(neighbor_colors) + 2) 
+              if c not in neighbor_colors), 1)
+
+# Ambas son correctas. La Opción 1 es más legible y directa.
 ```
 
 **Manejo de casos especiales**:
 - Grafo vacío → ValueError
 - Grafo con un solo nodo → color 1
-- Nodos sin vecinos → pueden reutilizar color 1
-- Grafo desconectado → funciona correctamente, cada componente se colorea independientemente
+- Nodos sin vecinos (aislados) → pueden reutilizar color 1
+- Grafo desconectado (múltiples componentes) → funciona correctamente, cada componente se colorea independientemente
 
 ### Funciones Auxiliares (Opcional pero Recomendado)
 
@@ -159,6 +173,33 @@ def get_first_available_color(neighbor_colors):
     # Implementación aquí
 ```
 
+```python
+def validate_coloring(graph, coloring):
+    """
+    Verify that a coloring is valid (no adjacent nodes share colors).
+    
+    This is an educational tool to understand and verify the constraint
+    being satisfied by the coloring algorithm. Useful for testing and
+    debugging.
+    
+    Args:
+        graph: Graph object
+        coloring: Dictionary mapping nodes to colors
+        
+    Returns:
+        tuple: (is_valid: bool, errors: list of str)
+               is_valid is True if coloring is valid
+               errors contains descriptions of any violations found
+               
+    Example:
+        >>> is_valid, errors = validate_coloring(graph, coloring)
+        >>> if not is_valid:
+        ...     for error in errors:
+        ...         print(error)
+    """
+    # Implementación aquí
+```
+
 ## Testing y Ejemplos
 
 ### Archivo de Pruebas
@@ -167,18 +208,22 @@ def get_first_available_color(neighbor_colors):
 Debe incluir pruebas para:
 
 1. **Grafo vacío**: Debe lanzar ValueError
-2. **Grafo de un nodo**: Debe retornar {nodo: 1}
-3. **Grafo triángulo** (K₃): Debe usar exactamente 3 colores
-4. **Grafo bipartito**: Debe usar exactamente 2 colores
-5. **Grafo estrella**: Debe usar 2 colores (centro y hojas)
-6. **Grafo lineal** (cadena): Debe usar máximo 2 colores
-7. **Comparación con greedy básico**: Welsh-Powell debe usar ≤ colores que greedy sin ordenamiento
+2. **Grafo None**: Debe lanzar ValueError
+3. **Grafo de un nodo**: Debe retornar {nodo: 1}
+4. **Grafo con nodos aislados**: Múltiples nodos sin conexiones, todos deberían tener color 1
+5. **Grafo triángulo** (K₃): Debe usar exactamente 3 colores
+6. **Grafo bipartito**: Debe usar exactamente 2 colores
+7. **Grafo estrella**: Debe usar 2 colores (centro y hojas)
+8. **Grafo lineal** (cadena): Debe usar máximo 2 colores
+9. **Grafo con múltiples componentes conexas**: Verifica que cada componente se colorea independientemente
+10. **Grafo donde todos los nodos tienen el mismo grado**: Verifica que el ordenamiento secundario por ID funciona
+11. **Comparación con greedy básico**: Welsh-Powell debe usar ≤ colores que greedy sin ordenamiento
 
 ### Ejemplo de Uso en Main
 
 ```python
 if __name__ == "__main__":
-    # Crear grafo de ejemplo (ciclo de 5 vértices)
+    # Crear grafo de ejemplo (ciclo de 5 nodos)
     graph = Graph()
     
     nodes = [Node(f"v{i}") for i in range(1, 6)]
