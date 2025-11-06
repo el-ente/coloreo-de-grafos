@@ -58,17 +58,24 @@ class BruteForceColoring:
             
         Algorithm:
         1. Start with k=1 color
-        2. Generate all possible k-colorations
+        2. Generate all possible k-colorations using backtracking
         3. Test each coloration for validity
         4. If valid, return it; otherwise increment k and repeat
+        
+        The upper bound uses Brooks' theorem: χ(G) ≤ Δ + 1
+        where Δ is the maximum degree of the graph.
         """
         nodes = list(self.graph.get_nodes())
         num_nodes = len(nodes)
         
-        # Intentar con k colores, comenzando desde 1
-        # El número cromático nunca excede el número de nodos
-        for k in range(1, num_nodes + 1):
-            # Generar todas las posibles k-coloraciones
+        # Upper bound optimization: Brooks' theorem states χ(G) ≤ Δ + 1
+        # Exception: complete graphs and odd cycles need Δ + 1 colors
+        max_degree = self.graph.get_max_degree()
+        upper_bound = min(max_degree + 1, num_nodes)
+        
+        # Try with k colors, starting from 1
+        for k in range(1, upper_bound + 1):
+            # Search for valid k-coloring using backtracking
             valid_coloring = self._find_valid_coloring_with_k_colors(nodes, k)
             
             if valid_coloring is not None:
@@ -79,7 +86,16 @@ class BruteForceColoring:
         return {}
     
     def _find_valid_coloring_with_k_colors(self, nodes, k):
-        """Search using backtracking (more efficient than product)."""
+        """
+        Search for valid k-coloring using backtracking.
+        
+        Args:
+            nodes: List of nodes to color
+            k: Number of colors to use
+            
+        Returns:
+            Dictionary with valid coloring, or None if not possible
+        """
         coloring = {}
         
         def backtrack(node_index):
@@ -88,11 +104,11 @@ class BruteForceColoring:
             
             node = nodes[node_index]
             
-            # Intentar asignar cada color
+            # Try assigning each color
             for color in range(k):
                 coloring[node] = color
                 
-                # Verificar si es seguro (solo con vecinos ya coloreados)
+                # Check if safe (only against already colored neighbors)
                 if self._is_safe_partial_coloring(node, coloring):
                     if backtrack(node_index + 1):
                         return True
@@ -106,15 +122,24 @@ class BruteForceColoring:
         return None
     
     def _is_safe_partial_coloring(self, node, coloring):
-        """Check only against already colored neighbors."""
+        """
+        Check if current node's color conflicts with already colored neighbors.
+        
+        Args:
+            node: The node to check
+            coloring: Dictionary mapping nodes to colors (partial or complete)
+            
+        Returns:
+            True if no conflicts with colored neighbors, False otherwise
+        """
         for neighbor in self.graph.get_neighbors(node):
             if neighbor in coloring and coloring[neighbor] == coloring[node]:
                 return False
         return True
     
-    def _is_safe_coloring(self, coloring):
+    def _is_valid_coloring(self, coloring):
         """
-        Verify if a coloring is valid (no adjacent nodes share the same color).
+        Verify if a complete coloring is valid for the entire graph.
         
         Args:
             coloring: Dictionary mapping nodes to colors
@@ -122,40 +147,56 @@ class BruteForceColoring:
         Returns:
             True if the coloring is valid, False otherwise
         """
-        # Iterar sobre todas las aristas del grafo
+        # Check all nodes have a color assignment
+        if set(coloring.keys()) != self.graph.get_nodes():
+            return False
+        
+        # Verify no adjacent nodes share the same color
         for edge in self.graph.get_edges():
             node1, node2 = edge
-            
-            # Si dos nodos adyacentes tienen el mismo color, no es válida
             if coloring[node1] == coloring[node2]:
                 return False
         
         return True
     
     def is_valid_coloring(self, coloring):
-        """Check if a given coloring is valid."""
-        # Verificar que todos los nodos están coloreados
-        if set(coloring.keys()) != set(self.graph.get_nodes()):
+        """
+        Public method to check if a given coloring is valid.
+        
+        Args:
+            coloring: Dictionary mapping nodes to colors
+            
+        Returns:
+            True if the coloring is valid, False otherwise
+            
+        Raises:
+            ValueError: If coloring doesn't include all nodes
+        """
+        if set(coloring.keys()) != self.graph.get_nodes():
             raise ValueError("Coloring must include all nodes")
         
-        return self._is_safe_coloring(coloring)
+        return self._is_valid_coloring(coloring)
     
     def get_chromaticity(self):
         """
         Get the chromatic number (minimum colors needed).
         
-        The chromatic number is found by the color_graph() method,
-        which incrementally tries k=1, 2, 3, ... until finding a valid coloring.
-        
         Returns:
             Integer representing the minimum number of colors needed
+            
+        Raises:
+            RuntimeError: If color_graph() has not been called yet
+            
+        Note:
+            You must call color_graph() before calling this method.
         """
         if not self.coloring:
-            self.color_graph()
+            raise RuntimeError(
+                "No coloring found. Call color_graph() first to compute the coloring."
+            )
         
-        # El número cromático es el máximo color utilizado + 1
-        # (colores indexados desde 0)
-        return max(self.coloring.values()) + 1 if self.coloring else 0
+        # Chromatic number is max color used + 1 (colors are 0-indexed)
+        return max(self.coloring.values()) + 1
 
 
 # ============================================================================
