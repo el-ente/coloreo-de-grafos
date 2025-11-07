@@ -149,7 +149,7 @@ class TestWelshPowellColoring(unittest.TestCase):
     def test_none_graph(self):
         """Should raise ValueError for None graph."""
         with self.assertRaises(ValueError) as context:
-            welsh_powell_coloring(None)
+            coloring, _ = welsh_powell_coloring(None)
         
         self.assertIn("cannot be None", str(context.exception))
     
@@ -158,7 +158,7 @@ class TestWelshPowellColoring(unittest.TestCase):
         graph = Graph()
         
         with self.assertRaises(ValueError) as context:
-            welsh_powell_coloring(graph)
+            coloring, _ = welsh_powell_coloring(graph)
         
         self.assertIn("cannot be empty", str(context.exception))
     
@@ -168,7 +168,7 @@ class TestWelshPowellColoring(unittest.TestCase):
         node = Node("A")
         graph.add_node(node)
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         self.assertEqual(len(coloring), 1)
         self.assertEqual(coloring[node], 1)
@@ -182,7 +182,7 @@ class TestWelshPowellColoring(unittest.TestCase):
         graph.add_node(node_a)
         graph.add_node(node_b)
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         self.assertEqual(len(coloring), 2)
         self.assertEqual(coloring[node_a], 1)
@@ -196,7 +196,7 @@ class TestWelshPowellColoring(unittest.TestCase):
         for node in nodes:
             graph.add_node(node)
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         self.assertEqual(len(coloring), 5)
         # Todos deben tener el mismo color
@@ -220,7 +220,7 @@ class TestWelshPowellColoring(unittest.TestCase):
         graph.add_edge(node_b, node_c)
         graph.add_edge(node_c, node_a)
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         # Verificar que usa 3 colores
         num_colors = len(set(coloring.values()))
@@ -243,7 +243,7 @@ class TestWelshPowellColoring(unittest.TestCase):
             for j in range(i + 1, len(nodes)):
                 graph.add_edge(nodes[i], nodes[j])
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         # K4 necesita 4 colores
         num_colors = len(set(coloring.values()))
@@ -277,7 +277,7 @@ class TestWelshPowellColoring(unittest.TestCase):
         graph.add_edge(a3, b1)
         graph.add_edge(a3, b2)
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         # Debe usar exactamente 2 colores
         num_colors = len(set(coloring.values()))
@@ -299,7 +299,7 @@ class TestWelshPowellColoring(unittest.TestCase):
             graph.add_node(leaf)
             graph.add_edge(center, leaf)
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         # Debe usar 2 colores (centro y hojas)
         num_colors = len(set(coloring.values()))
@@ -330,7 +330,7 @@ class TestWelshPowellColoring(unittest.TestCase):
         for i in range(len(nodes) - 1):
             graph.add_edge(nodes[i], nodes[i + 1])
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         # Debe usar máximo 2 colores
         num_colors = len(set(coloring.values()))
@@ -352,7 +352,7 @@ class TestWelshPowellColoring(unittest.TestCase):
         for i in range(len(nodes)):
             graph.add_edge(nodes[i], nodes[(i + 1) % len(nodes)])
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         # Ciclo impar necesita 3 colores
         num_colors = len(set(coloring.values()))
@@ -374,7 +374,7 @@ class TestWelshPowellColoring(unittest.TestCase):
         for i in range(len(nodes)):
             graph.add_edge(nodes[i], nodes[(i + 1) % len(nodes)])
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         # Ciclo par necesita 2 colores
         num_colors = len(set(coloring.values()))
@@ -413,7 +413,7 @@ class TestWelshPowellColoring(unittest.TestCase):
         isolated = Node("isolated")
         graph.add_node(isolated)
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         # Debe colorear todos los nodos
         self.assertEqual(len(coloring), 6)
@@ -434,7 +434,7 @@ class TestWelshPowellColoring(unittest.TestCase):
         for i in range(len(nodes)):
             graph.add_edge(nodes[i], nodes[(i + 1) % len(nodes)])
         
-        coloring = welsh_powell_coloring(graph)
+        coloring, _ = welsh_powell_coloring(graph)
         
         # Verificar que el algoritmo maneja este caso
         # (el orden secundario por ID debe resolver empates)
@@ -467,7 +467,7 @@ class TestWelshPowellColoring(unittest.TestCase):
                 graph.add_edge(bb_node, leaf)
         
         # Aplicar Welsh-Powell
-        wp_coloring = welsh_powell_coloring(graph)
+        wp_coloring, _ = welsh_powell_coloring(graph)
         wp_colors = len(set(wp_coloring.values()))
         
         # Aplicar greedy básico (sin ordenamiento previo)

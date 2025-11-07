@@ -6,6 +6,7 @@ algorithm that colors high-degree nodes first to achieve better results
 than naive first-fit approaches.
 """
 
+import time
 from graph import Node, Graph
 
 
@@ -136,7 +137,9 @@ def welsh_powell_coloring(graph):
         graph: A Graph object with nodes and edges
         
     Returns:
-        dict: A dictionary mapping each node to its assigned color (int)
+        tuple: (coloring, execution_time) where:
+               - coloring: dict mapping each node to its assigned color (int)
+               - execution_time: float representing seconds elapsed
               Colors start from 1 (not 0)
               
     Raises:
@@ -145,10 +148,11 @@ def welsh_powell_coloring(graph):
     Example:
         >>> graph = Graph()
         >>> # ... add nodes and edges ...
-        >>> coloring = welsh_powell_coloring(graph)
-        >>> coloring[node_a]
-        1
+        >>> coloring, exec_time = welsh_powell_coloring(graph)
+        >>> print(f"Color: {coloring[node_a]}, Time: {exec_time:.6f}s")
     """
+    start_time = time.time()
+    
     # Validación inicial
     if graph is None:
         raise ValueError("Graph cannot be None")
@@ -173,8 +177,10 @@ def welsh_powell_coloring(graph):
         color = get_first_available_color(neighbor_colors)
         coloring[node] = color
     
-    # Paso 4: Retornar el coloreo completo
-    return coloring
+    execution_time = time.time() - start_time
+    
+    # Paso 4: Retornar el coloreo completo y el tiempo
+    return coloring, execution_time
 
 
 # ============================================================================
@@ -210,7 +216,9 @@ if __name__ == "__main__":
     print("Applying Welsh-Powell Algorithm")
     print("-" * 60)
     
-    coloring = welsh_powell_coloring(graph)
+    coloring, exec_time = welsh_powell_coloring(graph)
+    
+    print(f"\n⏱️  Execution time: {exec_time:.6f} seconds")
     
     # Mostrar resultados ordenados por ID
     print("\nColoring Results:")
@@ -259,8 +267,9 @@ if __name__ == "__main__":
     
     print(f"  {graph_k4}")
     
-    coloring_k4 = welsh_powell_coloring(graph_k4)
+    coloring_k4, exec_time_k4 = welsh_powell_coloring(graph_k4)
     
+    print(f"\n⏱️  Execution time: {exec_time_k4:.6f} seconds")
     print("\nColoring Results:")
     for node in sorted(coloring_k4.keys(), key=lambda n: n.id):
         print(f"  {node.id} (degree {graph_k4.get_degree(node)}): Color {coloring_k4[node]}")

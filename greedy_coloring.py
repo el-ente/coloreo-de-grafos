@@ -12,6 +12,7 @@ Educational Purpose:
 - Practical for large graphs where exact solutions are infeasible
 """
 
+import time
 from graph import Node, Graph
 
 
@@ -57,6 +58,7 @@ class GreedyColoring:
         self.graph = graph
         self.coloring = {}
         self.order_strategy = order_strategy
+        self.execution_time = None  # Tiempo de ejecución en segundos
     
     def color_graph(self):
         """
@@ -78,6 +80,8 @@ class GreedyColoring:
             >>> print(coloring[node_a])
             1
         """
+        start_time = time.time()
+        
         # Obtener lista ordenada de nodos según la estrategia
         nodes = list(self.graph.get_nodes())
         
@@ -109,6 +113,7 @@ class GreedyColoring:
             # Asignar el color al nodo
             self.coloring[node] = color
         
+        self.execution_time = time.time() - start_time
         return self.coloring
     
     def get_num_colors(self):
@@ -178,6 +183,15 @@ class GreedyColoring:
                 color_classes[color] = []
             color_classes[color].append(node.id)
         return color_classes
+    
+    def get_execution_time(self):
+        """
+        Get the execution time of the last color_graph() call.
+        
+        Returns:
+            Float representing execution time in seconds, or None if not run yet
+        """
+        return self.execution_time
 
 
 if __name__ == "__main__":
@@ -208,6 +222,7 @@ if __name__ == "__main__":
     greedy_natural = GreedyColoring(graph, order_strategy='natural')
     coloring_natural = greedy_natural.color_graph()
     
+    print(f"⏱️  Execution time: {greedy_natural.get_execution_time():.6f} seconds")
     print(f"\nColoración obtenida:")
     for node, color in sorted(coloring_natural.items(), key=lambda x: x[0].id):
         print(f"  {node.id}: Color {color}")
@@ -230,6 +245,7 @@ if __name__ == "__main__":
     greedy_degree = GreedyColoring(graph, order_strategy='degree')
     coloring_degree = greedy_degree.color_graph()
     
+    print(f"⏱️  Execution time: {greedy_degree.get_execution_time():.6f} seconds")
     print(f"\nColoración obtenida:")
     for node, color in sorted(coloring_degree.items(), key=lambda x: x[0].id):
         print(f"  {node.id}: Color {color}")

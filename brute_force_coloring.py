@@ -10,6 +10,7 @@ Educational Purpose:
 - Useful for understanding the graph coloring problem fundamentally
 """
 
+import time
 from itertools import product
 from graph import Node, Graph
 
@@ -48,6 +49,7 @@ class BruteForceColoring:
         
         self.graph = graph
         self.coloring = {}
+        self.execution_time = None  # Tiempo de ejecución en segundos
     
     def color_graph(self):
         """
@@ -65,6 +67,8 @@ class BruteForceColoring:
         The upper bound uses Brooks' theorem: χ(G) ≤ Δ + 1
         where Δ is the maximum degree of the graph.
         """
+        start_time = time.time()
+        
         nodes = list(self.graph.get_nodes())
         num_nodes = len(nodes)
         
@@ -80,9 +84,11 @@ class BruteForceColoring:
             
             if valid_coloring is not None:
                 self.coloring = valid_coloring
+                self.execution_time = time.time() - start_time
                 return self.coloring
         
         # This should never happen for a valid graph
+        self.execution_time = time.time() - start_time
         return {}
     
     def _find_valid_coloring_with_k_colors(self, nodes, k):
@@ -197,6 +203,15 @@ class BruteForceColoring:
         
         # Chromatic number is max color used + 1 (colors are 0-indexed)
         return max(self.coloring.values()) + 1
+    
+    def get_execution_time(self):
+        """
+        Get the execution time of the last color_graph() call.
+        
+        Returns:
+            Float representing execution time in seconds, or None if not run yet
+        """
+        return self.execution_time
 
 
 # ============================================================================
@@ -279,7 +294,8 @@ if __name__ == "__main__":
     coloring_algorithm = BruteForceColoring(graph)
     result = coloring_algorithm.color_graph()
     
-    print("Coloring found:")
+    print(f"⏱️  Execution time: {coloring_algorithm.get_execution_time():.6f} seconds")
+    print("\nColoring found:")
     for node in sorted(graph.get_nodes(), key=lambda n: n.id):
         color = result[node]
         print(f"  Node {node.id}: Color {color}")
@@ -347,7 +363,8 @@ This algorithm becomes impractical for graphs with more than 15-20 nodes.
     coloring_algo2 = BruteForceColoring(graph2)
     result2 = coloring_algo2.color_graph()
     
-    print("Coloring:")
+    print(f"⏱️  Execution time: {coloring_algo2.get_execution_time():.6f} seconds")
+    print("\nColoring:")
     for node in sorted(graph2.get_nodes(), key=lambda n: n.id):
         print(f"  {node.id}: Color {result2[node]}")
     
