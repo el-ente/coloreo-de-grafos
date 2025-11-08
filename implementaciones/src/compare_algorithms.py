@@ -15,7 +15,7 @@ Educational Purpose:
 
 import time
 from graph import Node, Graph
-from brute_force_coloring import BruteForceColoring
+from implementaciones.src.brute_force_coloring import BruteForceColoring
 from greedy_coloring import GreedyColoring
 from welsh_powell_coloring import welsh_powell_coloring
 
@@ -101,7 +101,7 @@ def compare_algorithms(graph, graph_name, chromatic_number=None):
     
     # 1. Brute Force (skip for large graphs)
     num_nodes = len(graph.get_nodes())
-    if num_nodes <= 10:  # Only run brute force for small graphs
+    if num_nodes <= 12:  # Only run brute force for small graphs (⚠️ puede ser lento para >10)
         print("🔍 Brute Force (exact algorithm):")
         bf = BruteForceColoring(graph)
         bf_coloring = bf.color_graph()
