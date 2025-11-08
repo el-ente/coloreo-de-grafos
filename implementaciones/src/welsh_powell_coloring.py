@@ -8,6 +8,7 @@ than naive first-fit approaches.
 
 import time
 from graph import Node, Graph
+from interfaces import GraphColoringAlgorithm
 
 
 def get_sorted_nodes_by_degree(graph):
@@ -114,73 +115,136 @@ def validate_coloring(graph, coloring):
     return (is_valid, errors)
 
 
-def welsh_powell_coloring(graph):
+class WelshPowellColoring(GraphColoringAlgorithm):
     """
-    Color a graph using the Welsh-Powell heuristic.
-    
-    This algorithm improves upon greedy first-fit by coloring
-    high-degree nodes first, which are more constrained and
-    harder to color later in the process. The intuition is that
-    nodes with many neighbors have fewer color options available,
-    so they should be colored early.
-    
-    Algorithm steps:
-    1. Calculate the degree of each node
-    2. Sort nodes in descending order by degree
-    3. Apply first-fit greedy coloring in this order
-    4. Return the resulting coloring
-    
-    Time Complexity: O(n² + m) where n = nodes, m = edges
-    Space Complexity: O(n) for storing coloring and sorted list
-    
-    Args:
-        graph: A Graph object with nodes and edges
-        
-    Returns:
-        tuple: (coloring, execution_time) where:
-               - coloring: dict mapping each node to its assigned color (int)
-               - execution_time: float representing seconds elapsed
-              Colors start from 1 (not 0)
-              
-    Raises:
-        ValueError: If graph is None or empty
-        
-    Example:
-        >>> graph = Graph()
-        >>> # ... add nodes and edges ...
-        >>> coloring, exec_time = welsh_powell_coloring(graph)
-        >>> print(f"Color: {coloring[node_a]}, Time: {exec_time:.6f}s")
+    Welsh-Powell heuristic for graph coloring.
     """
-    start_time = time.time()
     
-    # Validación inicial
-    if graph is None:
-        raise ValueError("Graph cannot be None")
-    
-    if not graph.get_nodes():
-        raise ValueError("Graph cannot be empty")
-    
-    # Paso 1 y 2: Obtener nodos ordenados por grado descendente
-    sorted_nodes = get_sorted_nodes_by_degree(graph)
-    
-    # Paso 3: Coloreo greedy en el orden establecido
-    coloring = {}
-    
-    for node in sorted_nodes:
-        # Obtener colores de vecinos ya coloreados
-        neighbor_colors = set()
-        for neighbor in graph.get_neighbors(node):
-            if neighbor in coloring:
-                neighbor_colors.add(coloring[neighbor])
+    def __init__(self, graph):
+        super().__init__(graph)
+        self.coloring = {}
+        self.execution_time = None
+
+    def color_graph(self):
+        """
+        Color a graph using the Welsh-Powell heuristic.
         
-        # Asignar el primer color disponible
-        color = get_first_available_color(neighbor_colors)
-        coloring[node] = color
-    
-    execution_time = time.time() - start_time
-    
-    # Paso 4: Retornar el coloreo completo y el tiempo
-    return coloring, execution_time
+        This algorithm improves upon greedy first-fit by coloring
+        high-degree nodes first, which are more constrained and
+        harder to color later in the process. The intuition is that
+        nodes with many neighbors have fewer color options available,
+        so they should be colored early.
+        
+        Algorithm steps:
+        1. Calculate the degree of each node
+        2. Sort nodes in descending order by degree
+        3. Apply first-fit greedy coloring in this order
+        4. Return the resulting coloring
+        
+        Time Complexity: O(n² + m) where n = nodes, m = edges
+        Space Complexity: O(n) for storing coloring and sorted list
+        
+        Args:
+            graph: A Graph object with nodes and edges
+            
+        Returns:
+            tuple: (coloring, execution_time) where:
+                   - coloring: dict mapping each node to its assigned color (int)
+                   - execution_time: float representing seconds elapsed
+                  Colors start from 1 (not 0)
+                  
+        Raises:
+            ValueError: If graph is None or empty
+            
+        Example:
+            >>> graph = Graph()
+            >>> # ... add nodes and edges ...
+            >>> coloring, exec_time = welsh_powell_coloring(graph)
+            >>> print(f"Color: {coloring[node_a]}, Time: {exec_time:.6f}s")
+        """
+        start_time = time.time()
+        
+        # Validación inicial
+        if self.graph is None:
+            raise ValueError("Graph cannot be None")
+        
+        if not self.graph.get_nodes():
+            raise ValueError("Graph cannot be empty")
+        
+        # Paso 1 y 2: Obtener nodos ordenados por grado descendente
+        sorted_nodes = get_sorted_nodes_by_degree(self.graph)
+        
+        # Paso 3: Coloreo greedy en el orden establecido
+        for node in sorted_nodes:
+            # Obtener colores de vecinos ya coloreados
+            neighbor_colors = set()
+            for neighbor in self.graph.get_neighbors(node):
+                if neighbor in self.coloring:
+                    neighbor_colors.add(self.coloring[neighbor])
+            
+            # Asignar el primer color disponible
+            color = get_first_available_color(neighbor_colors)
+            self.coloring[node] = color
+        
+        self.execution_time = time.time() - start_time
+
+
+    def is_valid_coloring(self, coloring):
+        """
+        Check if the given coloring is valid for the graph.
+
+        Args:
+            coloring: A dictionary mapping nodes to colors.
+
+        Returns:
+            bool: True if the coloring is valid, False otherwise.
+        """
+        for edge in self.graph.get_edges():
+            if coloring[edge[0]] == coloring[edge[1]]:
+                return False
+        return True
+
+    def get_coloring_conflicts(self, coloring):
+        """
+        Get a list of conflicts in the given coloring.
+
+        Args:
+            coloring: A dictionary mapping nodes to colors.
+
+        Returns:
+            list: A list of conflicting edges.
+        """
+        conflicts = []
+        for edge in self.graph.get_edges():
+            if coloring[edge[0]] == coloring[edge[1]]:
+                conflicts.append(edge)
+        return conflicts
+
+    def get_chromaticity(self):
+        """
+        Get the chromaticity (minimum number of colors) of the graph.
+        
+        This is determined by the number of distinct colors used
+        in the valid coloring of the graph. For the Welsh-Powell
+        algorithm, this value is equal to the maximum degree of
+        the graph, since it uses at most Δ colors for a proper
+        coloring.
+        
+        Note: This method assumes that the graph is not empty
+              and that coloring has been performed.
+        
+        Returns:
+            int: Chromaticity (minimum number of colors)
+            
+        Example:
+            >>> chromaticity = get_chromaticity()
+            >>> print(f"Chromaticity: {chromaticity}")
+        """
+        # Suponiendo que el coloreo ya fue realizado
+        return max(self.coloring.values())
+
+    def get_execution_time(self):
+        return self.execution_time
 
 
 # ============================================================================
@@ -216,7 +280,11 @@ if __name__ == "__main__":
     print("Applying Welsh-Powell Algorithm")
     print("-" * 60)
     
-    coloring, exec_time = welsh_powell_coloring(graph)
+    wp_coloring = WelshPowellColoring(graph)
+    wp_coloring.color_graph()
+    
+    coloring = wp_coloring.coloring
+    exec_time = wp_coloring.get_execution_time()
     
     print(f"\n⏱️  Execution time: {exec_time:.6f} seconds")
     

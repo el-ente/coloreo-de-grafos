@@ -13,9 +13,10 @@ Educational Purpose:
 import time
 from itertools import product
 from graph import Node, Graph
+from interfaces import GraphColoringAlgorithm
 
 
-class BruteForceColoring:
+class BruteForceColoring(GraphColoringAlgorithm):
     """
     Exhaustive search algorithm for graph coloring.
     
@@ -41,13 +42,7 @@ class BruteForceColoring:
         Raises:
             ValueError: If graph is None or empty
         """
-        if graph is None:
-            raise ValueError("Graph cannot be None")
-        
-        if not graph.nodes:
-            raise ValueError("Graph must contain at least one node")
-        
-        self.graph = graph
+        super().__init__(graph)
         self.coloring = {}
         self.execution_time = None  # Tiempo de ejecución en segundos
     

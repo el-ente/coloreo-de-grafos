@@ -15,9 +15,9 @@ Educational Purpose:
 
 import time
 from graph import Node, Graph
-from implementaciones.src.brute_force_coloring import BruteForceColoring
+from brute_force_coloring import BruteForceColoring
 from greedy_coloring import GreedyColoring
-from welsh_powell_coloring import welsh_powell_coloring
+from welsh_powell_coloring import WelshPowellColoring
 
 
 def create_cycle_graph(n):
@@ -96,114 +96,97 @@ def compare_algorithms(graph, graph_name, chromatic_number=None):
     if chromatic_number:
         print(f"Chromatic Number (optimal): {chromatic_number}")
     print()
-    
+
     results = {}
-    
+
     # 1. Brute Force (skip for large graphs)
     num_nodes = len(graph.get_nodes())
-    if num_nodes <= 12:  # Only run brute force for small graphs (⚠️ puede ser lento para >10)
+    if num_nodes <= 12:  # Only run brute force for small graphs
         print("🔍 Brute Force (exact algorithm):")
         bf = BruteForceColoring(graph)
-        bf_coloring = bf.color_graph()
-        bf_colors = bf.get_chromaticity()
-        bf_time = bf.get_execution_time()
+        bf.color_graph()
         results['brute_force'] = {
-            'colors': bf_colors,
-            'time': bf_time,
-            'valid': bf.is_valid_coloring(bf_coloring)
+            'colors': bf.get_chromaticity(),
+            'time': bf.get_execution_time(),
+            'valid': bf.is_valid_coloring(bf.coloring)
         }
-        print(f"   Colors used: {bf_colors}")
-        print(f"   Execution time: {bf_time:.6f} seconds")
+        print(f"   Colors used: {results['brute_force']['colors']}")
+        print(f"   Execution time: {results['brute_force']['time']:.6f} seconds")
         print(f"   Valid: {results['brute_force']['valid']}")
     else:
         print("🔍 Brute Force: SKIPPED (graph too large)")
         results['brute_force'] = None
-    
+
     # 2. Greedy (natural order)
     print("\n🟢 Greedy First-Fit (natural order):")
     greedy = GreedyColoring(graph, order_strategy='natural')
-    greedy_coloring = greedy.color_graph()
-    greedy_colors = greedy.get_num_colors()
-    greedy_time = greedy.get_execution_time()
+    greedy.color_graph()
     results['greedy'] = {
-        'colors': greedy_colors,
-        'time': greedy_time,
-        'valid': greedy.is_valid_coloring()
+        'colors': greedy.get_chromaticity(),
+        'time': greedy.get_execution_time(),
+        'valid': greedy.is_valid_coloring(greedy.coloring)
     }
-    print(f"   Colors used: {greedy_colors}")
-    print(f"   Execution time: {greedy_time:.6f} seconds")
+    print(f"   Colors used: {results['greedy']['colors']}")
+    print(f"   Execution time: {results['greedy']['time']:.6f} seconds")
     print(f"   Valid: {results['greedy']['valid']}")
-    
+
     # 3. Welsh-Powell
     print("\n🎯 Welsh-Powell (degree-ordered heuristic):")
-    wp_coloring, wp_time = welsh_powell_coloring(graph)
-    wp_colors = len(set(wp_coloring.values()))
-    
-    # Validate Welsh-Powell
-    wp_valid = True
-    for node in graph.get_nodes():
-        if node not in wp_coloring:
-            wp_valid = False
-            break
-    if wp_valid:
-        for edge in graph.get_edges():
-            if wp_coloring[edge[0]] == wp_coloring[edge[1]]:
-                wp_valid = False
-                break
-    
+    wp = WelshPowellColoring(graph)
+    wp.color_graph()
     results['welsh_powell'] = {
-        'colors': wp_colors,
-        'time': wp_time,
-        'valid': wp_valid
+        'colors': wp.get_chromaticity(),
+        'time': wp.get_execution_time(),
+        'valid': wp.is_valid_coloring(wp.coloring)
     }
-    print(f"   Colors used: {wp_colors}")
-    print(f"   Execution time: {wp_time:.6f} seconds")
+    print(f"   Colors used: {results['welsh_powell']['colors']}")
+    print(f"   Execution time: {results['welsh_powell']['time']:.6f} seconds")
     print(f"   Valid: {results['welsh_powell']['valid']}")
-    
+
     # Analysis
     print("\n" + "-" * 70)
     print("ANALYSIS:")
     print("-" * 70)
-    
+
     if results['brute_force']:
         bf_colors = results['brute_force']['colors']
         print(f"✓ Brute Force found optimal solution: {bf_colors} colors")
-        
+
         if results['greedy']['colors'] == bf_colors:
             print(f"✓ Greedy is OPTIMAL")
         else:
             overhead = results['greedy']['colors'] - bf_colors
             print(f"⚠ Greedy uses {overhead} extra color(s) ({results['greedy']['colors']} vs {bf_colors})")
-        
+
         if results['welsh_powell']['colors'] == bf_colors:
             print(f"✓ Welsh-Powell is OPTIMAL")
         else:
             overhead = results['welsh_powell']['colors'] - bf_colors
             print(f"⚠ Welsh-Powell uses {overhead} extra color(s) ({results['welsh_powell']['colors']} vs {bf_colors})")
-    
+
     if chromatic_number:
         if results['welsh_powell']['colors'] == chromatic_number:
             print(f"✓ Welsh-Powell achieved chromatic number: {chromatic_number}")
         if results['greedy']['colors'] == chromatic_number:
             print(f"✓ Greedy achieved chromatic number: {chromatic_number}")
-    
+
     # Speed comparison
     print("\nSpeed Comparison:")
     if results['brute_force']:
         bf_time = results['brute_force']['time']
         greedy_speedup = bf_time / results['greedy']['time'] if results['greedy']['time'] > 0 else float('inf')
         wp_speedup = bf_time / results['welsh_powell']['time'] if results['welsh_powell']['time'] > 0 else float('inf')
-        
+
         print(f"  Greedy is {greedy_speedup:.1f}x faster than Brute Force")
         print(f"  Welsh-Powell is {wp_speedup:.1f}x faster than Brute Force")
-    
+
     if results['greedy']['time'] > 0 and results['welsh_powell']['time'] > 0:
         ratio = results['greedy']['time'] / results['welsh_powell']['time']
         if ratio > 1:
             print(f"  Greedy is {ratio:.1f}x faster than Welsh-Powell")
         else:
             print(f"  Welsh-Powell is {1/ratio:.1f}x faster than Greedy")
-    
+
     return results
 
 
@@ -245,29 +228,3 @@ if __name__ == "__main__":
     graph7, _ = create_complete_graph(12)
     compare_algorithms(graph7, "Complete Graph K12 (large clique)", chromatic_number=12)
     
-    # Final summary
-    print("\n" + "=" * 70)
-    print("KEY INSIGHTS")
-    print("=" * 70)
-    print("""
-1. BRUTE FORCE: 
-   - Always finds the optimal solution (minimum colors)
-   - Becomes impractical for graphs with >10 nodes
-   - Execution time grows exponentially
-
-2. GREEDY FIRST-FIT:
-   - Very fast, works on large graphs
-   - Quality depends heavily on node ordering
-   - May use more colors than necessary
-
-3. WELSH-POWELL:
-   - Fast like Greedy (O(n² + m))
-   - Better results by processing high-degree nodes first
-   - Often matches or beats Greedy
-   - Good balance of speed and quality
-
-RECOMMENDATION:
-- Use Brute Force only for: small graphs, research, verification
-- Use Greedy for: very large graphs, when speed is critical
-- Use Welsh-Powell for: most practical applications
-    """)

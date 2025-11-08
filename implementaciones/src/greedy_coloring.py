@@ -14,9 +14,10 @@ Educational Purpose:
 
 import time
 from graph import Node, Graph
+from interfaces import GraphColoringAlgorithm
 
 
-class GreedyColoring:
+class GreedyColoring(GraphColoringAlgorithm):
     """
     Greedy first-fit algorithm for graph coloring.
     
@@ -46,6 +47,8 @@ class GreedyColoring:
         Raises:
             ValueError: If graph is None, empty, or order_strategy is invalid
         """
+        super().__init__(graph)
+        
         if graph is None:
             raise ValueError("Graph cannot be None")
         
@@ -55,7 +58,6 @@ class GreedyColoring:
         if order_strategy not in ['natural', 'degree']:
             raise ValueError("order_strategy must be 'natural' or 'degree'")
         
-        self.graph = graph
         self.coloring = {}
         self.order_strategy = order_strategy
         self.execution_time = None  # Tiempo de ejecución en segundos
@@ -116,7 +118,31 @@ class GreedyColoring:
         self.execution_time = time.time() - start_time
         return self.coloring
     
-    def get_num_colors(self):
+    def is_valid_coloring(self, coloring):
+        """
+        Verify that the coloring is valid.
+        
+        A coloring is valid if no two adjacent nodes have the same color.
+        
+        Returns:
+            bool: True if coloring is valid, False otherwise
+        """
+        if not coloring:
+            return False
+        
+        # Verificar que todos los nodos estén coloreados
+        for node in self.graph.get_nodes():
+            if node not in coloring:
+                return False
+        
+        # Verificar que ningún par de vecinos tenga el mismo color
+        for node1, node2 in self.graph.get_edges():
+            if coloring[node1] == coloring[node2]:
+                return False
+        
+        return True
+    
+    def get_chromaticity(self):
         """
         Get the number of colors used in the coloring.
         
@@ -126,63 +152,6 @@ class GreedyColoring:
         if not self.coloring:
             return 0
         return max(self.coloring.values())
-    
-    def is_valid_coloring(self):
-        """
-        Verify that the coloring is valid.
-        
-        A coloring is valid if no two adjacent nodes have the same color.
-        
-        Returns:
-            bool: True if coloring is valid, False otherwise
-        """
-        if not self.coloring:
-            return False
-        
-        # Verificar que todos los nodos estén coloreados
-        for node in self.graph.get_nodes():
-            if node not in self.coloring:
-                return False
-        
-        # Verificar que ningún par de vecinos tenga el mismo color
-        for node1, node2 in self.graph.get_edges():
-            if self.coloring[node1] == self.coloring[node2]:
-                return False
-        
-        return True
-    
-    def get_coloring_dict(self):
-        """
-        Get the coloring as a dictionary with node IDs instead of Node objects.
-        
-        Returns:
-            dict: Mapping from node IDs to color integers
-            
-        Example:
-            >>> coloring_dict = greedy.get_coloring_dict()
-            >>> print(coloring_dict)
-            {'A': 1, 'B': 2, 'C': 1}
-        """
-        return {node.id: color for node, color in self.coloring.items()}
-    
-    def get_color_classes(self):
-        """
-        Group nodes by their assigned colors.
-        
-        Returns:
-            dict: Mapping from color integers to lists of node IDs
-            
-        Example:
-            >>> color_classes = greedy.get_color_classes()
-            >>> print(color_classes)
-            {1: ['A', 'C'], 2: ['B', 'D'], 3: ['E']}
-        """
-        color_classes = {}
-        for node, color in self.coloring.items():
-            if color not in color_classes:
-                color_classes[color] = []
-            color_classes[color].append(node.id)
-        return color_classes
     
     def get_execution_time(self):
         """
@@ -227,8 +196,8 @@ if __name__ == "__main__":
     for node, color in sorted(coloring_natural.items(), key=lambda x: x[0].id):
         print(f"  {node.id}: Color {color}")
     
-    print(f"\nNúmero de colores usados: {greedy_natural.get_num_colors()}")
-    print(f"¿Coloración válida? {greedy_natural.is_valid_coloring()}")
+    print(f"\nNúmero de colores usados: {greedy_natural.get_chromaticity()}")
+    print(f"¿Coloración válida? {greedy_natural.is_valid_coloring(coloring_natural)}")
     
     # Verificar que ningún par de vecinos tiene el mismo color
     print("\nVerificación de vecinos:")
@@ -250,15 +219,15 @@ if __name__ == "__main__":
     for node, color in sorted(coloring_degree.items(), key=lambda x: x[0].id):
         print(f"  {node.id}: Color {color}")
     
-    print(f"\nNúmero de colores usados: {greedy_degree.get_num_colors()}")
-    print(f"¿Coloración válida? {greedy_degree.is_valid_coloring()}")
+    print(f"\nNúmero de colores usados: {greedy_degree.get_chromaticity()}")
+    print(f"¿Coloración válida? {greedy_degree.is_valid_coloring(coloring_degree)}")
     
     # 4. Comparación
     print("\n" + "=" * 60)
     print("ANÁLISIS COMPARATIVO")
     print("=" * 60)
     print(f"Número cromático teórico: 3")
-    print(f"Colores usados (natural): {greedy_natural.get_num_colors()}")
-    print(f"Colores usados (por grado): {greedy_degree.get_num_colors()}")
+    print(f"Colores usados (natural): {greedy_natural.get_chromaticity()}")
+    print(f"Colores usados (por grado): {greedy_degree.get_chromaticity()}")
     print(f"\nNota: El algoritmo codicioso no garantiza encontrar el mínimo,")
     print(f"pero es mucho más rápido que la fuerza bruta para grafos grandes.")
