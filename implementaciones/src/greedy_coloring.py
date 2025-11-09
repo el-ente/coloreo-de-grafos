@@ -120,7 +120,7 @@ class GreedyColoring(GraphColoringAlgorithm):
         Returns:
             int: Number of unique colors used.
         """
-        return len(set(self.coloring.values()))
+        return self.get_chromaticity()
     
     def get_coloring_dict(self):
         """
