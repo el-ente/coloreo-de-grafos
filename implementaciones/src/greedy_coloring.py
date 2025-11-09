@@ -60,7 +60,42 @@ class GreedyColoring(GraphColoringAlgorithm):
         
         self.coloring = {}
         self.order_strategy = order_strategy
-        self.execution_time = None  # Tiempo de ejecución en segundos
+    
+    def _color_graph_impl(self):
+        """
+        Color the graph using the greedy first-fit strategy.
+        
+        Processes vertices in the order specified by order_strategy,
+        assigning each vertex the smallest color that doesn't conflict
+        with its already-colored neighbors.
+        
+        Returns:
+            dict: Mapping from Node objects to color integers (1-indexed)
+            
+        Time Complexity: O(n²) where n is the number of vertices
+        Space Complexity: O(n) for storing the coloring
+        
+        Example:
+            >>> greedy = GreedyColoring(graph)
+            >>> coloring = greedy.color_graph()
+            >>> print(coloring[node_a])
+            1
+        """
+        
+        # Obtener lista ordenada de nodos según la estrategia
+        nodes = list(self.graph.get_nodes())
+        
+        if self.order_strategy == 'natural':
+            # Ordenar por node.id (alfabéticamente o numéricamente)
+            nodes.sort(key=lambda n: str(n.id))
+        else:  # 'degree'
+            # Ordenar por grado descendente, desempatar por node.id
+            nodes.sort(key=lambda n: (-self.graph.get_degree(n), str(n.id)))
+        
+        # Inicializar coloración vacía
+        self.coloring = {}
+        
+        # Procesar cada nodo en orden
     
     def color_graph(self):
         """
@@ -115,52 +150,7 @@ class GreedyColoring(GraphColoringAlgorithm):
             # Asignar el color al nodo
             self.coloring[node] = color
         
-        self.execution_time = time.time() - start_time
         return self.coloring
-    
-    def is_valid_coloring(self, coloring):
-        """
-        Verify that the coloring is valid.
-        
-        A coloring is valid if no two adjacent nodes have the same color.
-        
-        Returns:
-            bool: True if coloring is valid, False otherwise
-        """
-        if not coloring:
-            return False
-        
-        # Verificar que todos los nodos estén coloreados
-        for node in self.graph.get_nodes():
-            if node not in coloring:
-                return False
-        
-        # Verificar que ningún par de vecinos tenga el mismo color
-        for node1, node2 in self.graph.get_edges():
-            if coloring[node1] == coloring[node2]:
-                return False
-        
-        return True
-    
-    def get_chromaticity(self):
-        """
-        Get the number of colors used in the coloring.
-        
-        Returns:
-            int: Number of distinct colors used (0 if graph not colored yet)
-        """
-        if not self.coloring:
-            return 0
-        return max(self.coloring.values())
-    
-    def get_execution_time(self):
-        """
-        Get the execution time of the last color_graph() call.
-        
-        Returns:
-            Float representing execution time in seconds, or None if not run yet
-        """
-        return self.execution_time
 
 
 if __name__ == "__main__":

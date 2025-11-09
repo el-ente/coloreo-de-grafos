@@ -33,20 +33,10 @@ class BruteForceColoring(GraphColoringAlgorithm):
     """
     
     def __init__(self, graph):
-        """
-        Initialize the BruteForceColoring algorithm.
-        
-        Args:
-            graph: A Graph object to be colored
-            
-        Raises:
-            ValueError: If graph is None or empty
-        """
         super().__init__(graph)
         self.coloring = {}
-        self.execution_time = None  # Tiempo de ejecución en segundos
     
-    def color_graph(self):
+    def _color_graph_impl(self):
         """
         Find a valid coloring of the graph using brute force.
         
@@ -62,7 +52,6 @@ class BruteForceColoring(GraphColoringAlgorithm):
         The upper bound uses Brooks' theorem: χ(G) ≤ Δ + 1
         where Δ is the maximum degree of the graph.
         """
-        start_time = time.time()
         
         nodes = list(self.graph.get_nodes())
         num_nodes = len(nodes)
@@ -79,11 +68,9 @@ class BruteForceColoring(GraphColoringAlgorithm):
             
             if valid_coloring is not None:
                 self.coloring = valid_coloring
-                self.execution_time = time.time() - start_time
                 return self.coloring
         
         # This should never happen for a valid graph
-        self.execution_time = time.time() - start_time
         return {}
     
     def _find_valid_coloring_with_k_colors(self, nodes, k):
@@ -137,76 +124,6 @@ class BruteForceColoring(GraphColoringAlgorithm):
             if neighbor in coloring and coloring[neighbor] == coloring[node]:
                 return False
         return True
-    
-    def _is_valid_coloring(self, coloring):
-        """
-        Verify if a complete coloring is valid for the entire graph.
-        
-        Args:
-            coloring: Dictionary mapping nodes to colors
-            
-        Returns:
-            True if the coloring is valid, False otherwise
-        """
-        # Check all nodes have a color assignment
-        if set(coloring.keys()) != self.graph.get_nodes():
-            return False
-        
-        # Verify no adjacent nodes share the same color
-        for edge in self.graph.get_edges():
-            node1, node2 = edge
-            if coloring[node1] == coloring[node2]:
-                return False
-        
-        return True
-    
-    def is_valid_coloring(self, coloring):
-        """
-        Public method to check if a given coloring is valid.
-        
-        Args:
-            coloring: Dictionary mapping nodes to colors
-            
-        Returns:
-            True if the coloring is valid, False otherwise
-            
-        Raises:
-            ValueError: If coloring doesn't include all nodes
-        """
-        if set(coloring.keys()) != self.graph.get_nodes():
-            raise ValueError("Coloring must include all nodes")
-        
-        return self._is_valid_coloring(coloring)
-    
-    def get_chromaticity(self):
-        """
-        Get the chromatic number (minimum colors needed).
-        
-        Returns:
-            Integer representing the minimum number of colors needed
-            
-        Raises:
-            RuntimeError: If color_graph() has not been called yet
-            
-        Note:
-            You must call color_graph() before calling this method.
-        """
-        if not self.coloring:
-            raise RuntimeError(
-                "No coloring found. Call color_graph() first to compute the coloring."
-            )
-        
-        # Chromatic number is max color used + 1 (colors are 0-indexed)
-        return max(self.coloring.values()) + 1
-    
-    def get_execution_time(self):
-        """
-        Get the execution time of the last color_graph() call.
-        
-        Returns:
-            Float representing execution time in seconds, or None if not run yet
-        """
-        return self.execution_time
 
 
 # ============================================================================

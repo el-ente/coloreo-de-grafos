@@ -123,9 +123,8 @@ class WelshPowellColoring(GraphColoringAlgorithm):
     def __init__(self, graph):
         super().__init__(graph)
         self.coloring = {}
-        self.execution_time = None
 
-    def color_graph(self):
+    def _color_graph_impl(self):
         """
         Color a graph using the Welsh-Powell heuristic.
         
@@ -159,10 +158,11 @@ class WelshPowellColoring(GraphColoringAlgorithm):
         Example:
             >>> graph = Graph()
             >>> # ... add nodes and edges ...
-            >>> coloring, exec_time = welsh_powell_coloring(graph)
+            >>> wp = WelshPowellColoring(graph)
+            >>> coloring = wp.color_graph()
+            >>> exec_time = wp.get_execution_time()
             >>> print(f"Color: {coloring[node_a]}, Time: {exec_time:.6f}s")
         """
-        start_time = time.time()
         
         # Validación inicial
         if self.graph is None:
@@ -185,66 +185,6 @@ class WelshPowellColoring(GraphColoringAlgorithm):
             # Asignar el primer color disponible
             color = get_first_available_color(neighbor_colors)
             self.coloring[node] = color
-        
-        self.execution_time = time.time() - start_time
-
-
-    def is_valid_coloring(self, coloring):
-        """
-        Check if the given coloring is valid for the graph.
-
-        Args:
-            coloring: A dictionary mapping nodes to colors.
-
-        Returns:
-            bool: True if the coloring is valid, False otherwise.
-        """
-        for edge in self.graph.get_edges():
-            if coloring[edge[0]] == coloring[edge[1]]:
-                return False
-        return True
-
-    def get_coloring_conflicts(self, coloring):
-        """
-        Get a list of conflicts in the given coloring.
-
-        Args:
-            coloring: A dictionary mapping nodes to colors.
-
-        Returns:
-            list: A list of conflicting edges.
-        """
-        conflicts = []
-        for edge in self.graph.get_edges():
-            if coloring[edge[0]] == coloring[edge[1]]:
-                conflicts.append(edge)
-        return conflicts
-
-    def get_chromaticity(self):
-        """
-        Get the chromaticity (minimum number of colors) of the graph.
-        
-        This is determined by the number of distinct colors used
-        in the valid coloring of the graph. For the Welsh-Powell
-        algorithm, this value is equal to the maximum degree of
-        the graph, since it uses at most Δ colors for a proper
-        coloring.
-        
-        Note: This method assumes that the graph is not empty
-              and that coloring has been performed.
-        
-        Returns:
-            int: Chromaticity (minimum number of colors)
-            
-        Example:
-            >>> chromaticity = get_chromaticity()
-            >>> print(f"Chromaticity: {chromaticity}")
-        """
-        # Suponiendo que el coloreo ya fue realizado
-        return max(self.coloring.values())
-
-    def get_execution_time(self):
-        return self.execution_time
 
 
 # ============================================================================
@@ -335,7 +275,9 @@ if __name__ == "__main__":
     
     print(f"  {graph_k4}")
     
-    coloring_k4, exec_time_k4 = welsh_powell_coloring(graph_k4)
+    wp_k4 = WelshPowellColoring(graph_k4)
+    coloring_k4 = wp_k4.color_graph()
+    exec_time_k4 = wp_k4.get_execution_time()
     
     print(f"\n⏱️  Execution time: {exec_time_k4:.6f} seconds")
     print("\nColoring Results:")
