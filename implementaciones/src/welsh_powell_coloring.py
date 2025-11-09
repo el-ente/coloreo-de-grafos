@@ -185,3 +185,74 @@ class WelshPowellColoring(GraphColoringAlgorithm):
             # Asignar el primer color disponible
             color = get_first_available_color(neighbor_colors)
             self.coloring[node] = color
+    
+    def get_num_colors(self):
+        """
+        Get the number of colors used in the coloring.
+        
+        Returns:
+            int: Number of unique colors used.
+        """
+        return self.get_chromaticity()
+    
+    def get_coloring_dict(self):
+        """
+        Get the coloring as a dictionary with node IDs as keys.
+        
+        Returns:
+            dict: Mapping from node IDs to color integers.
+        """
+        return {node.id: color for node, color in self.coloring.items()}
+    
+    def get_color_classes(self):
+        """
+        Get the color classes, grouping nodes by their assigned color.
+        
+        Returns:
+            dict: Mapping from color to list of node IDs.
+        """
+        classes = {}
+        for node, color in self.coloring.items():
+            if color not in classes:
+                classes[color] = []
+            classes[color].append(node.id)
+        return classes
+    
+    def is_valid_coloring(self, coloring=None):
+        """
+        Check if the coloring is valid for the graph.
+        
+        Args:
+            coloring: Optional coloring dict. If None, uses self.coloring.
+        
+        Returns:
+            bool: True if valid, False otherwise.
+        """
+        if coloring is None:
+            coloring = self.coloring
+        return super().is_valid_coloring(coloring)
+
+
+def welsh_powell_coloring(graph):
+    """
+    Convenience function for Welsh-Powell coloring.
+    
+    This function provides a simple interface for coloring a graph
+    using the Welsh-Powell heuristic. It creates a WelshPowellColoring
+    instance, performs the coloring, and returns the result.
+    
+    Args:
+        graph: A Graph object to color
+        
+    Returns:
+        tuple: (coloring_dict, execution_time) where:
+               - coloring_dict: dict mapping nodes to colors
+               - execution_time: float in seconds
+               
+    Raises:
+        ValueError: If graph is None or empty
+    """
+    algorithm = WelshPowellColoring(graph)
+    coloring = algorithm.color_graph()
+    execution_time = algorithm.get_execution_time()
+    return coloring, execution_time

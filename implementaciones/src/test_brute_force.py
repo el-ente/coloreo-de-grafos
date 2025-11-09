@@ -6,7 +6,7 @@ BruteForceColoring implementation.
 """
 
 from graph import Node, Graph
-from implementaciones.src.brute_force_coloring import BruteForceColoring
+from brute_force_coloring import BruteForceColoring
 
 
 def test_single_node():
