@@ -12,6 +12,7 @@ Educational Purpose:
 
 import time
 from itertools import product
+from typing import Dict, List, Optional
 from graph import Node, Graph
 from interfaces import GraphColoringAlgorithm
 
@@ -32,11 +33,11 @@ class BruteForceColoring(GraphColoringAlgorithm):
         coloring: Result of the coloring operation (node -> color mapping)
     """
     
-    def __init__(self, graph):
+    def __init__(self, graph: Graph) -> None:
         super().__init__(graph)
-        self.coloring = {}
+        self.coloring: Dict[Node, int] = {}
     
-    def _color_graph_impl(self):
+    def _color_graph_impl(self) -> None:
         """
         Find a valid coloring of the graph using brute force.
         
@@ -73,7 +74,7 @@ class BruteForceColoring(GraphColoringAlgorithm):
         # This should never happen for a valid graph
         return {}
     
-    def _find_valid_coloring_with_k_colors(self, nodes, k):
+    def _find_valid_coloring_with_k_colors(self, nodes: List[Node], k: int) -> Optional[Dict[Node, int]]:
         """
         Search for valid k-coloring using backtracking.
         
@@ -84,9 +85,9 @@ class BruteForceColoring(GraphColoringAlgorithm):
         Returns:
             Dictionary with valid coloring, or None if not possible
         """
-        coloring = {}
+        coloring: Dict[Node, int] = {}
         
-        def backtrack(node_index):
+        def backtrack(node_index: int) -> bool:
             if node_index == len(nodes):
                 return True
             
@@ -109,7 +110,7 @@ class BruteForceColoring(GraphColoringAlgorithm):
             return coloring
         return None
     
-    def _is_safe_partial_coloring(self, node, coloring):
+    def _is_safe_partial_coloring(self, node: Node, coloring: Dict[Node, int]) -> bool:
         """
         Check if current node's color conflicts with already colored neighbors.
         
@@ -125,7 +126,7 @@ class BruteForceColoring(GraphColoringAlgorithm):
                 return False
         return True
     
-    def get_num_colors(self):
+    def get_num_colors(self) -> int:
         """
         Get the number of colors used in the coloring.
         
@@ -134,7 +135,7 @@ class BruteForceColoring(GraphColoringAlgorithm):
         """
         return self.get_chromaticity()
     
-    def get_coloring_dict(self):
+    def get_coloring_dict(self) -> Dict[str, int]:
         """
         Get the coloring as a dictionary with node IDs as keys.
         
@@ -143,21 +144,21 @@ class BruteForceColoring(GraphColoringAlgorithm):
         """
         return {node.id: color for node, color in self.coloring.items()}
     
-    def get_color_classes(self):
+    def get_color_classes(self) -> Dict[int, List[str]]:
         """
         Get the color classes, grouping nodes by their assigned color.
         
         Returns:
             dict: Mapping from color to list of node IDs.
         """
-        classes = {}
+        classes: Dict[int, List[str]] = {}
         for node, color in self.coloring.items():
             if color not in classes:
                 classes[color] = []
             classes[color].append(node.id)
         return classes
     
-    def is_valid_coloring(self, coloring=None):
+    def is_valid_coloring(self, coloring: Optional[Dict[Node, int]] = None) -> bool:
         """
         Check if the coloring is valid for the graph.
         
