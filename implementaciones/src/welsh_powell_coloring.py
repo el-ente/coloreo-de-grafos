@@ -7,11 +7,12 @@ than naive first-fit approaches.
 """
 
 import time
+from typing import Dict, List, Set, Tuple, Optional
 from graph import Node, Graph
 from interfaces import GraphColoringAlgorithm
 
 
-def get_sorted_nodes_by_degree(graph):
+def get_sorted_nodes_by_degree(graph: Graph) -> List[Node]:
     """
     Sort graph nodes in descending order by degree.
     
@@ -38,7 +39,7 @@ def get_sorted_nodes_by_degree(graph):
     return sorted(nodes, key=lambda n: (-graph.get_degree(n), str(n.id)))
 
 
-def get_first_available_color(neighbor_colors):
+def get_first_available_color(neighbor_colors: Set[int]) -> int:
     """
     Find the smallest positive integer not in the set.
     
@@ -66,7 +67,7 @@ def get_first_available_color(neighbor_colors):
     return color
 
 
-def validate_coloring(graph, coloring):
+def validate_coloring(graph: Graph, coloring: Dict[Node, int]) -> Tuple[bool, List[str]]:
     """
     Verify that a coloring is valid (no adjacent nodes share colors).
     
@@ -89,7 +90,7 @@ def validate_coloring(graph, coloring):
         ...     for error in errors:
         ...         print(error)
     """
-    errors = []
+    errors: List[str] = []
     
     # Verificar que todos los nodos tienen un color asignado
     for node in graph.get_nodes():
@@ -120,11 +121,11 @@ class WelshPowellColoring(GraphColoringAlgorithm):
     Welsh-Powell heuristic for graph coloring.
     """
     
-    def __init__(self, graph):
+    def __init__(self, graph: Graph) -> None:
         super().__init__(graph)
-        self.coloring = {}
+        self.coloring: Dict[Node, int] = {}
 
-    def _color_graph_impl(self):
+    def _color_graph_impl(self) -> None:
         """
         Color a graph using the Welsh-Powell heuristic.
         
@@ -177,7 +178,7 @@ class WelshPowellColoring(GraphColoringAlgorithm):
         # Paso 3: Coloreo greedy en el orden establecido
         for node in sorted_nodes:
             # Obtener colores de vecinos ya coloreados
-            neighbor_colors = set()
+            neighbor_colors: Set[int] = set()
             for neighbor in self.graph.get_neighbors(node):
                 if neighbor in self.coloring:
                     neighbor_colors.add(self.coloring[neighbor])
@@ -186,7 +187,7 @@ class WelshPowellColoring(GraphColoringAlgorithm):
             color = get_first_available_color(neighbor_colors)
             self.coloring[node] = color
     
-    def get_num_colors(self):
+    def get_num_colors(self) -> int:
         """
         Get the number of colors used in the coloring.
         
@@ -195,7 +196,7 @@ class WelshPowellColoring(GraphColoringAlgorithm):
         """
         return self.get_chromaticity()
     
-    def get_coloring_dict(self):
+    def get_coloring_dict(self) -> Dict[str, int]:
         """
         Get the coloring as a dictionary with node IDs as keys.
         
@@ -204,21 +205,21 @@ class WelshPowellColoring(GraphColoringAlgorithm):
         """
         return {node.id: color for node, color in self.coloring.items()}
     
-    def get_color_classes(self):
+    def get_color_classes(self) -> Dict[int, List[str]]:
         """
         Get the color classes, grouping nodes by their assigned color.
         
         Returns:
             dict: Mapping from color to list of node IDs.
         """
-        classes = {}
+        classes: Dict[int, List[str]] = {}
         for node, color in self.coloring.items():
             if color not in classes:
                 classes[color] = []
             classes[color].append(node.id)
         return classes
     
-    def is_valid_coloring(self, coloring=None):
+    def is_valid_coloring(self, coloring: Optional[Dict[Node, int]] = None) -> bool:
         """
         Check if the coloring is valid for the graph.
         
@@ -233,7 +234,7 @@ class WelshPowellColoring(GraphColoringAlgorithm):
         return super().is_valid_coloring(coloring)
 
 
-def welsh_powell_coloring(graph):
+def welsh_powell_coloring(graph: Graph) -> Tuple[Dict[Node, int], float]:
     """
     Convenience function for Welsh-Powell coloring.
     
