@@ -5,6 +5,8 @@ This module provides the fundamental classes for representing
 graphs used in educational examples of graph coloring.
 """
 
+from typing import Dict, List, Set, Optional, Any
+
 
 class Node:
     """
@@ -19,7 +21,7 @@ class Node:
     to the Graph class.
     """
     
-    def __init__(self, node_id, data=None):
+    def __init__(self, node_id: str, data: Optional[Any] = None) -> None:
         """
         Initialize a Node.
         
@@ -30,19 +32,19 @@ class Node:
         self.id = node_id
         self.data = data
     
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Return a readable representation of the node."""
         if self.data is not None:
             return f"Node({self.id}, data={self.data})"
         return f"Node({self.id})"
     
-    def __eq__(self, other):
+    def __eq__(self, other: object) -> bool:
         """Check equality based on node id."""
         if isinstance(other, Node):
             return self.id == other.id
         return False
     
-    def __hash__(self):
+    def __hash__(self) -> int:
         """Make nodes hashable so they can be used in sets and dicts."""
         return hash(self.id)
 
@@ -61,14 +63,14 @@ class Graph:
         nodes: Set of all nodes in the graph
     """
     
-    def __init__(self):
+    def __init__(self) -> None:
         """Initialize an empty graph."""
         # Diccionario de adyacencia: cada nodo mapea a su lista de vecinos
-        self.adjacency_list = {}
+        self.adjacency_list: Dict[Node, List[Node]] = {}
         # Conjunto de nodos para acceso rápido
-        self.nodes = set()
+        self.nodes: Set[Node] = set()
     
-    def add_node(self, node):
+    def add_node(self, node: Node) -> None:
         """
         Add a node to the graph.
         
@@ -88,7 +90,7 @@ class Graph:
         self.adjacency_list[node] = []
         self.nodes.add(node)
     
-    def add_edge(self, node1, node2):
+    def add_edge(self, node1: Node, node2: Node) -> None:
         """Connect two nodes with an undirected edge."""
         if node1 not in self.nodes:
             raise ValueError(f"Node {node1} not in graph")
@@ -104,7 +106,7 @@ class Graph:
             self.adjacency_list[node1].append(node2)
             self.adjacency_list[node2].append(node1)
     
-    def get_neighbors(self, node):
+    def get_neighbors(self, node: Node) -> List[Node]:
         """
         Get all neighbors of a given node.
         
@@ -122,7 +124,7 @@ class Graph:
         
         return self.adjacency_list[node].copy()
     
-    def get_nodes(self):
+    def get_nodes(self) -> Set[Node]:
         """
         Get all nodes in the graph.
         
@@ -131,7 +133,7 @@ class Graph:
         """
         return self.nodes.copy()
     
-    def get_edges(self):
+    def get_edges(self) -> List[tuple[Node, Node]]:
         """
         Get all edges in the graph.
         
@@ -149,7 +151,7 @@ class Graph:
         
         return edges
     
-    def get_degree(self, node):
+    def get_degree(self, node: Node) -> int:
         """
         Get the degree (number of neighbors) of a node.
         
@@ -167,7 +169,7 @@ class Graph:
         
         return len(self.adjacency_list[node])
     
-    def has_edge(self, node1, node2):
+    def has_edge(self, node1: Node, node2: Node) -> bool:
         """
         Check if there is an edge between two nodes.
         
@@ -189,82 +191,14 @@ class Graph:
         
         return node2 in self.adjacency_list[node1]
     
-    def get_max_degree(self):
+    def get_max_degree(self) -> int:
         """Get the maximum degree in the graph."""
         if not self.nodes:
             return 0
         return max(self.get_degree(node) for node in self.nodes)
     
-    def __repr__(self):
+    def __repr__(self) -> str:
         """Return a readable representation of the graph."""
         num_nodes = len(self.nodes)
         num_edges = len(self.get_edges())
         return f"Graph(nodes={num_nodes}, edges={num_edges})"
-
-
-# ============================================================================
-# Ejemplo de uso / Usage example
-# ============================================================================
-
-if __name__ == "__main__":
-    # Crear un grafo simple
-    graph = Graph()
-    
-    # Crear nodos
-    print("=" * 50)
-    print("Creando nodos...")
-    print("=" * 50)
-    
-    node_a = Node("A")
-    node_b = Node("B")
-    node_c = Node("C")
-    node_d = Node("D")
-    
-    print(f"{node_a}")
-    print(f"{node_b}")
-    print(f"{node_c}")
-    print(f"{node_d}")
-    
-    # Añadir nodos al grafo
-    print("\n" + "=" * 50)
-    print("Añadiendo nodos al grafo...")
-    print("=" * 50)
-    
-    graph.add_node(node_a)
-    graph.add_node(node_b)
-    graph.add_node(node_c)
-    graph.add_node(node_d)
-    
-    print(f"{graph}")
-    
-    # Añadir aristas
-    print("\n" + "=" * 50)
-    print("Conectando nodos con aristas...")
-    print("=" * 50)
-    
-    graph.add_edge(node_a, node_b)
-    graph.add_edge(node_a, node_c)
-    graph.add_edge(node_b, node_c)
-    graph.add_edge(node_c, node_d)
-    
-    print(f"Grafo actualizado: {graph}")
-    
-    # Consultar propiedades del grafo
-    print("\n" + "=" * 50)
-    print("Consultando propiedades del grafo...")
-    print("=" * 50)
-    
-    print(f"\nGrado de cada nodo:")
-    for node in graph.get_nodes():
-        degree = graph.get_degree(node)
-        print(f"  Grado de {node.id}: {degree}")
-    
-    print(f"\nVecinos de {node_a.id}: {[n.id for n in graph.get_neighbors(node_a)]}")
-    print(f"Vecinos de {node_c.id}: {[n.id for n in graph.get_neighbors(node_c)]}")
-    
-    print(f"\nAristas del grafo:")
-    for edge in graph.get_edges():
-        print(f"  {edge[0].id} -- {edge[1].id}")
-    
-    print(f"\n¿Existe arista entre {node_a.id} y {node_b.id}? {graph.has_edge(node_a, node_b)}")
-    print(f"¿Existe arista entre {node_a.id} y {node_d.id}? {graph.has_edge(node_a, node_d)}")
