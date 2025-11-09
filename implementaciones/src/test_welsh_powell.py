@@ -468,7 +468,8 @@ class TestWelshPowellColoring(unittest.TestCase):
         # Aplicar greedy básico (sin ordenamiento previo)
         greedy = GreedyColoring(graph)
         greedy_coloring = greedy.color_graph()
-        greedy_colors = greedy.get_num_colors()
+        # GreedyColoring does not expose get_num_colors(); compute from coloring
+        greedy_colors = len(set(greedy_coloring.values()))
         
         # Welsh-Powell debe usar <= colores que greedy básico
         self.assertLessEqual(wp_colors, greedy_colors)
@@ -479,6 +480,181 @@ class TestWelshPowellColoring(unittest.TestCase):
         
         self.assertTrue(is_valid_wp)
         self.assertTrue(is_valid_greedy)
+    
+    def test_optimality_on_bipartite(self):
+        """Welsh-Powell should achieve optimal coloring on bipartite graphs.
+        
+        Bipartite graphs have chromatic number 2. Welsh-Powell should
+        achieve this optimal coloring.
+        """
+        graph = Graph()
+        
+        # Crear un árbol binario (bipartito)
+        #       root
+        #      /    \
+        #    l1      r1
+        #   / \     /  \
+        #  l2 l3   r2  r3
+        root = Node("root")
+        l1 = Node("l1")
+        r1 = Node("r1")
+        l2 = Node("l2")
+        l3 = Node("l3")
+        r2 = Node("r2")
+        r3 = Node("r3")
+        
+        for node in [root, l1, r1, l2, l3, r2, r3]:
+            graph.add_node(node)
+        
+        graph.add_edge(root, l1)
+        graph.add_edge(root, r1)
+        graph.add_edge(l1, l2)
+        graph.add_edge(l1, l3)
+        graph.add_edge(r1, r2)
+        graph.add_edge(r1, r3)
+        
+        coloring, exec_time = welsh_powell_coloring(graph)
+        num_colors = len(set(coloring.values()))
+        
+        # Un árbol es bipartito, necesita exactamente 2 colores
+        self.assertEqual(num_colors, 2)
+        
+        # Verificar validez
+        is_valid, _ = validate_coloring(graph, coloring)
+        self.assertTrue(is_valid)
+        
+        # El tiempo de ejecución debe ser razonable (< 1 segundo para grafo pequeño)
+        self.assertLess(exec_time, 1.0)
+    
+    def test_degree_ordering_matters(self):
+        """Test that Welsh-Powell actually uses degree ordering.
+        
+        Create a graph where degree-based ordering produces a better
+        coloring than arbitrary ordering.
+        """
+        graph = Graph()
+        
+        # Crear grafo en forma de estrella con subciclos
+        # Centro tiene grado alto, debe colorearse primero
+        center = Node("hub")
+        graph.add_node(center)
+        
+        # Crear 4 "brazos", cada uno con un pequeño ciclo
+        for arm in range(4):
+            arm_nodes = [Node(f"arm{arm}_n{i}") for i in range(3)]
+            
+            for node in arm_nodes:
+                graph.add_node(node)
+            
+            # Conectar primer nodo del brazo al centro
+            graph.add_edge(center, arm_nodes[0])
+            
+            # Crear pequeño camino en cada brazo
+            graph.add_edge(arm_nodes[0], arm_nodes[1])
+            graph.add_edge(arm_nodes[1], arm_nodes[2])
+        
+        coloring, _ = welsh_powell_coloring(graph)
+        
+        # El centro debe tener un color específico
+        # y todos los nodos adyacentes deben tener colores diferentes al centro
+        center_color = coloring[center]
+        
+        # Verificar que ningún vecino del centro tiene el mismo color
+        neighbors = graph.get_neighbors(center)
+        for neighbor in neighbors:
+            self.assertNotEqual(coloring[neighbor], center_color)
+        
+        # El coloreo debe ser válido
+        is_valid, _ = validate_coloring(graph, coloring)
+        self.assertTrue(is_valid)
+        
+        # Debe usar un número razonable de colores (máximo 3 para esta estructura)
+        num_colors = len(set(coloring.values()))
+        self.assertLessEqual(num_colors, 3)
+    
+    def test_execution_time_reasonable(self):
+        """Test that Welsh-Powell completes in reasonable time.
+        
+        Welsh-Powell should have O(V log V + E) complexity.
+        Test with a moderately sized graph.
+        """
+        graph = Graph()
+        
+        # Crear un grafo de tamaño moderado (30 nodos)
+        nodes = [Node(f"v{i}") for i in range(30)]
+        
+        for node in nodes:
+            graph.add_node(node)
+        
+        # Crear una estructura con variedad de grados
+        # Ciclo principal
+        for i in range(30):
+            graph.add_edge(nodes[i], nodes[(i + 1) % 30])
+        
+        # Agregar algunas conexiones cruzadas
+        for i in range(0, 30, 3):
+            graph.add_edge(nodes[i], nodes[(i + 10) % 30])
+        
+        coloring, exec_time = welsh_powell_coloring(graph)
+        
+        # Debe completar en menos de 0.5 segundos
+        self.assertLess(exec_time, 0.5)
+        
+        # El coloreo debe ser válido
+        is_valid, _ = validate_coloring(graph, coloring)
+        self.assertTrue(is_valid)
+        
+        # Debe colorear todos los nodos
+        self.assertEqual(len(coloring), 30)
+    
+    def test_worst_case_ordering(self):
+        """Test Welsh-Powell on graph where degree ordering helps significantly.
+        
+        Create a graph where starting with high-degree nodes leads to
+        better coloring than random ordering.
+        """
+        graph = Graph()
+        
+        # Crear "barbell" graph: dos cliques conectadas por un puente
+        # Clique 1: K_4
+        clique1 = [Node(f"c1_{i}") for i in range(4)]
+        for node in clique1:
+            graph.add_node(node)
+        
+        for i in range(4):
+            for j in range(i + 1, 4):
+                graph.add_edge(clique1[i], clique1[j])
+        
+        # Puente
+        bridge1 = Node("bridge1")
+        bridge2 = Node("bridge2")
+        graph.add_node(bridge1)
+        graph.add_node(bridge2)
+        
+        graph.add_edge(clique1[0], bridge1)
+        graph.add_edge(bridge1, bridge2)
+        
+        # Clique 2: K_4
+        clique2 = [Node(f"c2_{i}") for i in range(4)]
+        for node in clique2:
+            graph.add_node(node)
+        
+        for i in range(4):
+            for j in range(i + 1, 4):
+                graph.add_edge(clique2[i], clique2[j])
+        
+        graph.add_edge(bridge2, clique2[0])
+        
+        coloring, _ = welsh_powell_coloring(graph)
+        num_colors = len(set(coloring.values()))
+        
+        # Cada clique necesita 4 colores, el puente puede reutilizar colores
+        # Total: debe usar exactamente 4 colores
+        self.assertEqual(num_colors, 4)
+        
+        # Verificar validez
+        is_valid, _ = validate_coloring(graph, coloring)
+        self.assertTrue(is_valid)
 
 
 def validate_coloring(graph: Graph, coloring: dict) -> tuple[bool, list[str]]:

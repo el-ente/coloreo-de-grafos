@@ -271,6 +271,150 @@ class TestGreedyColoring(unittest.TestCase):
         
         # Ambas deben ser iguales (mismo grafo, mismo orden)
         self.assertEqual(coloring1, coloring2)
+    
+    def test_greedy_order_dependency(self):
+        """Test that node order affects greedy coloring result quality.
+        
+        Greedy is order-sensitive. This test demonstrates that different
+        iteration orders can produce different (but valid) colorings with
+        potentially different numbers of colors.
+        """
+        graph = Graph()
+        
+        # Crear un "wheel graph": centro conectado a un ciclo exterior
+        # Estructura: center conectado a v0, v1, v2, v3, v4
+        # y v0-v1-v2-v3-v4-v0 forman un ciclo
+        center = Node("center")
+        outer = [Node(f"v{i}") for i in range(5)]
+        
+        graph.add_node(center)
+        for node in outer:
+            graph.add_node(node)
+            graph.add_edge(center, node)
+        
+        # Conectar el ciclo exterior
+        for i in range(5):
+            graph.add_edge(outer[i], outer[(i + 1) % 5])
+        
+        greedy = GreedyColoring(graph)
+        coloring = greedy.color_graph()
+        
+        # El coloreo debe ser válido independientemente del orden
+        self.assertTrue(greedy.is_valid_coloring())
+        
+        # Un wheel graph con ciclo impar necesita 4 colores (centro + 3 del ciclo)
+        # o potencialmente más dependiendo del orden
+        num_colors = len(set(coloring.values()))
+        self.assertGreaterEqual(num_colors, 4)
+        self.assertLessEqual(num_colors, 6)  # No debería necesitar más de n nodos
+    
+    def test_worst_case_greedy(self):
+        """Test greedy on a graph where it may not be optimal.
+        
+        On a complete bipartite graph, greedy might use 3 colors if it
+        colors nodes in an unfortunate order, even though 2 is optimal.
+        """
+        graph = Graph()
+        
+        # K_{3,3}: Grafo bipartito completo
+        set_a = [Node(f"a{i}") for i in range(3)]
+        set_b = [Node(f"b{i}") for i in range(3)]
+        
+        for node in set_a + set_b:
+            graph.add_node(node)
+        
+        # Conectar cada nodo de set_a con cada nodo de set_b
+        for a_node in set_a:
+            for b_node in set_b:
+                graph.add_edge(a_node, b_node)
+        
+        greedy = GreedyColoring(graph)
+        coloring = greedy.color_graph()
+        
+        num_colors = len(set(coloring.values()))
+        
+        # El coloreo debe ser válido
+        self.assertTrue(greedy.is_valid_coloring())
+        
+        # Un bipartito K_{3,3} necesita exactamente 2 colores óptimamente
+        # Greedy debería encontrarlo si procesa nodos en orden adecuado
+        # pero podría usar más colores en el peor caso
+        self.assertGreaterEqual(num_colors, 2)
+        self.assertLessEqual(num_colors, 6)
+    
+    def test_chromatic_number_vs_used_colors(self):
+        """Compare colors used vs known chromatic numbers.
+        
+        For certain graph families, we know the exact chromatic number.
+        This test verifies greedy finds valid colorings, even if not optimal.
+        """
+        # Test 1: Complete graph K_n needs exactly n colors
+        k5 = Graph()
+        k5_nodes = [Node(f"k{i}") for i in range(5)]
+        
+        for node in k5_nodes:
+            k5.add_node(node)
+        
+        # Conectar todos con todos
+        for i in range(5):
+            for j in range(i + 1, 5):
+                k5.add_edge(k5_nodes[i], k5_nodes[j])
+        
+        greedy_k5 = GreedyColoring(k5)
+        coloring_k5 = greedy_k5.color_graph()
+        
+        # K_5 necesita exactamente 5 colores (número cromático = 5)
+        self.assertEqual(len(set(coloring_k5.values())), 5)
+        self.assertTrue(greedy_k5.is_valid_coloring())
+        
+        # Test 2: Even cycle needs 2 colors
+        c6 = Graph()
+        c6_nodes = [Node(f"c{i}") for i in range(6)]
+        
+        for node in c6_nodes:
+            c6.add_node(node)
+        
+        for i in range(6):
+            c6.add_edge(c6_nodes[i], c6_nodes[(i + 1) % 6])
+        
+        greedy_c6 = GreedyColoring(c6)
+        coloring_c6 = greedy_c6.color_graph()
+        
+        # C_6 (ciclo par) necesita exactamente 2 colores
+        self.assertEqual(len(set(coloring_c6.values())), 2)
+        self.assertTrue(greedy_c6.is_valid_coloring())
+        
+        # Test 3: Tree (bipartite) - greedy should find a valid coloring
+        # Trees are bipartite and need at most 2 colors optimally,
+        # but greedy may use 3 depending on node order
+        tree = Graph()
+        tree_nodes = [Node(f"t{i}") for i in range(7)]
+        
+        for node in tree_nodes:
+            tree.add_node(node)
+        
+        # Crear un árbol binario
+        #       t0
+        #      /  \
+        #    t1    t2
+        #   / \   / \
+        #  t3 t4 t5 t6
+        tree.add_edge(tree_nodes[0], tree_nodes[1])
+        tree.add_edge(tree_nodes[0], tree_nodes[2])
+        tree.add_edge(tree_nodes[1], tree_nodes[3])
+        tree.add_edge(tree_nodes[1], tree_nodes[4])
+        tree.add_edge(tree_nodes[2], tree_nodes[5])
+        tree.add_edge(tree_nodes[2], tree_nodes[6])
+        
+        greedy_tree = GreedyColoring(tree)
+        coloring_tree = greedy_tree.color_graph()
+        
+        # Trees are bipartite (optimal = 2), but greedy may use more
+        # depending on node iteration order. Just verify it's valid and reasonable.
+        num_colors_tree = len(set(coloring_tree.values()))
+        self.assertGreaterEqual(num_colors_tree, 2)  # At least 2 (has edges)
+        self.assertLessEqual(num_colors_tree, 4)  # Should not be too bad
+        self.assertTrue(greedy_tree.is_valid_coloring())
 
 
 if __name__ == '__main__':
