@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 import time
+from typing import Dict
+from graph import Graph, Node
 
 class GraphColoringAlgorithm(ABC):
     """
@@ -9,18 +11,18 @@ class GraphColoringAlgorithm(ABC):
     should implement.
     """
 
-    def __init__(self, graph):
+    def __init__(self, graph: Graph) -> None:
         """
         Initialize the algorithm with a graph.
 
         Args:
             graph: A Graph object to be colored.
         """
-        self.graph = graph
-        self.coloring = {}
-        self.execution_time = 0.0
+        self.graph: Graph = graph
+        self.coloring: Dict[Node, int] = {}
+        self.execution_time: float = 0.0
 
-    def color_graph(self):
+    def color_graph(self) -> Dict[Node, int]:
         """
         Perform the graph coloring and return the result.
         Measures execution time automatically.
@@ -34,14 +36,14 @@ class GraphColoringAlgorithm(ABC):
         return self.coloring
 
     @abstractmethod
-    def _color_graph_impl(self):
+    def _color_graph_impl(self) -> None:
         """
         Internal implementation of the coloring algorithm.
         Subclasses must implement this method.
         """
         pass
 
-    def is_valid_coloring(self, coloring):
+    def is_valid_coloring(self, coloring: Dict[Node, int]) -> bool:
         """
         Check if a given coloring is valid for the graph.
 
@@ -56,7 +58,7 @@ class GraphColoringAlgorithm(ABC):
                 return False
         return True
 
-    def get_chromaticity(self):
+    def get_chromaticity(self) -> int:
         """
         Get the chromatic number (minimum number of colors needed).
 
@@ -67,7 +69,7 @@ class GraphColoringAlgorithm(ABC):
             return 0
         return len(set(self.coloring.values()))
 
-    def get_execution_time(self):
+    def get_execution_time(self) -> float:
         """
         Get the execution time of the coloring algorithm.
 
