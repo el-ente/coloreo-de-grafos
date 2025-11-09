@@ -96,43 +96,6 @@ class GreedyColoring(GraphColoringAlgorithm):
         self.coloring = {}
         
         # Procesar cada nodo en orden
-    
-    def color_graph(self):
-        """
-        Color the graph using the greedy first-fit strategy.
-        
-        Processes vertices in the order specified by order_strategy,
-        assigning each vertex the smallest color that doesn't conflict
-        with its already-colored neighbors.
-        
-        Returns:
-            dict: Mapping from Node objects to color integers (1-indexed)
-            
-        Time Complexity: O(n²) where n is the number of vertices
-        Space Complexity: O(n) for storing the coloring
-        
-        Example:
-            >>> greedy = GreedyColoring(graph)
-            >>> coloring = greedy.color_graph()
-            >>> print(coloring[node_a])
-            1
-        """
-        start_time = time.time()
-        
-        # Obtener lista ordenada de nodos según la estrategia
-        nodes = list(self.graph.get_nodes())
-        
-        if self.order_strategy == 'natural':
-            # Ordenar por node.id (alfabéticamente o numéricamente)
-            nodes.sort(key=lambda n: str(n.id))
-        else:  # 'degree'
-            # Ordenar por grado descendente, desempatar por node.id
-            nodes.sort(key=lambda n: (-self.graph.get_degree(n), str(n.id)))
-        
-        # Inicializar coloración vacía
-        self.coloring = {}
-        
-        # Procesar cada nodo en orden
         for node in nodes:
             # Recolectar colores de vecinos ya coloreados
             forbidden_colors = set()
@@ -149,5 +112,49 @@ class GreedyColoring(GraphColoringAlgorithm):
             
             # Asignar el color al nodo
             self.coloring[node] = color
+    
+    def get_num_colors(self):
+        """
+        Get the number of colors used in the coloring.
         
-        return self.coloring
+        Returns:
+            int: Number of unique colors used.
+        """
+        return len(set(self.coloring.values()))
+    
+    def get_coloring_dict(self):
+        """
+        Get the coloring as a dictionary with node IDs as keys.
+        
+        Returns:
+            dict: Mapping from node IDs to color integers.
+        """
+        return {node.id: color for node, color in self.coloring.items()}
+    
+    def get_color_classes(self):
+        """
+        Get the color classes, grouping nodes by their assigned color.
+        
+        Returns:
+            dict: Mapping from color to list of node IDs.
+        """
+        classes = {}
+        for node, color in self.coloring.items():
+            if color not in classes:
+                classes[color] = []
+            classes[color].append(node.id)
+        return classes
+    
+    def is_valid_coloring(self, coloring=None):
+        """
+        Check if the coloring is valid for the graph.
+        
+        Args:
+            coloring: Optional coloring dict. If None, uses self.coloring.
+        
+        Returns:
+            bool: True if valid, False otherwise.
+        """
+        if coloring is None:
+            coloring = self.coloring
+        return super().is_valid_coloring(coloring)
