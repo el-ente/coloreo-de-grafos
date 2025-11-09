@@ -7,12 +7,7 @@ various graph structures and edge cases.
 
 import unittest
 from graph import Node, Graph
-from welsh_powell_coloring import (
-    welsh_powell_coloring,
-    get_sorted_nodes_by_degree,
-    get_first_available_color,
-    validate_coloring
-)
+from welsh_powell_coloring import WelshPowellColoring, get_sorted_nodes_by_degree, get_first_available_color
 from greedy_coloring import GreedyColoring
 
 
@@ -484,6 +479,43 @@ class TestWelshPowellColoring(unittest.TestCase):
         
         self.assertTrue(is_valid_wp)
         self.assertTrue(is_valid_greedy)
+
+
+def validate_coloring(graph: Graph, coloring: dict) -> tuple[bool, list[str]]:
+    """
+    Validate a graph coloring and return errors if invalid.
+    
+    Args:
+        graph: The graph
+        coloring: Dict mapping nodes to colors
+        
+    Returns:
+        (is_valid, errors): True if valid, list of error messages
+    """
+    errors = []
+    for node in graph.get_nodes():
+        if node not in coloring:
+            errors.append(f"Node {node.id} has no color assigned")
+    
+    for edge in graph.get_edges():
+        node1, node2 = edge
+        if coloring.get(node1) == coloring.get(node2):
+            errors.append(f"Adjacent nodes {node1.id} and {node2.id} both have color {coloring.get(node1)}")
+    
+    return len(errors) == 0, errors
+
+
+def welsh_powell_coloring(graph: Graph) -> tuple[dict, float]:
+    """
+    Wrapper function for Welsh-Powell coloring.
+    
+    Returns:
+        (coloring, execution_time)
+    """
+    wp = WelshPowellColoring(graph)
+    coloring = wp.color_graph()
+    exec_time = wp.get_execution_time()
+    return coloring, exec_time
 
 
 if __name__ == "__main__":

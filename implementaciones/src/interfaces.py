@@ -43,7 +43,7 @@ class GraphColoringAlgorithm(ABC):
         """
         pass
 
-    def is_valid_coloring(self, coloring: Dict[Node, int]) -> bool:
+    def is_valid_coloring(self, coloring: Dict[Node, int] = None) -> bool:
         """
         Check if a given coloring is valid for the graph.
 
@@ -53,8 +53,10 @@ class GraphColoringAlgorithm(ABC):
         Returns:
             True if the coloring is valid, False otherwise.
         """
+        actual_coloring = coloring if coloring is not None else self.coloring
+
         for edge in self.graph.get_edges():
-            if coloring.get(edge[0]) == coloring.get(edge[1]):
+            if actual_coloring.get(edge[0]) == actual_coloring.get(edge[1]):
                 return False
         return True
 

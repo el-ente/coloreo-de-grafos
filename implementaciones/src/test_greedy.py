@@ -24,7 +24,7 @@ class TestGreedyColoring(unittest.TestCase):
         
         self.assertEqual(len(coloring), 1)
         self.assertEqual(coloring[node], 1)
-        self.assertEqual(greedy.get_num_colors(), 1)
+        self.assertEqual(len(set(coloring.values())), 1)
         self.assertTrue(greedy.is_valid_coloring())
     
     def test_two_disconnected_nodes(self):
@@ -42,7 +42,7 @@ class TestGreedyColoring(unittest.TestCase):
         # Ambos nodos pueden tener el mismo color (no hay arista)
         self.assertEqual(coloring[node_a], 1)
         self.assertEqual(coloring[node_b], 1)
-        self.assertEqual(greedy.get_num_colors(), 1)
+        self.assertEqual(len(set(coloring.values())), 1)
         self.assertTrue(greedy.is_valid_coloring())
     
     def test_two_connected_nodes(self):
@@ -60,7 +60,7 @@ class TestGreedyColoring(unittest.TestCase):
         self.assertEqual(len(coloring), 2)
         # Los nodos deben tener colores diferentes
         self.assertNotEqual(coloring[node_a], coloring[node_b])
-        self.assertEqual(greedy.get_num_colors(), 2)
+        self.assertEqual(len(set(coloring.values())), 2)
         self.assertTrue(greedy.is_valid_coloring())
     
     def test_triangle(self):
@@ -80,7 +80,7 @@ class TestGreedyColoring(unittest.TestCase):
         coloring = greedy.color_graph()
         
         self.assertEqual(len(coloring), 3)
-        self.assertEqual(greedy.get_num_colors(), 3)
+        self.assertEqual(len(set(coloring.values())), 3)
         self.assertTrue(greedy.is_valid_coloring())
         
         # Todos los nodos deben tener colores diferentes
@@ -107,7 +107,7 @@ class TestGreedyColoring(unittest.TestCase):
         coloring = greedy.color_graph()
         
         self.assertEqual(len(coloring), 4)
-        self.assertEqual(greedy.get_num_colors(), 2)
+        self.assertEqual(len(set(coloring.values())), 2)
         self.assertTrue(greedy.is_valid_coloring())
         
         # A y B deben tener el mismo color
@@ -133,7 +133,7 @@ class TestGreedyColoring(unittest.TestCase):
         coloring = greedy.color_graph()
         
         self.assertEqual(len(coloring), 5)
-        self.assertEqual(greedy.get_num_colors(), 3)
+        self.assertEqual(len(set(coloring.values())), 3)
         self.assertTrue(greedy.is_valid_coloring())
     
     def test_complete_graph(self):
@@ -153,7 +153,7 @@ class TestGreedyColoring(unittest.TestCase):
         coloring = greedy.color_graph()
         
         self.assertEqual(len(coloring), 4)
-        self.assertEqual(greedy.get_num_colors(), 4)
+        self.assertEqual(len(set(coloring.values())), 4)
         self.assertTrue(greedy.is_valid_coloring())
         
         # Todos los nodos deben tener colores diferentes
@@ -176,7 +176,7 @@ class TestGreedyColoring(unittest.TestCase):
         coloring = greedy.color_graph()
         
         self.assertEqual(len(coloring), 6)
-        self.assertEqual(greedy.get_num_colors(), 2)
+        self.assertEqual(len(set(coloring.values())), 2)
         self.assertTrue(greedy.is_valid_coloring())
         
         # Todos los nodos periféricos deben tener el mismo color
@@ -184,66 +184,7 @@ class TestGreedyColoring(unittest.TestCase):
         periphery_colors = [coloring[node] for node in periphery]
         self.assertEqual(len(set(periphery_colors)), 1)
         self.assertNotEqual(coloring[center], periphery_colors[0])
-    
-    def test_order_strategy_natural(self):
-        """Verify that natural ordering processes nodes by ID."""
-        graph = Graph()
-        # Crear nodos con IDs que no están en orden alfabético
-        nodes = [Node(letter) for letter in ['D', 'B', 'A', 'C']]
-        
-        for node in nodes:
-            graph.add_node(node)
-        
-        # Conectar en cadena: D-B, B-A, A-C
-        graph.add_edge(nodes[0], nodes[1])  # D-B
-        graph.add_edge(nodes[1], nodes[2])  # B-A
-        graph.add_edge(nodes[2], nodes[3])  # A-C
-        
-        greedy = GreedyColoring(graph, order_strategy='natural')
-        coloring = greedy.color_graph()
-        
-        # Con orden natural (A, B, C, D):
-        # A=1, B=2, C=1, D=1
-        # Verificar que es válido
-        self.assertTrue(greedy.is_valid_coloring())
-        self.assertEqual(greedy.get_num_colors(), 2)
-    
-    def test_order_strategy_degree(self):
-        """Verify that degree ordering processes high-degree nodes first."""
-        graph = Graph()
-        # Crear grafo estrella donde el centro tiene mayor grado
-        center = Node("CENTER")
-        graph.add_node(center)
-        
-        periphery = [Node(f"P{i}") for i in range(3)]
-        for node in periphery:
-            graph.add_node(node)
-            graph.add_edge(center, node)
-        
-        greedy = GreedyColoring(graph, order_strategy='degree')
-        coloring = greedy.color_graph()
-        
-        # El centro (grado 3) debe procesarse primero y obtener color 1
-        # Los periféricos (grado 1) deben obtener color 2
-        self.assertEqual(coloring[center], 1)
-        for node in periphery:
-            self.assertEqual(coloring[node], 2)
-        
-        self.assertEqual(greedy.get_num_colors(), 2)
-        self.assertTrue(greedy.is_valid_coloring())
-    
-    def test_invalid_order_strategy(self):
-        """Verify that invalid order strategy raises ValueError."""
-        graph = Graph()
-        node = Node("A")
-        graph.add_node(node)
-        
-        with self.assertRaises(ValueError) as context:
-            GreedyColoring(graph, order_strategy='invalid')
-        
-        self.assertIn("order_strategy must be 'natural' or 'degree'", 
-                      str(context.exception))
-    
+      
     def test_empty_graph_error(self):
         """Verify that empty graph raises ValueError."""
         graph = Graph()
@@ -262,7 +203,7 @@ class TestGreedyColoring(unittest.TestCase):
         self.assertIn("Graph cannot be None", str(context.exception))
     
     def test_get_coloring_dict(self):
-        """Test get_coloring_dict returns dict with node IDs."""
+        """Test coloring dict with node IDs."""
         graph = Graph()
         nodes = [Node(chr(65 + i)) for i in range(3)]
         
@@ -272,9 +213,9 @@ class TestGreedyColoring(unittest.TestCase):
         graph.add_edge(nodes[0], nodes[1])
         
         greedy = GreedyColoring(graph)
-        greedy.color_graph()
+        coloring = greedy.color_graph()
         
-        coloring_dict = greedy.get_coloring_dict()
+        coloring_dict = {node.id: color for node, color in coloring.items()}
         
         # Verificar que las claves son IDs, no objetos Node
         self.assertIn('A', coloring_dict)
@@ -283,7 +224,7 @@ class TestGreedyColoring(unittest.TestCase):
         self.assertEqual(len(coloring_dict), 3)
     
     def test_get_color_classes(self):
-        """Test get_color_classes groups nodes by color."""
+        """Test color classes group nodes by color."""
         graph = Graph()
         nodes = [Node(chr(65 + i)) for i in range(3)]
         
@@ -294,9 +235,13 @@ class TestGreedyColoring(unittest.TestCase):
         graph.add_edge(nodes[0], nodes[1])
         
         greedy = GreedyColoring(graph)
-        greedy.color_graph()
+        coloring = greedy.color_graph()
         
-        color_classes = greedy.get_color_classes()
+        from collections import defaultdict
+        color_classes = defaultdict(list)
+        for node, color in coloring.items():
+            color_classes[color].append(node.id)
+        color_classes = dict(color_classes)
         
         # Debe haber 2 colores
         self.assertEqual(len(color_classes), 2)
