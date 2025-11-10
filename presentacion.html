@@ -472,7 +472,30 @@
             width: 1280,
             height: 720
         });
-        mermaid.initialize({ startOnLoad: true });
+
+        // Render diferido de Mermaid para evitar tamaños 0 al estar oculto
+        mermaid.initialize({ startOnLoad: false });
+
+        async function renderMermaidInSlide(slide) {
+            const scope = slide || document.querySelector('.slides section.present');
+            if (!scope) return;
+            const blocks = scope.querySelectorAll('.mermaid:not([data-processed])');
+            for (const el of blocks) {
+                const code = el.textContent.trim();
+                if (!code) continue;
+                const id = 'mmd-' + Math.random().toString(36).slice(2);
+                try {
+                    const { svg } = await mermaid.render(id, code);
+                    el.innerHTML = svg;
+                    el.setAttribute('data-processed', 'true');
+                } catch (err) {
+                    console.error('Mermaid render error:', err);
+                }
+            }
+        }
+
+        Reveal.on('ready', e => renderMermaidInSlide(e.currentSlide));
+        Reveal.on('slidechanged', e => renderMermaidInSlide(e.currentSlide));
     </script>
 </body>
 </html>
