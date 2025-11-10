@@ -249,6 +249,20 @@
                 </div>
             </section>
 
+            <!-- Alternativa DOT: Ciclo (circular exacto) -->
+            <section>
+                <h3>Ciclo (DOT)</h3>
+                <p>Distribución circular forzada con layout=circo.</p>
+                <div class="dot">
+digraph G {
+  layout=circo;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  A [label="v0"]; B [label="v1"]; C [label="v2"]; D [label="v3"]; E [label="v4"];
+  A -- B; B -- C; C -- D; D -- E; E -- A;
+}
+                </div>
+            </section>
+
             <section>
                 <h3>Completo (Clique)</h3>
                 <p>Todos los nodos conectados entre sí (máximo número de aristas).</p>
@@ -260,6 +274,19 @@
                     K2 --- K3
                     K2 --- K4
                     K3 --- K4
+                </div>
+            </section>
+
+            <!-- Alternativa DOT: Completo (clique) -->
+            <section>
+                <h3>Completo (DOT)</h3>
+                <p>Todos con todos; layout=neato para distribución uniforme.</p>
+                <div class="dot">
+graph G {
+  layout=neato; overlap=false; splines=true;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  K0 -- K1; K0 -- K2; K0 -- K3; K1 -- K2; K1 -- K3; K2 -- K3;
+}
                 </div>
             </section>
 
@@ -276,6 +303,19 @@
                 </div>
             </section>
 
+            <!-- Alternativa DOT: Estrella (radial real) -->
+            <section>
+                <h3>Estrella (DOT)</h3>
+                <p>Centro radial; layout=twopi.</p>
+                <div class="dot">
+graph G {
+  layout=twopi; root=center;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  center -- leaf1; center -- leaf2; center -- leaf3; center -- leaf4; center -- leaf5;
+}
+                </div>
+            </section>
+
             <section>
                 <h3>Bipartito Completo K(3,3)</h3>
                 <p>Dos grupos; cada nodo de un grupo se conecta con todos los del otro.</p>
@@ -288,12 +328,40 @@
                 </div>
             </section>
 
+            <!-- Alternativa DOT: Bipartito completo -->
+            <section>
+                <h3>Bipartito K(3,3) (DOT)</h3>
+                <p>Niveles por conjunto; layout=dot (rango por capas).</p>
+                <div class="dot">
+graph G {
+  layout=dot; rankdir=LR; nodesep=0.4; ranksep=0.8;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  {rank=same; A0; A1; A2}
+  {rank=same; B0; B1; B2}
+  A0 -- B0; A0 -- B1; A0 -- B2; A1 -- B0; A1 -- B1; A1 -- B2; A2 -- B0; A2 -- B1; A2 -- B2;
+}
+                </div>
+            </section>
+
             <section>
                 <h3>Camino (Path)</h3>
                 <p>Nodos en línea: extremos con un vecino, internos con dos.</p>
                 <div class="mermaid">
                     graph LR;
                     P0((p0)) --- P1((p1)) --- P2((p2)) --- P3((p3)) --- P4((p4)) --- P5((p5))
+                </div>
+            </section>
+
+            <!-- Alternativa DOT: Camino -->
+            <section>
+                <h3>Camino (DOT)</h3>
+                <p>Disposición lineal izquierda a derecha.</p>
+                <div class="dot">
+graph G {
+  layout=dot; rankdir=LR;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  P0 -- P1 -- P2 -- P3 -- P4 -- P5;
+}
                 </div>
             </section>
 
@@ -309,6 +377,21 @@
                     Hub --- R4((rim4))
                     Hub --- R5((rim5))
                     R0 --- R1 --- R2 --- R3 --- R4 --- R5 --- R0
+                </div>
+            </section>
+
+            <!-- Alternativa DOT: Rueda -->
+            <section>
+                <h3>Rueda (DOT)</h3>
+                <p>Ciclo exterior circular con radios al centro.</p>
+                <div class="dot">
+graph G {
+  layout=circo;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  hub; r0; r1; r2; r3; r4; r5;
+  r0 -- r1 -- r2 -- r3 -- r4 -- r5 -- r0;
+  hub -- r0; hub -- r1; hub -- r2; hub -- r3; hub -- r4; hub -- r5;
+}
                 </div>
             </section>
 
@@ -332,6 +415,23 @@
                     g1_0((g1_0)) --- g1_1((g1_1)) --- g1_2((g1_2));
                     g2_0((g2_0)) --- g2_1((g2_1)) --- g2_2((g2_2));
                     g0_0 --- g1_0 --- g2_0; g0_1 --- g1_1 --- g2_1; g0_2 --- g1_2 --- g2_2;
+                </div>
+            </section>
+
+            <!-- Alternativa DOT: Grilla 3x3 con posiciones -->
+            <section>
+                <h3>Grilla 3x3 (DOT)</h3>
+                <p>Posiciones fijas como cuadrícula (neato + pos).</p>
+                <div class="dot">
+graph G {
+  layout=neato; overlap=false; splines=false;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  g00 [pos="0,2!"]; g01 [pos="1,2!"]; g02 [pos="2,2!"];
+  g10 [pos="0,1!"]; g11 [pos="1,1!"]; g12 [pos="2,1!"];
+  g20 [pos="0,0!"]; g21 [pos="1,0!"]; g22 [pos="2,0!"];
+  g00 -- g01 -- g02; g10 -- g11 -- g12; g20 -- g21 -- g22;
+  g00 -- g10 -- g20; g01 -- g11 -- g21; g02 -- g12 -- g22;
+}
                 </div>
             </section>
 
@@ -360,6 +460,19 @@
                 </div>
             </section>
 
+            <!-- Alternativa DOT: Árbol binario -->
+            <section>
+                <h3>Árbol Binario (DOT)</h3>
+                <p>Layout jerárquico (dot) en niveles.</p>
+                <div class="dot">
+digraph G {
+  layout=dot; rankdir=TB;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  t0 -> t1; t0 -> t2; t1 -> t3; t1 -> t4; t2 -> t5; t2 -> t6; t3 -> t7; t3 -> t8; t4 -> t9; t4 -> t10; t5 -> t11; t5 -> t12; t6 -> t13; t6 -> t14;
+}
+                </div>
+            </section>
+
             <section>
                 <h3>Hipercubo (dimension=3)</h3>
                 <p>Nodos representan cadenas de bits; aristas cambian un bit.</p>
@@ -371,6 +484,21 @@
                 </div>
             </section>
 
+            <!-- Alternativa DOT: Hipercubo 3D (cubo+conexiones) -->
+            <section>
+                <h3>Hipercubo (DOT)</h3>
+                <p>Dos cuadrados conectados (neato, simetría).</p>
+                <div class="dot">
+graph G {
+  layout=neato; overlap=false; splines=true;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  "000" -- "001" -- "011" -- "010" -- "000";
+  "100" -- "101" -- "111" -- "110" -- "100";
+  "000" -- "100"; "001" -- "101"; "011" -- "111"; "010" -- "110";
+}
+                </div>
+            </section>
+
             <section>
                 <h3>Prisma (n=5)</h3>
                 <p>Dos ciclos paralelos conectados por pares de vértices.</p>
@@ -379,6 +507,21 @@
                     c1_0((c1_0)) --- c1_1((c1_1)) --- c1_2((c1_2)) --- c1_3((c1_3)) --- c1_4((c1_4)) --- c1_0;
                     c2_0((c2_0)) --- c2_1((c2_1)) --- c2_2((c2_2)) --- c2_3((c2_3)) --- c2_4((c2_4)) --- c2_0;
                     c1_0 --- c2_0; c1_1 --- c2_1; c1_2 --- c2_2; c1_3 --- c2_3; c1_4 --- c2_4;
+                </div>
+            </section>
+
+            <!-- Alternativa DOT: Prisma -->
+            <section>
+                <h3>Prisma (DOT)</h3>
+                <p>Dos ciclos en paralelo conectados verticalmente.</p>
+                <div class="dot">
+graph G {
+  layout=neato; overlap=false;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  c10 -- c11 -- c12 -- c13 -- c14 -- c10;
+  c20 -- c21 -- c22 -- c23 -- c24 -- c20;
+  c10 -- c20; c11 -- c21; c12 -- c22; c13 -- c23; c14 -- c24;
+}
                 </div>
             </section>
 
@@ -405,6 +548,23 @@
                 </div>
             </section>
 
+            <!-- Alternativa DOT: Escalera -->
+            <section>
+                <h3>Escalera (DOT)</h3>
+                <p>Dos líneas paralelas con conectores.</p>
+                <div class="dot">
+graph G {
+  layout=dot; rankdir=LR; ranksep=0.6; nodesep=0.4;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  {rank=same; l10; l11; l12; l13}
+  {rank=same; l20; l21; l22; l23}
+  l10 -- l11 -- l12 -- l13;
+  l20 -- l21 -- l22 -- l23;
+  l10 -- l20; l11 -- l21; l12 -- l22; l13 -- l23;
+}
+                </div>
+            </section>
+
             <section>
                 <h3>Escalera Circular (Circular Ladder)</h3>
                 <p>Versión cerrada de la escalera: ambos extremos unidos formando ciclos.</p>
@@ -416,6 +576,21 @@
                 </div>
             </section>
 
+            <!-- Alternativa DOT: Escalera circular -->
+            <section>
+                <h3>Escalera Circular (DOT)</h3>
+                <p>Dos ciclos paralelos conectados (prisma).</p>
+                <div class="dot">
+graph G {
+  layout=neato; overlap=false;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  cl10 -- cl11 -- cl12 -- cl13 -- cl14 -- cl10;
+  cl20 -- cl21 -- cl22 -- cl23 -- cl24 -- cl20;
+  cl10 -- cl20; cl11 -- cl21; cl12 -- cl22; cl13 -- cl23; cl14 -- cl24;
+}
+                </div>
+            </section>
+
             <section>
                 <h3>Friendship (n=3)</h3>
                 <p>Varios triángulos que comparten un vértice central.</p>
@@ -424,6 +599,21 @@
                     FC((center)) --- F0_1((f0_1)) --- F0_2((f0_2)) --- FC;
                     FC --- F1_1((f1_1)) --- F1_2((f1_2)) --- FC;
                     FC --- F2_1((f2_1)) --- F2_2((f2_2)) --- FC;
+                </div>
+            </section>
+
+            <!-- Alternativa DOT: Friendship -->
+            <section>
+                <h3>Friendship (DOT)</h3>
+                <p>Triángulos compartiendo un centro (radial).</p>
+                <div class="dot">
+graph G {
+  layout=twopi; root=center;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  center -- f01; center -- f02; f01 -- f02;
+  center -- f11; center -- f12; f11 -- f12;
+  center -- f21; center -- f22; f21 -- f22;
+}
                 </div>
             </section>
 
@@ -439,6 +629,25 @@
                     crown_a2 --- crown_b0; crown_a2 --- crown_b1; crown_a2 --- crown_b3; crown_a2 --- crown_b4;
                     crown_a3 --- crown_b0; crown_a3 --- crown_b1; crown_a3 --- crown_b2; crown_a3 --- crown_b4;
                     crown_a4 --- crown_b0; crown_a4 --- crown_b1; crown_a4 --- crown_b2; crown_a4 --- crown_b3;
+                </div>
+            </section>
+
+            <!-- Alternativa DOT: Crown -->
+            <section>
+                <h3>Crown (DOT)</h3>
+                <p>Bipartito por niveles sin matching perfecto.</p>
+                <div class="dot">
+graph G {
+  layout=dot; rankdir=LR; nodesep=0.4; ranksep=0.8;
+  node [shape=circle style=filled fillcolor="#2b2b2b" fontcolor="#ffffff"];
+  {rank=same; a0; a1; a2; a3; a4}
+  {rank=same; b0; b1; b2; b3; b4}
+  a0 -- b1; a0 -- b2; a0 -- b3; a0 -- b4;
+  a1 -- b0; a1 -- b2; a1 -- b3; a1 -- b4;
+  a2 -- b0; a2 -- b1; a2 -- b3; a2 -- b4;
+  a3 -- b0; a3 -- b1; a3 -- b2; a3 -- b4;
+  a4 -- b0; a4 -- b1; a4 -- b2; a4 -- b3;
+}
                 </div>
             </section>
 
@@ -460,6 +669,10 @@
 
     <script src="https://cdn.jsdelivr.net/npm/reveal.js@4.6.1/dist/reveal.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <!-- Graphviz (d3-graphviz) para representaciones más geométricas -->
+    <script src="https://cdn.jsdelivr.net/npm/d3@7/dist/d3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@hpcc-js/wasm@2/dist/index.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/d3-graphviz@5/build/d3-graphviz.min.js"></script>
     <script>
         Reveal.initialize({
             hash: true,
@@ -494,8 +707,24 @@
             }
         }
 
-        Reveal.on('ready', e => renderMermaidInSlide(e.currentSlide));
-        Reveal.on('slidechanged', e => renderMermaidInSlide(e.currentSlide));
+        function renderDotInSlide(slide) {
+            const scope = slide || document.querySelector('.slides section.present');
+            if (!scope) return;
+            const blocks = scope.querySelectorAll('.dot:not([data-processed])');
+            blocks.forEach(block => {
+                const code = block.textContent.trim();
+                if (!code) return;
+                try {
+                    d3.select(block).graphviz({useWorker: false}).renderDot(code);
+                    block.setAttribute('data-processed', 'true');
+                } catch (err) {
+                    console.error('DOT render error:', err);
+                }
+            });
+        }
+
+        Reveal.on('ready', e => {renderMermaidInSlide(e.currentSlide); renderDotInSlide(e.currentSlide);});
+        Reveal.on('slidechanged', e => {renderMermaidInSlide(e.currentSlide); renderDotInSlide(e.currentSlide);});
     </script>
 </body>
 </html>
