@@ -234,6 +234,214 @@
             </section>
 
             <!-- Conclusión -->
+            <!-- Visualización de Tipos de Grafos -->
+            <section>
+                <h2>Visualización de Tipos de Grafos</h2>
+                <p>Ejemplos pequeños para cada familia definida en el código.</p>
+            </section>
+
+            <section>
+                <h3>Ciclo (Cycle)</h3>
+                <p>Todos los nodos forman un anillo; cada uno conecta con dos vecinos.</p>
+                <div class="mermaid">
+                    graph LR;
+                    A((v0)) --- B((v1)) --- C((v2)) --- D((v3)) --- E((v4)) --- A
+                </div>
+            </section>
+
+            <section>
+                <h3>Completo (Clique)</h3>
+                <p>Todos los nodos conectados entre sí (máximo número de aristas).</p>
+                <div class="mermaid">
+                    graph LR;
+                    K1((k0)) --- K2((k1))
+                    K1 --- K3((k2))
+                    K1 --- K4((k3))
+                    K2 --- K3
+                    K2 --- K4
+                    K3 --- K4
+                </div>
+            </section>
+
+            <section>
+                <h3>Estrella (Star)</h3>
+                <p>Un centro conectado a todos los demás; las hojas no están entre sí.</p>
+                <div class="mermaid">
+                    graph LR;
+                    C((center)) --- L1((leaf1))
+                    C --- L2((leaf2))
+                    C --- L3((leaf3))
+                    C --- L4((leaf4))
+                    C --- L5((leaf5))
+                </div>
+            </section>
+
+            <section>
+                <h3>Bipartito Completo K(3,3)</h3>
+                <p>Dos grupos; cada nodo de un grupo se conecta con todos los del otro.</p>
+                <div class="mermaid">
+                    graph LR;
+                    A1((a0)); A2((a1)); A3((a2)); B1((b0)); B2((b1)); B3((b2));
+                    A1 --- B1; A1 --- B2; A1 --- B3;
+                    A2 --- B1; A2 --- B2; A2 --- B3;
+                    A3 --- B1; A3 --- B2; A3 --- B3;
+                </div>
+            </section>
+
+            <section>
+                <h3>Camino (Path)</h3>
+                <p>Nodos en línea: extremos con un vecino, internos con dos.</p>
+                <div class="mermaid">
+                    graph LR;
+                    P0((p0)) --- P1((p1)) --- P2((p2)) --- P3((p3)) --- P4((p4)) --- P5((p5))
+                </div>
+            </section>
+
+            <section>
+                <h3>Rueda (Wheel)</h3>
+                <p>Un centro conectado a un ciclo externo; mezcla de estrella y ciclo.</p>
+                <div class="mermaid">
+                    graph LR;
+                    Hub((hub)) --- R0((rim0))
+                    Hub --- R1((rim1))
+                    Hub --- R2((rim2))
+                    Hub --- R3((rim3))
+                    Hub --- R4((rim4))
+                    Hub --- R5((rim5))
+                    R0 --- R1 --- R2 --- R3 --- R4 --- R5 --- R0
+                </div>
+            </section>
+
+            <section>
+                <h3>Petersen</h3>
+                <p>Grafo famoso: 10 nodos, simétrico; útil como contraejemplo.</p>
+                <div class="mermaid">
+                    graph LR;
+                    o0((o0)) --- o1((o1)) --- o2((o2)) --- o3((o3)) --- o4((o4)) --- o0;
+                    i0((i0)) --- i2((i2)) --- i4((i4)) --- i1((i1)) --- i3((i3)) --- i0;
+                    o0 --- i0; o1 --- i1; o2 --- i2; o3 --- i3; o4 --- i4;
+                </div>
+            </section>
+
+            <section>
+                <h3>Grilla 3x3 (Grid)</h3>
+                <p>Nodos en filas y columnas; estructura cuadriculada.</p>
+                <div class="mermaid">
+                    graph LR;
+                    g0_0((g0_0)) --- g0_1((g0_1)) --- g0_2((g0_2));
+                    g1_0((g1_0)) --- g1_1((g1_1)) --- g1_2((g1_2));
+                    g2_0((g2_0)) --- g2_1((g2_1)) --- g2_2((g2_2));
+                    g0_0 --- g1_0 --- g2_0; g0_1 --- g1_1 --- g2_1; g0_2 --- g1_2 --- g2_2;
+                </div>
+            </section>
+
+            <section>
+                <h3>Planar (Triangulación simple)</h3>
+                <p>Ciclo externo con diagonales desde un vértice sin cruces.</p>
+                <div class="mermaid">
+                    graph LR;
+                    pl0((pl0)) --- pl1((pl1)) --- pl2((pl2)) --- pl3((pl3)) --- pl4((pl4)) --- pl0;
+                    pl0 --- pl2; pl0 --- pl3; pl0 --- pl4;
+                </div>
+            </section>
+
+            <section>
+                <h3>Árbol Binario (height=3)</h3>
+                <p>Cada nodo interno tiene dos hijos; sin ciclos.</p>
+                <div class="mermaid">
+                    graph TD;
+                    t0((t0)) --- t1((t1)); t0 --- t2((t2));
+                    t1 --- t3((t3)); t1 --- t4((t4));
+                    t2 --- t5((t5)); t2 --- t6((t6));
+                    t3 --- t7((t7)); t3 --- t8((t8));
+                    t4 --- t9((t9)); t4 --- t10((t10));
+                    t5 --- t11((t11)); t5 --- t12((t12));
+                    t6 --- t13((t13)); t6 --- t14((t14));
+                </div>
+            </section>
+
+            <section>
+                <h3>Hipercubo (dimension=3)</h3>
+                <p>Nodos representan cadenas de bits; aristas cambian un bit.</p>
+                <div class="mermaid">
+                    graph LR;
+                    h000((000)) --- h001((001)) --- h011((011)) --- h010((010)) --- h000;
+                    h100((100)) --- h101((101)) --- h111((111)) --- h110((110)) --- h100;
+                    h000 --- h100; h001 --- h101; h011 --- h111; h010 --- h110;
+                </div>
+            </section>
+
+            <section>
+                <h3>Prisma (n=5)</h3>
+                <p>Dos ciclos paralelos conectados por pares de vértices.</p>
+                <div class="mermaid">
+                    graph LR;
+                    c1_0((c1_0)) --- c1_1((c1_1)) --- c1_2((c1_2)) --- c1_3((c1_3)) --- c1_4((c1_4)) --- c1_0;
+                    c2_0((c2_0)) --- c2_1((c2_1)) --- c2_2((c2_2)) --- c2_3((c2_3)) --- c2_4((c2_4)) --- c2_0;
+                    c1_0 --- c2_0; c1_1 --- c2_1; c1_2 --- c2_2; c1_3 --- c2_3; c1_4 --- c2_4;
+                </div>
+            </section>
+
+            <section>
+                <h3>Kneser KG(5,2)</h3>
+                <p>Es isomorfo al grafo de Petersen (misma estructura con distinto etiquetado).</p>
+                <p>Vértices: subconjuntos de tamaño 2; arista si son disjuntos.</p>
+                <div class="mermaid">
+                    graph LR;
+                    o0((012)) --- o1((013)) --- o2((014)) --- o3((023)) --- o4((024)) --- o0;
+                    i0((034)) --- i2((124)) --- i4((123)) --- i1((134)) --- i3((234)) --- i0;
+                    o0 --- i0; o1 --- i1; o2 --- i2; o3 --- i3; o4 --- i4;
+                </div>
+            </section>
+
+            <section>
+                <h3>Escalera (Ladder)</h3>
+                <p>Dos caminos paralelos unidos por "peldaños".</p>
+                <div class="mermaid">
+                    graph LR;
+                    l1_0((l1_0)) --- l1_1((l1_1)) --- l1_2((l1_2)) --- l1_3((l1_3));
+                    l2_0((l2_0)) --- l2_1((l2_1)) --- l2_2((l2_2)) --- l2_3((l2_3));
+                    l1_0 --- l2_0; l1_1 --- l2_1; l1_2 --- l2_2; l1_3 --- l2_3;
+                </div>
+            </section>
+
+            <section>
+                <h3>Escalera Circular (Circular Ladder)</h3>
+                <p>Versión cerrada de la escalera: ambos extremos unidos formando ciclos.</p>
+                <div class="mermaid">
+                    graph LR;
+                    cl1_0((c1_0)) --- cl1_1((c1_1)) --- cl1_2((c1_2)) --- cl1_3((c1_3)) --- cl1_4((c1_4)) --- cl1_0;
+                    cl2_0((c2_0)) --- cl2_1((c2_1)) --- cl2_2((c2_2)) --- cl2_3((c2_3)) --- cl2_4((c2_4)) --- cl2_0;
+                    cl1_0 --- cl2_0; cl1_1 --- cl2_1; cl1_2 --- cl2_2; cl1_3 --- cl2_3; cl1_4 --- cl2_4;
+                </div>
+            </section>
+
+            <section>
+                <h3>Friendship (n=3)</h3>
+                <p>Varios triángulos que comparten un vértice central.</p>
+                <div class="mermaid">
+                    graph LR;
+                    FC((center)) --- F0_1((f0_1)) --- F0_2((f0_2)) --- FC;
+                    FC --- F1_1((f1_1)) --- F1_2((f1_2)) --- FC;
+                    FC --- F2_1((f2_1)) --- F2_2((f2_2)) --- FC;
+                </div>
+            </section>
+
+            <section>
+                <h3>Crown (n=5)</h3>
+                <p>Grafo bipartito completo sin las parejas directas (se quita el matching perfecto).</p>
+                <div class="mermaid">
+                    graph LR;
+                    crown_a0((a0)); crown_a1((a1)); crown_a2((a2)); crown_a3((a3)); crown_a4((a4));
+                    crown_b0((b0)); crown_b1((b1)); crown_b2((b2)); crown_b3((b3)); crown_b4((b4));
+                    crown_a0 --- crown_b1; crown_a0 --- crown_b2; crown_a0 --- crown_b3; crown_a0 --- crown_b4;
+                    crown_a1 --- crown_b0; crown_a1 --- crown_b2; crown_a1 --- crown_b3; crown_a1 --- crown_b4;
+                    crown_a2 --- crown_b0; crown_a2 --- crown_b1; crown_a2 --- crown_b3; crown_a2 --- crown_b4;
+                    crown_a3 --- crown_b0; crown_a3 --- crown_b1; crown_a3 --- crown_b2; crown_a3 --- crown_b4;
+                    crown_a4 --- crown_b0; crown_a4 --- crown_b1; crown_a4 --- crown_b2; crown_a4 --- crown_b3;
+                </div>
+            </section>
+
             <section>
                 <h2>Conclusión</h2>
                 <p>El problema de coloreo de grafos tiene importantes aplicaciones prácticas y es imprescindible elegir el algoritmo más adecuado para cada caso.</p>

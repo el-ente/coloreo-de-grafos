@@ -77,6 +77,7 @@ def measure_graph_type(graph_creator, graph_name, n_values, algorithms):
     
     for n in n_values:
         try:
+            print(f"\nMidiendo {graph_name} con n={n}...")
             graph, nodes = graph_creator(n)
             measurement = {
                 'n': n,
@@ -189,23 +190,23 @@ def main():
     
     # Definir algoritmos a probar
     algorithms = [
-        (GreedyColoring, "Greedy"),
-        (WelshPowellColoring, "Welsh-Powell"),
-        (BruteForceColoring, "Brute Force")
+        # (GreedyColoring, "Greedy"),
+        # (WelshPowellColoring, "Welsh-Powell"),
+        (BruteForceColoring, "Brute Force"),
     ]
     
     # Definir tipos de grafos a probar
     graph_types = [
-        (create_cycle_graph, "Grafo Cíclico", range(3, 11)),  # n >= 3 para ciclos
-        (create_complete_graph, "Grafo Completo", range(1, 11)),
-        (create_star_graph, "Grafo Estrella", range(2, 11)),  # n >= 2 para estrella
-        (create_path_graph, "Grafo Camino", range(1, 11)),
+        (create_cycle_graph, "Grafo Cíclico", range(3, 10)),  # n >= 3 para ciclos
+        (create_complete_graph, "Grafo Completo", range(1, 10)),
+        (create_star_graph, "Grafo Estrella", range(2, 10)),  # n >= 2 para estrella
+        (create_path_graph, "Grafo Camino", range(1, 10)),
         (create_tree_graph, "Árbol Binario (altura)", range(1, 5)),  # Menos valores por crecimiento exponencial
-        (lambda n: create_bipartite_graph(n, n), "Grafo Bipartito K(n,n)", range(1, 11)),
-        (create_wheel_graph, "Grafo Rueda", range(3, 11)),  # n >= 3
+        (lambda n: create_bipartite_graph(n, n), "Grafo Bipartito K(n,n)", range(1, 10)),
+        (create_wheel_graph, "Grafo Rueda", range(3, 10)),  # n >= 3
         (lambda n: create_grid_graph(n, n), "Grafo Cuadrícula n×n", range(2, 6)),  # Menos valores
-        (create_ladder_graph, "Grafo Escalera", range(2, 11)),
-        (create_prism_graph, "Grafo Prisma", range(3, 11)),  # n >= 3
+        (create_ladder_graph, "Grafo Escalera", range(2, 10)),
+        (create_prism_graph, "Grafo Prisma", range(3, 10)),  # n >= 3
     ]
     
     print("\n" + "="*80)
@@ -219,9 +220,10 @@ def main():
     # Ejecutar mediciones para cada tipo de grafo
     all_results = []
     for graph_creator, graph_name, n_values in graph_types:
-        results = measure_graph_type(graph_creator, graph_name, n_values, algorithms)
-        all_results.append(results)
-        print_results(results)
+        for i in range(10):
+            results = measure_graph_type(graph_creator, graph_name, n_values, algorithms)
+            all_results.append(results)
+            print_results(results)
     
     # Guardar resultados en CSV
     csv_filename = save_results_to_csv(all_results)
@@ -230,6 +232,7 @@ def main():
     print("MEDICIONES COMPLETADAS")
     print(f"{'='*80}")
     print(f"\nResultados guardados en: {csv_filename}\n")
+    print(f"\nAnalisis de resultados en: https://colab.research.google.com/drive/1O3sL2OpTXWl4DEGRtF5Xq8-QXU6q_Df0?usp=sharing\n")
 
 
 if __name__ == "__main__":
