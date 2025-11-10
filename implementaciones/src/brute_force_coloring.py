@@ -33,9 +33,11 @@ class BruteForceColoring(GraphColoringAlgorithm):
         coloring: Result of the coloring operation (node -> color mapping)
     """
     
-    def __init__(self, graph: Graph) -> None:
+    def __init__(self, graph: Graph, with_logging = False, step_delay = 0) -> None:
         super().__init__(graph)
         self.coloring: Dict[Node, int] = {}
+        self.with_logging = with_logging
+        self.step_delay = step_delay
     
     def _color_graph_impl(self) -> None:
         """
@@ -95,7 +97,12 @@ class BruteForceColoring(GraphColoringAlgorithm):
             
             # Try assigning each color
             for color in range(k):
+                if (self.step_delay > 0):
+                    time.sleep(self.step_delay)
+
                 coloring[node] = color
+                if (self.with_logging):
+                    print([val for val in coloring.values()])
                 
                 # Check if safe (only against already colored neighbors)
                 if self._is_safe_partial_coloring(node, coloring):
