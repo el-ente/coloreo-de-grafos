@@ -31,6 +31,11 @@
             margin: 10px 0;
             border-left: 5px solid #007bff;
         }
+        /* Evitar parpadeo del código: ocultar hasta que se renderice */
+        .reveal .slides .mermaid,
+        .reveal .slides .dot { visibility: hidden; }
+        .reveal .slides .mermaid[data-processed="true"],
+        .reveal .slides .dot[data-processed="true"] { visibility: visible; }
     </style>
 </head>
 <body>
@@ -686,6 +691,11 @@ graph G {
             height: 720
         });
 
+        // Configuración HPCC wasm para d3-graphviz
+        if (window.hpccWasm && hpccWasm.wasmFolder) {
+            hpccWasm.wasmFolder('https://cdn.jsdelivr.net/npm/@hpcc-js/wasm@2/dist/');
+        }
+
         // Render diferido de Mermaid para evitar tamaños 0 al estar oculto
         mermaid.initialize({ startOnLoad: false });
 
@@ -715,7 +725,9 @@ graph G {
                 const code = block.textContent.trim();
                 if (!code) return;
                 try {
-                    d3.select(block).graphviz({useWorker: false}).renderDot(code);
+                    // Limpiar el contenido de texto para que no se vea el DOT
+                    block.innerHTML = '';
+                    d3.select(block).graphviz({ useWorker: false }).renderDot(code);
                     block.setAttribute('data-processed', 'true');
                 } catch (err) {
                     console.error('DOT render error:', err);
