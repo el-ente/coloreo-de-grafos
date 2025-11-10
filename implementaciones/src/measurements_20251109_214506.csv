@@ -1,0 +1,241 @@
+graph_type,n,num_nodes,num_edges,algorithm,time_ns,num_colors
+Grafo Cíclico,3,3,3,Greedy,13875,3
+Grafo Cíclico,3,3,3,Welsh-Powell,12125,3
+Grafo Cíclico,3,3,3,Brute Force,42208,3
+Grafo Cíclico,4,4,4,Greedy,8625,2
+Grafo Cíclico,4,4,4,Welsh-Powell,11708,2
+Grafo Cíclico,4,4,4,Brute Force,21750,2
+Grafo Cíclico,5,5,5,Greedy,9167,3
+Grafo Cíclico,5,5,5,Welsh-Powell,13334,3
+Grafo Cíclico,5,5,5,Brute Force,62125,3
+Grafo Cíclico,6,6,6,Greedy,10292,3
+Grafo Cíclico,6,6,6,Welsh-Powell,15208,2
+Grafo Cíclico,6,6,6,Brute Force,31625,2
+Grafo Cíclico,7,7,7,Greedy,11250,3
+Grafo Cíclico,7,7,7,Welsh-Powell,16541,3
+Grafo Cíclico,7,7,7,Brute Force,108333,3
+Grafo Cíclico,8,8,8,Greedy,12500,3
+Grafo Cíclico,8,8,8,Welsh-Powell,18542,2
+Grafo Cíclico,8,8,8,Brute Force,34167,2
+Grafo Cíclico,9,9,9,Greedy,13375,3
+Grafo Cíclico,9,9,9,Welsh-Powell,20208,3
+Grafo Cíclico,9,9,9,Brute Force,133750,3
+Grafo Cíclico,10,10,10,Greedy,14375,3
+Grafo Cíclico,10,10,10,Welsh-Powell,21708,2
+Grafo Cíclico,10,10,10,Brute Force,40167,2
+Grafo Completo,1,1,0,Greedy,5166,1
+Grafo Completo,1,1,0,Welsh-Powell,5625,1
+Grafo Completo,1,1,0,Brute Force,8625,1
+Grafo Completo,2,2,1,Greedy,4833,2
+Grafo Completo,2,2,1,Welsh-Powell,6708,2
+Grafo Completo,2,2,1,Brute Force,21208,2
+Grafo Completo,3,3,3,Greedy,6583,3
+Grafo Completo,3,3,3,Welsh-Powell,9250,3
+Grafo Completo,3,3,3,Brute Force,35458,3
+Grafo Completo,4,4,6,Greedy,8708,4
+Grafo Completo,4,4,6,Welsh-Powell,11917,4
+Grafo Completo,4,4,6,Brute Force,124708,4
+Grafo Completo,5,5,10,Greedy,14167,5
+Grafo Completo,5,5,10,Welsh-Powell,15917,5
+Grafo Completo,5,5,10,Brute Force,644584,5
+Grafo Completo,6,6,15,Greedy,15584,6
+Grafo Completo,6,6,15,Welsh-Powell,20083,6
+Grafo Completo,6,6,15,Brute Force,4121666,6
+Grafo Completo,7,7,21,Greedy,19958,7
+Grafo Completo,7,7,21,Welsh-Powell,25583,7
+Grafo Completo,7,7,21,Brute Force,29956958,7
+Grafo Completo,8,8,28,Greedy,25250,8
+Grafo Completo,8,8,28,Welsh-Powell,30500,8
+Grafo Completo,8,8,28,Brute Force,252726167,8
+Grafo Completo,9,9,36,Greedy,35583,9
+Grafo Completo,9,9,36,Welsh-Powell,39666,9
+Grafo Completo,9,9,36,Brute Force,2439461917,9
+Grafo Completo,10,10,45,Greedy,34375,10
+Grafo Completo,10,10,45,Welsh-Powell,40000,10
+Grafo Completo,10,10,45,Brute Force,26456874542,10
+Grafo Estrella,2,2,1,Greedy,9500,2
+Grafo Estrella,2,2,1,Welsh-Powell,9792,2
+Grafo Estrella,2,2,1,Brute Force,19167,2
+Grafo Estrella,3,3,2,Greedy,5541,2
+Grafo Estrella,3,3,2,Welsh-Powell,8416,2
+Grafo Estrella,3,3,2,Brute Force,16500,2
+Grafo Estrella,4,4,3,Greedy,6541,2
+Grafo Estrella,4,4,3,Welsh-Powell,9833,2
+Grafo Estrella,4,4,3,Brute Force,19000,2
+Grafo Estrella,5,5,4,Greedy,8125,2
+Grafo Estrella,5,5,4,Welsh-Powell,11584,2
+Grafo Estrella,5,5,4,Brute Force,20041,2
+Grafo Estrella,6,6,5,Greedy,8834,2
+Grafo Estrella,6,6,5,Welsh-Powell,13291,2
+Grafo Estrella,6,6,5,Brute Force,21042,2
+Grafo Estrella,7,7,6,Greedy,9834,2
+Grafo Estrella,7,7,6,Welsh-Powell,15041,2
+Grafo Estrella,7,7,6,Brute Force,22958,2
+Grafo Estrella,8,8,7,Greedy,11250,2
+Grafo Estrella,8,8,7,Welsh-Powell,17125,2
+Grafo Estrella,8,8,7,Brute Force,28583,2
+Grafo Estrella,9,9,8,Greedy,12250,2
+Grafo Estrella,9,9,8,Welsh-Powell,18083,2
+Grafo Estrella,9,9,8,Brute Force,125417,2
+Grafo Estrella,10,10,9,Greedy,13750,2
+Grafo Estrella,10,10,9,Welsh-Powell,22334,2
+Grafo Estrella,10,10,9,Brute Force,36917,2
+Grafo Camino,1,1,0,Greedy,2833,1
+Grafo Camino,1,1,0,Welsh-Powell,3708,1
+Grafo Camino,1,1,0,Brute Force,5000,1
+Grafo Camino,2,2,1,Greedy,3542,2
+Grafo Camino,2,2,1,Welsh-Powell,5292,2
+Grafo Camino,2,2,1,Brute Force,11625,2
+Grafo Camino,3,3,2,Greedy,4792,2
+Grafo Camino,3,3,2,Welsh-Powell,7167,2
+Grafo Camino,3,3,2,Brute Force,13208,2
+Grafo Camino,4,4,3,Greedy,5833,2
+Grafo Camino,4,4,3,Welsh-Powell,8917,2
+Grafo Camino,4,4,3,Brute Force,16583,2
+Grafo Camino,5,5,4,Greedy,7375,2
+Grafo Camino,5,5,4,Welsh-Powell,11208,2
+Grafo Camino,5,5,4,Brute Force,18834,2
+Grafo Camino,6,6,5,Greedy,8875,3
+Grafo Camino,6,6,5,Welsh-Powell,12750,2
+Grafo Camino,6,6,5,Brute Force,24834,2
+Grafo Camino,7,7,6,Greedy,10209,2
+Grafo Camino,7,7,6,Welsh-Powell,14833,2
+Grafo Camino,7,7,6,Brute Force,23916,2
+Grafo Camino,8,8,7,Greedy,11542,3
+Grafo Camino,8,8,7,Welsh-Powell,17500,2
+Grafo Camino,8,8,7,Brute Force,38500,2
+Grafo Camino,9,9,8,Greedy,12667,3
+Grafo Camino,9,9,8,Welsh-Powell,19333,2
+Grafo Camino,9,9,8,Brute Force,41292,2
+Grafo Camino,10,10,9,Greedy,13667,3
+Grafo Camino,10,10,9,Welsh-Powell,20958,2
+Grafo Camino,10,10,9,Brute Force,44750,2
+Árbol Binario (altura),1,3,2,Greedy,5792,2
+Árbol Binario (altura),1,3,2,Welsh-Powell,7750,2
+Árbol Binario (altura),1,3,2,Brute Force,14042,2
+Árbol Binario (altura),2,7,6,Greedy,10250,3
+Árbol Binario (altura),2,7,6,Welsh-Powell,15250,2
+Árbol Binario (altura),2,7,6,Brute Force,43834,2
+Árbol Binario (altura),3,15,14,Greedy,20833,2
+Árbol Binario (altura),3,15,14,Welsh-Powell,31625,2
+Árbol Binario (altura),3,15,14,Brute Force,47042,2
+Árbol Binario (altura),4,31,30,Greedy,45709,3
+Árbol Binario (altura),4,31,30,Welsh-Powell,64917,2
+Árbol Binario (altura),4,31,30,Brute Force,513541,2
+"Grafo Bipartito K(n,n)",1,2,1,Greedy,4250,2
+"Grafo Bipartito K(n,n)",1,2,1,Welsh-Powell,5875,2
+"Grafo Bipartito K(n,n)",1,2,1,Brute Force,11708,2
+"Grafo Bipartito K(n,n)",2,4,4,Greedy,7250,2
+"Grafo Bipartito K(n,n)",2,4,4,Welsh-Powell,10208,2
+"Grafo Bipartito K(n,n)",2,4,4,Brute Force,18583,2
+"Grafo Bipartito K(n,n)",3,6,9,Greedy,10875,2
+"Grafo Bipartito K(n,n)",3,6,9,Welsh-Powell,15041,2
+"Grafo Bipartito K(n,n)",3,6,9,Brute Force,24334,2
+"Grafo Bipartito K(n,n)",4,8,16,Greedy,15709,2
+"Grafo Bipartito K(n,n)",4,8,16,Welsh-Powell,21417,2
+"Grafo Bipartito K(n,n)",4,8,16,Brute Force,33750,2
+"Grafo Bipartito K(n,n)",5,10,25,Greedy,21417,2
+"Grafo Bipartito K(n,n)",5,10,25,Welsh-Powell,28416,2
+"Grafo Bipartito K(n,n)",5,10,25,Brute Force,42042,2
+"Grafo Bipartito K(n,n)",6,12,36,Greedy,28708,2
+"Grafo Bipartito K(n,n)",6,12,36,Welsh-Powell,38208,2
+"Grafo Bipartito K(n,n)",6,12,36,Brute Force,53542,2
+"Grafo Bipartito K(n,n)",7,14,49,Greedy,35083,2
+"Grafo Bipartito K(n,n)",7,14,49,Welsh-Powell,45416,2
+"Grafo Bipartito K(n,n)",7,14,49,Brute Force,64916,2
+"Grafo Bipartito K(n,n)",8,16,64,Greedy,44250,2
+"Grafo Bipartito K(n,n)",8,16,64,Welsh-Powell,56250,2
+"Grafo Bipartito K(n,n)",8,16,64,Brute Force,76042,2
+"Grafo Bipartito K(n,n)",9,18,81,Greedy,54042,2
+"Grafo Bipartito K(n,n)",9,18,81,Welsh-Powell,66250,2
+"Grafo Bipartito K(n,n)",9,18,81,Brute Force,91292,2
+"Grafo Bipartito K(n,n)",10,20,100,Greedy,66000,2
+"Grafo Bipartito K(n,n)",10,20,100,Welsh-Powell,77875,2
+"Grafo Bipartito K(n,n)",10,20,100,Brute Force,109625,2
+Grafo Rueda,3,4,6,Greedy,8416,4
+Grafo Rueda,3,4,6,Welsh-Powell,11500,4
+Grafo Rueda,3,4,6,Brute Force,120959,4
+Grafo Rueda,4,5,8,Greedy,10042,3
+Grafo Rueda,4,5,8,Welsh-Powell,13833,3
+Grafo Rueda,4,5,8,Brute Force,54166,3
+Grafo Rueda,5,6,10,Greedy,11917,4
+Grafo Rueda,5,6,10,Welsh-Powell,16167,4
+Grafo Rueda,5,6,10,Brute Force,480750,4
+Grafo Rueda,6,7,12,Greedy,13458,4
+Grafo Rueda,6,7,12,Welsh-Powell,18583,3
+Grafo Rueda,6,7,12,Brute Force,110667,3
+Grafo Rueda,7,8,14,Greedy,15333,4
+Grafo Rueda,7,8,14,Welsh-Powell,20875,4
+Grafo Rueda,7,8,14,Brute Force,1506125,4
+Grafo Rueda,8,9,16,Greedy,16792,4
+Grafo Rueda,8,9,16,Welsh-Powell,23000,3
+Grafo Rueda,8,9,16,Brute Force,516167,3
+Grafo Rueda,9,10,18,Greedy,18500,4
+Grafo Rueda,9,10,18,Welsh-Powell,25625,4
+Grafo Rueda,9,10,18,Brute Force,5954625,4
+Grafo Rueda,10,11,20,Greedy,20125,4
+Grafo Rueda,10,11,20,Welsh-Powell,27625,3
+Grafo Rueda,10,11,20,Brute Force,1819625,3
+Grafo Cuadrícula n×n,2,4,4,Greedy,7167,2
+Grafo Cuadrícula n×n,2,4,4,Welsh-Powell,10333,2
+Grafo Cuadrícula n×n,2,4,4,Brute Force,18375,2
+Grafo Cuadrícula n×n,3,9,12,Greedy,14500,2
+Grafo Cuadrícula n×n,3,9,12,Welsh-Powell,21292,2
+Grafo Cuadrícula n×n,3,9,12,Brute Force,39958,2
+Grafo Cuadrícula n×n,4,16,24,Greedy,26875,2
+Grafo Cuadrícula n×n,4,16,24,Welsh-Powell,38542,2
+Grafo Cuadrícula n×n,4,16,24,Brute Force,58000,2
+Grafo Cuadrícula n×n,5,25,40,Greedy,46334,3
+Grafo Cuadrícula n×n,5,25,40,Welsh-Powell,59959,2
+Grafo Cuadrícula n×n,5,25,40,Brute Force,88375,2
+Grafo Escalera,2,4,4,Greedy,7292,2
+Grafo Escalera,2,4,4,Welsh-Powell,10208,2
+Grafo Escalera,2,4,4,Brute Force,18625,2
+Grafo Escalera,3,6,7,Greedy,10250,2
+Grafo Escalera,3,6,7,Welsh-Powell,14875,2
+Grafo Escalera,3,6,7,Brute Force,25375,2
+Grafo Escalera,4,8,10,Greedy,12958,2
+Grafo Escalera,4,8,10,Welsh-Powell,19042,2
+Grafo Escalera,4,8,10,Brute Force,31375,2
+Grafo Escalera,5,10,13,Greedy,16042,2
+Grafo Escalera,5,10,13,Welsh-Powell,23208,2
+Grafo Escalera,5,10,13,Brute Force,39041,2
+Grafo Escalera,6,12,16,Greedy,18792,2
+Grafo Escalera,6,12,16,Welsh-Powell,27542,2
+Grafo Escalera,6,12,16,Brute Force,44792,2
+Grafo Escalera,7,14,19,Greedy,97833,2
+Grafo Escalera,7,14,19,Welsh-Powell,32750,2
+Grafo Escalera,7,14,19,Brute Force,49416,2
+Grafo Escalera,8,16,22,Greedy,25542,3
+Grafo Escalera,8,16,22,Welsh-Powell,37375,2
+Grafo Escalera,8,16,22,Brute Force,63584,2
+Grafo Escalera,9,18,25,Greedy,28042,3
+Grafo Escalera,9,18,25,Welsh-Powell,41500,2
+Grafo Escalera,9,18,25,Brute Force,68666,2
+Grafo Escalera,10,20,28,Greedy,30750,4
+Grafo Escalera,10,20,28,Welsh-Powell,45917,2
+Grafo Escalera,10,20,28,Brute Force,86458,2
+Grafo Prisma,3,6,9,Greedy,11125,3
+Grafo Prisma,3,6,9,Welsh-Powell,15750,4
+Grafo Prisma,3,6,9,Brute Force,73000,3
+Grafo Prisma,4,8,12,Greedy,14667,3
+Grafo Prisma,4,8,12,Welsh-Powell,20334,2
+Grafo Prisma,4,8,12,Brute Force,39208,2
+Grafo Prisma,5,10,15,Greedy,17084,3
+Grafo Prisma,5,10,15,Welsh-Powell,24833,4
+Grafo Prisma,5,10,15,Brute Force,146167,3
+Grafo Prisma,6,12,18,Greedy,20583,4
+Grafo Prisma,6,12,18,Welsh-Powell,29125,2
+Grafo Prisma,6,12,18,Brute Force,53916,2
+Grafo Prisma,7,14,21,Greedy,22917,3
+Grafo Prisma,7,14,21,Welsh-Powell,33334,4
+Grafo Prisma,7,14,21,Brute Force,237750,3
+Grafo Prisma,8,16,24,Greedy,26333,2
+Grafo Prisma,8,16,24,Welsh-Powell,38667,2
+Grafo Prisma,8,16,24,Brute Force,56041,2
+Grafo Prisma,9,18,27,Greedy,29042,3
+Grafo Prisma,9,18,27,Welsh-Powell,42416,4
+Grafo Prisma,9,18,27,Brute Force,568459,3
+Grafo Prisma,10,20,30,Greedy,31666,3
+Grafo Prisma,10,20,30,Welsh-Powell,46500,2
+Grafo Prisma,10,20,30,Brute Force,150541,2

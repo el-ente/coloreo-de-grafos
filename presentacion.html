@@ -164,6 +164,76 @@
 
 
             <!-- Conclusión -->
+            <!-- Métricas y Rendimiento -->
+            <section>
+                <h2>Mediciones de Algoritmo Fuerza Bruta</h2>
+                <p>Tiempo vs n en grafo completo; escala logarítmica.</p>
+            </section>
+
+            <section>
+                <h3>Mediciones reales hasta n = 10</h3>
+                <figure class="r-stretch">
+                    <img src="graficos/bruteforce-time-vs-n.png" alt="Tiempo vs n (fuerza bruta) hasta n=10 - mediciones reales">
+                    <figcaption>Grafo completo, resultados de medición; escala logarítmica.</figcaption>
+                </figure>
+            </section>
+
+            <section>
+                <h3>Proyección hasta n = 40 (regresión lineal)</h3>
+                <figure class="r-stretch">
+                    <img src="graficos/bruteforce-time-vs-n-up-to-40.png" alt="Tiempo vs n (fuerza bruta) hasta n=40 - proyección por regresión lineal">
+                    <figcaption>Estimación basada en regresión lineal de mediciones; escala logarítmica.</figcaption>
+                </figure>
+            </section>
+
+            <!-- Escala temporal intermedia -->
+            <section>
+                <h2>Escala del Tiempo (1)</h2>
+                <p><strong>10<sup>4</sup> ms</strong> = 10 segundos.</p>
+                <div class="example">Parpadear, leer una notificación, cargar una página web.</div>
+            </section>
+
+            <section>
+                <h2>Escala del Tiempo (2)</h2>
+                <p><strong>10<sup>8</sup> ms</strong> = 100&nbsp;000 s ≈ 27.8 h ≈ 1.2 días.</p>
+                <div class="example">Aproximadamente un día y medio.</div>
+            </section>
+
+            <section>
+                <h2>Escala del Tiempo (3)</h2>
+                <p><strong>10<sup>12</sup> ms</strong> = 10<sup>9</sup> s ≈ 31.7 años.</p>
+                <div class="example">Unas tres décadas.</div>
+            </section>
+
+            <section>
+                <h2>Escala del Tiempo (4)</h2>
+                <p><strong>10<sup>16</sup> ms</strong> = 10<sup>13</sup> s ≈ 3.17 × 10<sup>5</sup> años (≈ 317 mil años).</p>
+                <div class="example">Más de 300 mil años.</div>
+            </section>
+
+            <!-- Explicación didáctica del tiempo 10^24 ms -->
+            <section>
+                <h2>¿Cuánto es <span class="highlight">10<sup>24</sup> ms</span>?</h2>
+                <p>Ese punto (n = 36) en la gráfica equivale a:</p>
+                <ul>
+                    <li><strong>10<sup>24</sup> milisegundos</strong></li>
+                    <li>= <strong>10<sup>21</sup> segundos</strong></li>
+                    <li>= <strong>1.67 × 10<sup>19</sup> minutos</strong></li>
+                    <li>= <strong>2.78 × 10<sup>17</sup> horas</strong></li>
+                    <li>= <strong>1.16 × 10<sup>16</sup> días</strong></li>
+                    <li>= <strong>≈ 3.17 × 10<sup>13</sup> años</strong> (≈ 31.7 billones; billón = 10<sup>12</sup>)</li>
+                </ul>
+                <div class="example">
+                    <strong>Para dimensionar:</strong>
+                    <ul>
+                        <li>La <em>edad del universo</em> es ≈ <strong>13.8 mil millones</strong> de años (1.38 × 10<sup>10</sup>).</li>
+                        <li>10<sup>24</sup> ms es ≈ <strong>2,300 veces</strong> esa edad.</li>
+                    </ul>
+                    Conclusión: la fuerza bruta no escala; tamaños moderados se vuelven imposibles en la práctica.
+                </div>
+            </section>
+
+            <!-- Conclusión -->
             <section>
                 <h2>Conclusión</h2>
                 <p>El problema de coloreo de grafos tiene importantes aplicaciones prácticas y es imprescindible elegir el algoritmo más adecuado para cada caso.</p>
