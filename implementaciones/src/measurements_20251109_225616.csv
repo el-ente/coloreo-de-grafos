@@ -1,0 +1,12 @@
+graph_type,n,num_nodes,num_edges,algorithm,time_ns,num_colors
+Grafo Completo,1,1,0,Brute Force,14750,1
+Grafo Completo,2,2,1,Brute Force,17583,2
+Grafo Completo,3,3,3,Brute Force,198750,3
+Grafo Completo,4,4,6,Brute Force,136042,4
+Grafo Completo,5,5,10,Brute Force,628833,5
+Grafo Completo,6,6,15,Brute Force,3957500,6
+Grafo Completo,7,7,21,Brute Force,30371625,7
+Grafo Completo,8,8,28,Brute Force,257436709,8
+Grafo Completo,9,9,36,Brute Force,2546113792,9
+Grafo Completo,10,10,45,Brute Force,27407052209,10
+Grafo Completo,11,11,55,Brute Force,312547705583,11

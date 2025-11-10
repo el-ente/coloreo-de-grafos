@@ -1,0 +1,641 @@
+graph_type,n,num_nodes,num_edges,algorithm,time_ns,num_colors
+Grafo Cíclico,3,3,3,Brute Force,48625,3
+Grafo Cíclico,4,4,4,Brute Force,22833,2
+Grafo Cíclico,5,5,5,Brute Force,63000,3
+Grafo Cíclico,6,6,6,Brute Force,26750,2
+Grafo Cíclico,7,7,7,Brute Force,144709,3
+Grafo Cíclico,8,8,8,Brute Force,49000,2
+Grafo Cíclico,3,3,3,Brute Force,41792,3
+Grafo Cíclico,4,4,4,Brute Force,22375,2
+Grafo Cíclico,5,5,5,Brute Force,61958,3
+Grafo Cíclico,6,6,6,Brute Force,26083,2
+Grafo Cíclico,7,7,7,Brute Force,80250,3
+Grafo Cíclico,8,8,8,Brute Force,42875,2
+Grafo Cíclico,3,3,3,Brute Force,33500,3
+Grafo Cíclico,4,4,4,Brute Force,18250,2
+Grafo Cíclico,5,5,5,Brute Force,72000,3
+Grafo Cíclico,6,6,6,Brute Force,89291,2
+Grafo Cíclico,7,7,7,Brute Force,81834,3
+Grafo Cíclico,8,8,8,Brute Force,41042,2
+Grafo Cíclico,3,3,3,Brute Force,34084,3
+Grafo Cíclico,4,4,4,Brute Force,18416,2
+Grafo Cíclico,5,5,5,Brute Force,58291,3
+Grafo Cíclico,6,6,6,Brute Force,24708,2
+Grafo Cíclico,7,7,7,Brute Force,80292,3
+Grafo Cíclico,8,8,8,Brute Force,40292,2
+Grafo Cíclico,3,3,3,Brute Force,32792,3
+Grafo Cíclico,4,4,4,Brute Force,18542,2
+Grafo Cíclico,5,5,5,Brute Force,57667,3
+Grafo Cíclico,6,6,6,Brute Force,24708,2
+Grafo Cíclico,7,7,7,Brute Force,81334,3
+Grafo Cíclico,8,8,8,Brute Force,39875,2
+Grafo Cíclico,3,3,3,Brute Force,33166,3
+Grafo Cíclico,4,4,4,Brute Force,18750,2
+Grafo Cíclico,5,5,5,Brute Force,59667,3
+Grafo Cíclico,6,6,6,Brute Force,138667,2
+Grafo Cíclico,7,7,7,Brute Force,79750,3
+Grafo Cíclico,8,8,8,Brute Force,39708,2
+Grafo Cíclico,3,3,3,Brute Force,33375,3
+Grafo Cíclico,4,4,4,Brute Force,18292,2
+Grafo Cíclico,5,5,5,Brute Force,56334,3
+Grafo Cíclico,6,6,6,Brute Force,24291,2
+Grafo Cíclico,7,7,7,Brute Force,77500,3
+Grafo Cíclico,8,8,8,Brute Force,39292,2
+Grafo Cíclico,3,3,3,Brute Force,33000,3
+Grafo Cíclico,4,4,4,Brute Force,18208,2
+Grafo Cíclico,5,5,5,Brute Force,56375,3
+Grafo Cíclico,6,6,6,Brute Force,24125,2
+Grafo Cíclico,7,7,7,Brute Force,80375,3
+Grafo Cíclico,8,8,8,Brute Force,38834,2
+Grafo Cíclico,3,3,3,Brute Force,32958,3
+Grafo Cíclico,4,4,4,Brute Force,18250,2
+Grafo Cíclico,5,5,5,Brute Force,55458,3
+Grafo Cíclico,6,6,6,Brute Force,24291,2
+Grafo Cíclico,7,7,7,Brute Force,78708,3
+Grafo Cíclico,8,8,8,Brute Force,38959,2
+Grafo Cíclico,3,3,3,Brute Force,33416,3
+Grafo Cíclico,4,4,4,Brute Force,17625,2
+Grafo Cíclico,5,5,5,Brute Force,55875,3
+Grafo Cíclico,6,6,6,Brute Force,24292,2
+Grafo Cíclico,7,7,7,Brute Force,78083,3
+Grafo Cíclico,8,8,8,Brute Force,38584,2
+Grafo Completo,1,1,0,Brute Force,5125,1
+Grafo Completo,2,2,1,Brute Force,11458,2
+Grafo Completo,3,3,3,Brute Force,31334,3
+Grafo Completo,4,4,6,Brute Force,115000,4
+Grafo Completo,5,5,10,Brute Force,599333,5
+Grafo Completo,6,6,15,Brute Force,3871083,6
+Grafo Completo,7,7,21,Brute Force,28748834,7
+Grafo Completo,8,8,28,Brute Force,255548834,8
+Grafo Completo,1,1,0,Brute Force,14583,1
+Grafo Completo,2,2,1,Brute Force,13500,2
+Grafo Completo,3,3,3,Brute Force,33250,3
+Grafo Completo,4,4,6,Brute Force,114542,4
+Grafo Completo,5,5,10,Brute Force,597209,5
+Grafo Completo,6,6,15,Brute Force,3907167,6
+Grafo Completo,7,7,21,Brute Force,28891084,7
+Grafo Completo,8,8,28,Brute Force,254971042,8
+Grafo Completo,1,1,0,Brute Force,9750,1
+Grafo Completo,2,2,1,Brute Force,11875,2
+Grafo Completo,3,3,3,Brute Force,31125,3
+Grafo Completo,4,4,6,Brute Force,114833,4
+Grafo Completo,5,5,10,Brute Force,614958,5
+Grafo Completo,6,6,15,Brute Force,3915541,6
+Grafo Completo,7,7,21,Brute Force,28887208,7
+Grafo Completo,8,8,28,Brute Force,255904000,8
+Grafo Completo,1,1,0,Brute Force,5541,1
+Grafo Completo,2,2,1,Brute Force,11375,2
+Grafo Completo,3,3,3,Brute Force,30417,3
+Grafo Completo,4,4,6,Brute Force,112167,4
+Grafo Completo,5,5,10,Brute Force,594292,5
+Grafo Completo,6,6,15,Brute Force,3855167,6
+Grafo Completo,7,7,21,Brute Force,28561833,7
+Grafo Completo,8,8,28,Brute Force,254484042,8
+Grafo Completo,1,1,0,Brute Force,5833,1
+Grafo Completo,2,2,1,Brute Force,11417,2
+Grafo Completo,3,3,3,Brute Force,32250,3
+Grafo Completo,4,4,6,Brute Force,113375,4
+Grafo Completo,5,5,10,Brute Force,1119625,5
+Grafo Completo,6,6,15,Brute Force,3841833,6
+Grafo Completo,7,7,21,Brute Force,28405625,7
+Grafo Completo,8,8,28,Brute Force,253673583,8
+Grafo Completo,1,1,0,Brute Force,5875,1
+Grafo Completo,2,2,1,Brute Force,11250,2
+Grafo Completo,3,3,3,Brute Force,30666,3
+Grafo Completo,4,4,6,Brute Force,112042,4
+Grafo Completo,5,5,10,Brute Force,585583,5
+Grafo Completo,6,6,15,Brute Force,3833041,6
+Grafo Completo,7,7,21,Brute Force,28533250,7
+Grafo Completo,8,8,28,Brute Force,253324875,8
+Grafo Completo,1,1,0,Brute Force,5500,1
+Grafo Completo,2,2,1,Brute Force,11667,2
+Grafo Completo,3,3,3,Brute Force,95459,3
+Grafo Completo,4,4,6,Brute Force,113209,4
+Grafo Completo,5,5,10,Brute Force,588792,5
+Grafo Completo,6,6,15,Brute Force,3848250,6
+Grafo Completo,7,7,21,Brute Force,28413208,7
+Grafo Completo,8,8,28,Brute Force,254250000,8
+Grafo Completo,1,1,0,Brute Force,5250,1
+Grafo Completo,2,2,1,Brute Force,11333,2
+Grafo Completo,3,3,3,Brute Force,30541,3
+Grafo Completo,4,4,6,Brute Force,113666,4
+Grafo Completo,5,5,10,Brute Force,587583,5
+Grafo Completo,6,6,15,Brute Force,3853250,6
+Grafo Completo,7,7,21,Brute Force,28402458,7
+Grafo Completo,8,8,28,Brute Force,253621209,8
+Grafo Completo,1,1,0,Brute Force,5375,1
+Grafo Completo,2,2,1,Brute Force,11416,2
+Grafo Completo,3,3,3,Brute Force,30542,3
+Grafo Completo,4,4,6,Brute Force,113209,4
+Grafo Completo,5,5,10,Brute Force,600583,5
+Grafo Completo,6,6,15,Brute Force,3848583,6
+Grafo Completo,7,7,21,Brute Force,28409875,7
+Grafo Completo,8,8,28,Brute Force,253962375,8
+Grafo Completo,1,1,0,Brute Force,4916,1
+Grafo Completo,2,2,1,Brute Force,11291,2
+Grafo Completo,3,3,3,Brute Force,30791,3
+Grafo Completo,4,4,6,Brute Force,112333,4
+Grafo Completo,5,5,10,Brute Force,584250,5
+Grafo Completo,6,6,15,Brute Force,3831250,6
+Grafo Completo,7,7,21,Brute Force,28507458,7
+Grafo Completo,8,8,28,Brute Force,254400292,8
+Grafo Estrella,2,2,1,Brute Force,12167,2
+Grafo Estrella,3,3,2,Brute Force,12958,2
+Grafo Estrella,4,4,3,Brute Force,16833,2
+Grafo Estrella,5,5,4,Brute Force,17667,2
+Grafo Estrella,6,6,5,Brute Force,19291,2
+Grafo Estrella,7,7,6,Brute Force,21250,2
+Grafo Estrella,8,8,7,Brute Force,30542,2
+Grafo Estrella,2,2,1,Brute Force,11334,2
+Grafo Estrella,3,3,2,Brute Force,13084,2
+Grafo Estrella,4,4,3,Brute Force,16458,2
+Grafo Estrella,5,5,4,Brute Force,17958,2
+Grafo Estrella,6,6,5,Brute Force,19084,2
+Grafo Estrella,7,7,6,Brute Force,21541,2
+Grafo Estrella,8,8,7,Brute Force,29542,2
+Grafo Estrella,2,2,1,Brute Force,11125,2
+Grafo Estrella,3,3,2,Brute Force,13250,2
+Grafo Estrella,4,4,3,Brute Force,21917,2
+Grafo Estrella,5,5,4,Brute Force,85750,2
+Grafo Estrella,6,6,5,Brute Force,19750,2
+Grafo Estrella,7,7,6,Brute Force,21125,2
+Grafo Estrella,8,8,7,Brute Force,29791,2
+Grafo Estrella,2,2,1,Brute Force,11292,2
+Grafo Estrella,3,3,2,Brute Force,12958,2
+Grafo Estrella,4,4,3,Brute Force,18042,2
+Grafo Estrella,5,5,4,Brute Force,17416,2
+Grafo Estrella,6,6,5,Brute Force,19208,2
+Grafo Estrella,7,7,6,Brute Force,21625,2
+Grafo Estrella,8,8,7,Brute Force,29583,2
+Grafo Estrella,2,2,1,Brute Force,11292,2
+Grafo Estrella,3,3,2,Brute Force,13042,2
+Grafo Estrella,4,4,3,Brute Force,16458,2
+Grafo Estrella,5,5,4,Brute Force,17334,2
+Grafo Estrella,6,6,5,Brute Force,20000,2
+Grafo Estrella,7,7,6,Brute Force,21709,2
+Grafo Estrella,8,8,7,Brute Force,30542,2
+Grafo Estrella,2,2,1,Brute Force,12709,2
+Grafo Estrella,3,3,2,Brute Force,12542,2
+Grafo Estrella,4,4,3,Brute Force,16917,2
+Grafo Estrella,5,5,4,Brute Force,18000,2
+Grafo Estrella,6,6,5,Brute Force,19959,2
+Grafo Estrella,7,7,6,Brute Force,21125,2
+Grafo Estrella,8,8,7,Brute Force,29750,2
+Grafo Estrella,2,2,1,Brute Force,10917,2
+Grafo Estrella,3,3,2,Brute Force,13375,2
+Grafo Estrella,4,4,3,Brute Force,16875,2
+Grafo Estrella,5,5,4,Brute Force,17375,2
+Grafo Estrella,6,6,5,Brute Force,19083,2
+Grafo Estrella,7,7,6,Brute Force,21125,2
+Grafo Estrella,8,8,7,Brute Force,29208,2
+Grafo Estrella,2,2,1,Brute Force,11209,2
+Grafo Estrella,3,3,2,Brute Force,13125,2
+Grafo Estrella,4,4,3,Brute Force,16583,2
+Grafo Estrella,5,5,4,Brute Force,16958,2
+Grafo Estrella,6,6,5,Brute Force,18917,2
+Grafo Estrella,7,7,6,Brute Force,20791,2
+Grafo Estrella,8,8,7,Brute Force,28875,2
+Grafo Estrella,2,2,1,Brute Force,11000,2
+Grafo Estrella,3,3,2,Brute Force,13041,2
+Grafo Estrella,4,4,3,Brute Force,16541,2
+Grafo Estrella,5,5,4,Brute Force,17542,2
+Grafo Estrella,6,6,5,Brute Force,18875,2
+Grafo Estrella,7,7,6,Brute Force,21083,2
+Grafo Estrella,8,8,7,Brute Force,28958,2
+Grafo Estrella,2,2,1,Brute Force,11375,2
+Grafo Estrella,3,3,2,Brute Force,13292,2
+Grafo Estrella,4,4,3,Brute Force,16208,2
+Grafo Estrella,5,5,4,Brute Force,17083,2
+Grafo Estrella,6,6,5,Brute Force,19458,2
+Grafo Estrella,7,7,6,Brute Force,20625,2
+Grafo Estrella,8,8,7,Brute Force,29166,2
+Grafo Camino,1,1,0,Brute Force,5000,1
+Grafo Camino,2,2,1,Brute Force,11541,2
+Grafo Camino,3,3,2,Brute Force,14041,2
+Grafo Camino,4,4,3,Brute Force,23958,2
+Grafo Camino,5,5,4,Brute Force,19542,2
+Grafo Camino,6,6,5,Brute Force,32125,2
+Grafo Camino,7,7,6,Brute Force,26541,2
+Grafo Camino,8,8,7,Brute Force,29291,2
+Grafo Camino,1,1,0,Brute Force,4625,1
+Grafo Camino,2,2,1,Brute Force,11750,2
+Grafo Camino,3,3,2,Brute Force,80958,2
+Grafo Camino,4,4,3,Brute Force,24417,2
+Grafo Camino,5,5,4,Brute Force,19250,2
+Grafo Camino,6,6,5,Brute Force,30750,2
+Grafo Camino,7,7,6,Brute Force,25583,2
+Grafo Camino,8,8,7,Brute Force,28584,2
+Grafo Camino,1,1,0,Brute Force,4917,1
+Grafo Camino,2,2,1,Brute Force,11125,2
+Grafo Camino,3,3,2,Brute Force,14459,2
+Grafo Camino,4,4,3,Brute Force,23166,2
+Grafo Camino,5,5,4,Brute Force,19042,2
+Grafo Camino,6,6,5,Brute Force,31292,2
+Grafo Camino,7,7,6,Brute Force,25000,2
+Grafo Camino,8,8,7,Brute Force,28500,2
+Grafo Camino,1,1,0,Brute Force,4541,1
+Grafo Camino,2,2,1,Brute Force,11208,2
+Grafo Camino,3,3,2,Brute Force,14083,2
+Grafo Camino,4,4,3,Brute Force,23917,2
+Grafo Camino,5,5,4,Brute Force,18875,2
+Grafo Camino,6,6,5,Brute Force,31083,2
+Grafo Camino,7,7,6,Brute Force,25833,2
+Grafo Camino,8,8,7,Brute Force,28708,2
+Grafo Camino,1,1,0,Brute Force,4916,1
+Grafo Camino,2,2,1,Brute Force,11333,2
+Grafo Camino,3,3,2,Brute Force,13666,2
+Grafo Camino,4,4,3,Brute Force,23208,2
+Grafo Camino,5,5,4,Brute Force,18791,2
+Grafo Camino,6,6,5,Brute Force,30458,2
+Grafo Camino,7,7,6,Brute Force,24959,2
+Grafo Camino,8,8,7,Brute Force,28500,2
+Grafo Camino,1,1,0,Brute Force,4541,1
+Grafo Camino,2,2,1,Brute Force,11000,2
+Grafo Camino,3,3,2,Brute Force,14041,2
+Grafo Camino,4,4,3,Brute Force,23625,2
+Grafo Camino,5,5,4,Brute Force,18750,2
+Grafo Camino,6,6,5,Brute Force,30083,2
+Grafo Camino,7,7,6,Brute Force,25000,2
+Grafo Camino,8,8,7,Brute Force,28250,2
+Grafo Camino,1,1,0,Brute Force,4708,1
+Grafo Camino,2,2,1,Brute Force,11042,2
+Grafo Camino,3,3,2,Brute Force,14834,2
+Grafo Camino,4,4,3,Brute Force,24042,2
+Grafo Camino,5,5,4,Brute Force,18667,2
+Grafo Camino,6,6,5,Brute Force,30333,2
+Grafo Camino,7,7,6,Brute Force,26292,2
+Grafo Camino,8,8,7,Brute Force,29083,2
+Grafo Camino,1,1,0,Brute Force,4500,1
+Grafo Camino,2,2,1,Brute Force,11083,2
+Grafo Camino,3,3,2,Brute Force,13875,2
+Grafo Camino,4,4,3,Brute Force,23541,2
+Grafo Camino,5,5,4,Brute Force,18708,2
+Grafo Camino,6,6,5,Brute Force,31125,2
+Grafo Camino,7,7,6,Brute Force,25042,2
+Grafo Camino,8,8,7,Brute Force,28333,2
+Grafo Camino,1,1,0,Brute Force,4417,1
+Grafo Camino,2,2,1,Brute Force,11958,2
+Grafo Camino,3,3,2,Brute Force,13958,2
+Grafo Camino,4,4,3,Brute Force,24250,2
+Grafo Camino,5,5,4,Brute Force,18625,2
+Grafo Camino,6,6,5,Brute Force,30500,2
+Grafo Camino,7,7,6,Brute Force,25000,2
+Grafo Camino,8,8,7,Brute Force,28375,2
+Grafo Camino,1,1,0,Brute Force,4417,1
+Grafo Camino,2,2,1,Brute Force,11250,2
+Grafo Camino,3,3,2,Brute Force,14500,2
+Grafo Camino,4,4,3,Brute Force,24042,2
+Grafo Camino,5,5,4,Brute Force,84334,2
+Grafo Camino,6,6,5,Brute Force,30833,2
+Grafo Camino,7,7,6,Brute Force,24958,2
+Grafo Camino,8,8,7,Brute Force,28208,2
+Árbol Binario (altura),1,3,2,Brute Force,13750,2
+Árbol Binario (altura),2,7,6,Brute Force,37334,2
+Árbol Binario (altura),3,15,14,Brute Force,318458,2
+Árbol Binario (altura),4,31,30,Brute Force,2714625,2
+Árbol Binario (altura),1,3,2,Brute Force,14250,2
+Árbol Binario (altura),2,7,6,Brute Force,36375,2
+Árbol Binario (altura),3,15,14,Brute Force,314917,2
+Árbol Binario (altura),4,31,30,Brute Force,2748167,2
+Árbol Binario (altura),1,3,2,Brute Force,14000,2
+Árbol Binario (altura),2,7,6,Brute Force,36875,2
+Árbol Binario (altura),3,15,14,Brute Force,310875,2
+Árbol Binario (altura),4,31,30,Brute Force,2731583,2
+Árbol Binario (altura),1,3,2,Brute Force,13625,2
+Árbol Binario (altura),2,7,6,Brute Force,35916,2
+Árbol Binario (altura),3,15,14,Brute Force,310708,2
+Árbol Binario (altura),4,31,30,Brute Force,2686959,2
+Árbol Binario (altura),1,3,2,Brute Force,13875,2
+Árbol Binario (altura),2,7,6,Brute Force,35958,2
+Árbol Binario (altura),3,15,14,Brute Force,310292,2
+Árbol Binario (altura),4,31,30,Brute Force,2683416,2
+Árbol Binario (altura),1,3,2,Brute Force,13750,2
+Árbol Binario (altura),2,7,6,Brute Force,40542,2
+Árbol Binario (altura),3,15,14,Brute Force,310958,2
+Árbol Binario (altura),4,31,30,Brute Force,2750083,2
+Árbol Binario (altura),1,3,2,Brute Force,14209,2
+Árbol Binario (altura),2,7,6,Brute Force,36792,2
+Árbol Binario (altura),3,15,14,Brute Force,314291,2
+Árbol Binario (altura),4,31,30,Brute Force,2727916,2
+Árbol Binario (altura),1,3,2,Brute Force,13958,2
+Árbol Binario (altura),2,7,6,Brute Force,36167,2
+Árbol Binario (altura),3,15,14,Brute Force,310750,2
+Árbol Binario (altura),4,31,30,Brute Force,2684459,2
+Árbol Binario (altura),1,3,2,Brute Force,13334,2
+Árbol Binario (altura),2,7,6,Brute Force,36167,2
+Árbol Binario (altura),3,15,14,Brute Force,314458,2
+Árbol Binario (altura),4,31,30,Brute Force,2687875,2
+Árbol Binario (altura),1,3,2,Brute Force,13959,2
+Árbol Binario (altura),2,7,6,Brute Force,35958,2
+Árbol Binario (altura),3,15,14,Brute Force,322625,2
+Árbol Binario (altura),4,31,30,Brute Force,2736458,2
+"Grafo Bipartito K(n,n)",1,2,1,Brute Force,12125,2
+"Grafo Bipartito K(n,n)",2,4,4,Brute Force,18000,2
+"Grafo Bipartito K(n,n)",3,6,9,Brute Force,26042,2
+"Grafo Bipartito K(n,n)",4,8,16,Brute Force,33208,2
+"Grafo Bipartito K(n,n)",5,10,25,Brute Force,44583,2
+"Grafo Bipartito K(n,n)",6,12,36,Brute Force,56250,2
+"Grafo Bipartito K(n,n)",7,14,49,Brute Force,68792,2
+"Grafo Bipartito K(n,n)",8,16,64,Brute Force,79583,2
+"Grafo Bipartito K(n,n)",1,2,1,Brute Force,11875,2
+"Grafo Bipartito K(n,n)",2,4,4,Brute Force,19292,2
+"Grafo Bipartito K(n,n)",3,6,9,Brute Force,25875,2
+"Grafo Bipartito K(n,n)",4,8,16,Brute Force,34709,2
+"Grafo Bipartito K(n,n)",5,10,25,Brute Force,44583,2
+"Grafo Bipartito K(n,n)",6,12,36,Brute Force,54459,2
+"Grafo Bipartito K(n,n)",7,14,49,Brute Force,68459,2
+"Grafo Bipartito K(n,n)",8,16,64,Brute Force,79667,2
+"Grafo Bipartito K(n,n)",1,2,1,Brute Force,12167,2
+"Grafo Bipartito K(n,n)",2,4,4,Brute Force,18250,2
+"Grafo Bipartito K(n,n)",3,6,9,Brute Force,25584,2
+"Grafo Bipartito K(n,n)",4,8,16,Brute Force,33125,2
+"Grafo Bipartito K(n,n)",5,10,25,Brute Force,44083,2
+"Grafo Bipartito K(n,n)",6,12,36,Brute Force,53500,2
+"Grafo Bipartito K(n,n)",7,14,49,Brute Force,69917,2
+"Grafo Bipartito K(n,n)",8,16,64,Brute Force,80750,2
+"Grafo Bipartito K(n,n)",1,2,1,Brute Force,15500,2
+"Grafo Bipartito K(n,n)",2,4,4,Brute Force,18917,2
+"Grafo Bipartito K(n,n)",3,6,9,Brute Force,25958,2
+"Grafo Bipartito K(n,n)",4,8,16,Brute Force,33792,2
+"Grafo Bipartito K(n,n)",5,10,25,Brute Force,44000,2
+"Grafo Bipartito K(n,n)",6,12,36,Brute Force,54125,2
+"Grafo Bipartito K(n,n)",7,14,49,Brute Force,68083,2
+"Grafo Bipartito K(n,n)",8,16,64,Brute Force,78500,2
+"Grafo Bipartito K(n,n)",1,2,1,Brute Force,12000,2
+"Grafo Bipartito K(n,n)",2,4,4,Brute Force,17750,2
+"Grafo Bipartito K(n,n)",3,6,9,Brute Force,25166,2
+"Grafo Bipartito K(n,n)",4,8,16,Brute Force,33083,2
+"Grafo Bipartito K(n,n)",5,10,25,Brute Force,44375,2
+"Grafo Bipartito K(n,n)",6,12,36,Brute Force,53875,2
+"Grafo Bipartito K(n,n)",7,14,49,Brute Force,68041,2
+"Grafo Bipartito K(n,n)",8,16,64,Brute Force,80791,2
+"Grafo Bipartito K(n,n)",1,2,1,Brute Force,12375,2
+"Grafo Bipartito K(n,n)",2,4,4,Brute Force,17750,2
+"Grafo Bipartito K(n,n)",3,6,9,Brute Force,25917,2
+"Grafo Bipartito K(n,n)",4,8,16,Brute Force,34708,2
+"Grafo Bipartito K(n,n)",5,10,25,Brute Force,44542,2
+"Grafo Bipartito K(n,n)",6,12,36,Brute Force,54500,2
+"Grafo Bipartito K(n,n)",7,14,49,Brute Force,68125,2
+"Grafo Bipartito K(n,n)",8,16,64,Brute Force,80083,2
+"Grafo Bipartito K(n,n)",1,2,1,Brute Force,11625,2
+"Grafo Bipartito K(n,n)",2,4,4,Brute Force,17416,2
+"Grafo Bipartito K(n,n)",3,6,9,Brute Force,25666,2
+"Grafo Bipartito K(n,n)",4,8,16,Brute Force,33084,2
+"Grafo Bipartito K(n,n)",5,10,25,Brute Force,44125,2
+"Grafo Bipartito K(n,n)",6,12,36,Brute Force,54167,2
+"Grafo Bipartito K(n,n)",7,14,49,Brute Force,69125,2
+"Grafo Bipartito K(n,n)",8,16,64,Brute Force,80208,2
+"Grafo Bipartito K(n,n)",1,2,1,Brute Force,11667,2
+"Grafo Bipartito K(n,n)",2,4,4,Brute Force,17833,2
+"Grafo Bipartito K(n,n)",3,6,9,Brute Force,25708,2
+"Grafo Bipartito K(n,n)",4,8,16,Brute Force,34125,2
+"Grafo Bipartito K(n,n)",5,10,25,Brute Force,43708,2
+"Grafo Bipartito K(n,n)",6,12,36,Brute Force,54375,2
+"Grafo Bipartito K(n,n)",7,14,49,Brute Force,68500,2
+"Grafo Bipartito K(n,n)",8,16,64,Brute Force,78208,2
+"Grafo Bipartito K(n,n)",1,2,1,Brute Force,11667,2
+"Grafo Bipartito K(n,n)",2,4,4,Brute Force,17291,2
+"Grafo Bipartito K(n,n)",3,6,9,Brute Force,25667,2
+"Grafo Bipartito K(n,n)",4,8,16,Brute Force,33250,2
+"Grafo Bipartito K(n,n)",5,10,25,Brute Force,44916,2
+"Grafo Bipartito K(n,n)",6,12,36,Brute Force,54625,2
+"Grafo Bipartito K(n,n)",7,14,49,Brute Force,68375,2
+"Grafo Bipartito K(n,n)",8,16,64,Brute Force,82208,2
+"Grafo Bipartito K(n,n)",1,2,1,Brute Force,11625,2
+"Grafo Bipartito K(n,n)",2,4,4,Brute Force,17708,2
+"Grafo Bipartito K(n,n)",3,6,9,Brute Force,25333,2
+"Grafo Bipartito K(n,n)",4,8,16,Brute Force,99083,2
+"Grafo Bipartito K(n,n)",5,10,25,Brute Force,43584,2
+"Grafo Bipartito K(n,n)",6,12,36,Brute Force,53917,2
+"Grafo Bipartito K(n,n)",7,14,49,Brute Force,67625,2
+"Grafo Bipartito K(n,n)",8,16,64,Brute Force,78750,2
+Grafo Rueda,3,4,6,Brute Force,114417,4
+Grafo Rueda,4,5,8,Brute Force,54458,3
+Grafo Rueda,5,6,10,Brute Force,315958,4
+Grafo Rueda,6,7,12,Brute Force,96000,3
+Grafo Rueda,7,8,14,Brute Force,489959,4
+Grafo Rueda,8,9,16,Brute Force,151625,3
+Grafo Rueda,3,4,6,Brute Force,114459,4
+Grafo Rueda,4,5,8,Brute Force,56625,3
+Grafo Rueda,5,6,10,Brute Force,317625,4
+Grafo Rueda,6,7,12,Brute Force,104167,3
+Grafo Rueda,7,8,14,Brute Force,479292,4
+Grafo Rueda,8,9,16,Brute Force,156042,3
+Grafo Rueda,3,4,6,Brute Force,113958,4
+Grafo Rueda,4,5,8,Brute Force,54292,3
+Grafo Rueda,5,6,10,Brute Force,320916,4
+Grafo Rueda,6,7,12,Brute Force,97209,3
+Grafo Rueda,7,8,14,Brute Force,472875,4
+Grafo Rueda,8,9,16,Brute Force,164583,3
+Grafo Rueda,3,4,6,Brute Force,114625,4
+Grafo Rueda,4,5,8,Brute Force,54375,3
+Grafo Rueda,5,6,10,Brute Force,326500,4
+Grafo Rueda,6,7,12,Brute Force,95875,3
+Grafo Rueda,7,8,14,Brute Force,478667,4
+Grafo Rueda,8,9,16,Brute Force,151875,3
+Grafo Rueda,3,4,6,Brute Force,190958,4
+Grafo Rueda,4,5,8,Brute Force,54875,3
+Grafo Rueda,5,6,10,Brute Force,319833,4
+Grafo Rueda,6,7,12,Brute Force,95750,3
+Grafo Rueda,7,8,14,Brute Force,490292,4
+Grafo Rueda,8,9,16,Brute Force,153125,3
+Grafo Rueda,3,4,6,Brute Force,113334,4
+Grafo Rueda,4,5,8,Brute Force,54125,3
+Grafo Rueda,5,6,10,Brute Force,315667,4
+Grafo Rueda,6,7,12,Brute Force,95334,3
+Grafo Rueda,7,8,14,Brute Force,471792,4
+Grafo Rueda,8,9,16,Brute Force,151375,3
+Grafo Rueda,3,4,6,Brute Force,113417,4
+Grafo Rueda,4,5,8,Brute Force,55208,3
+Grafo Rueda,5,6,10,Brute Force,316250,4
+Grafo Rueda,6,7,12,Brute Force,193333,3
+Grafo Rueda,7,8,14,Brute Force,486958,4
+Grafo Rueda,8,9,16,Brute Force,162833,3
+Grafo Rueda,3,4,6,Brute Force,116459,4
+Grafo Rueda,4,5,8,Brute Force,57042,3
+Grafo Rueda,5,6,10,Brute Force,320625,4
+Grafo Rueda,6,7,12,Brute Force,96500,3
+Grafo Rueda,7,8,14,Brute Force,486708,4
+Grafo Rueda,8,9,16,Brute Force,155792,3
+Grafo Rueda,3,4,6,Brute Force,124167,4
+Grafo Rueda,4,5,8,Brute Force,57750,3
+Grafo Rueda,5,6,10,Brute Force,317750,4
+Grafo Rueda,6,7,12,Brute Force,95958,3
+Grafo Rueda,7,8,14,Brute Force,474542,4
+Grafo Rueda,8,9,16,Brute Force,163375,3
+Grafo Rueda,3,4,6,Brute Force,189042,4
+Grafo Rueda,4,5,8,Brute Force,55667,3
+Grafo Rueda,5,6,10,Brute Force,337916,4
+Grafo Rueda,6,7,12,Brute Force,96541,3
+Grafo Rueda,7,8,14,Brute Force,479333,4
+Grafo Rueda,8,9,16,Brute Force,156625,3
+Grafo Cuadrícula n×n,2,4,4,Brute Force,19208,2
+Grafo Cuadrícula n×n,3,9,12,Brute Force,48583,2
+Grafo Cuadrícula n×n,4,16,24,Brute Force,204834,2
+Grafo Cuadrícula n×n,5,25,40,Brute Force,356500,2
+Grafo Cuadrícula n×n,2,4,4,Brute Force,18708,2
+Grafo Cuadrícula n×n,3,9,12,Brute Force,47083,2
+Grafo Cuadrícula n×n,4,16,24,Brute Force,201875,2
+Grafo Cuadrícula n×n,5,25,40,Brute Force,420792,2
+Grafo Cuadrícula n×n,2,4,4,Brute Force,19333,2
+Grafo Cuadrícula n×n,3,9,12,Brute Force,46625,2
+Grafo Cuadrícula n×n,4,16,24,Brute Force,199833,2
+Grafo Cuadrícula n×n,5,25,40,Brute Force,352667,2
+Grafo Cuadrícula n×n,2,4,4,Brute Force,18417,2
+Grafo Cuadrícula n×n,3,9,12,Brute Force,46333,2
+Grafo Cuadrícula n×n,4,16,24,Brute Force,195708,2
+Grafo Cuadrícula n×n,5,25,40,Brute Force,361292,2
+Grafo Cuadrícula n×n,2,4,4,Brute Force,19791,2
+Grafo Cuadrícula n×n,3,9,12,Brute Force,47834,2
+Grafo Cuadrícula n×n,4,16,24,Brute Force,203500,2
+Grafo Cuadrícula n×n,5,25,40,Brute Force,355792,2
+Grafo Cuadrícula n×n,2,4,4,Brute Force,18417,2
+Grafo Cuadrícula n×n,3,9,12,Brute Force,48125,2
+Grafo Cuadrícula n×n,4,16,24,Brute Force,200500,2
+Grafo Cuadrícula n×n,5,25,40,Brute Force,350166,2
+Grafo Cuadrícula n×n,2,4,4,Brute Force,18709,2
+Grafo Cuadrícula n×n,3,9,12,Brute Force,46250,2
+Grafo Cuadrícula n×n,4,16,24,Brute Force,196042,2
+Grafo Cuadrícula n×n,5,25,40,Brute Force,346084,2
+Grafo Cuadrícula n×n,2,4,4,Brute Force,18667,2
+Grafo Cuadrícula n×n,3,9,12,Brute Force,45917,2
+Grafo Cuadrícula n×n,4,16,24,Brute Force,197292,2
+Grafo Cuadrícula n×n,5,25,40,Brute Force,348625,2
+Grafo Cuadrícula n×n,2,4,4,Brute Force,18417,2
+Grafo Cuadrícula n×n,3,9,12,Brute Force,46459,2
+Grafo Cuadrícula n×n,4,16,24,Brute Force,200000,2
+Grafo Cuadrícula n×n,5,25,40,Brute Force,352000,2
+Grafo Cuadrícula n×n,2,4,4,Brute Force,18709,2
+Grafo Cuadrícula n×n,3,9,12,Brute Force,46042,2
+Grafo Cuadrícula n×n,4,16,24,Brute Force,206667,2
+Grafo Cuadrícula n×n,5,25,40,Brute Force,349583,2
+Grafo Escalera,2,4,4,Brute Force,18709,2
+Grafo Escalera,3,6,7,Brute Force,25291,2
+Grafo Escalera,4,8,10,Brute Force,31375,2
+Grafo Escalera,5,10,13,Brute Force,41292,2
+Grafo Escalera,6,12,16,Brute Force,46334,2
+Grafo Escalera,7,14,19,Brute Force,52625,2
+Grafo Escalera,8,16,22,Brute Force,57667,2
+Grafo Escalera,2,4,4,Brute Force,18333,2
+Grafo Escalera,3,6,7,Brute Force,25333,2
+Grafo Escalera,4,8,10,Brute Force,31583,2
+Grafo Escalera,5,10,13,Brute Force,38583,2
+Grafo Escalera,6,12,16,Brute Force,58875,2
+Grafo Escalera,7,14,19,Brute Force,54333,2
+Grafo Escalera,8,16,22,Brute Force,55709,2
+Grafo Escalera,2,4,4,Brute Force,17833,2
+Grafo Escalera,3,6,7,Brute Force,24750,2
+Grafo Escalera,4,8,10,Brute Force,30875,2
+Grafo Escalera,5,10,13,Brute Force,38250,2
+Grafo Escalera,6,12,16,Brute Force,45375,2
+Grafo Escalera,7,14,19,Brute Force,55167,2
+Grafo Escalera,8,16,22,Brute Force,57166,2
+Grafo Escalera,2,4,4,Brute Force,18084,2
+Grafo Escalera,3,6,7,Brute Force,24333,2
+Grafo Escalera,4,8,10,Brute Force,97667,2
+Grafo Escalera,5,10,13,Brute Force,38916,2
+Grafo Escalera,6,12,16,Brute Force,45542,2
+Grafo Escalera,7,14,19,Brute Force,51583,2
+Grafo Escalera,8,16,22,Brute Force,80667,2
+Grafo Escalera,2,4,4,Brute Force,21833,2
+Grafo Escalera,3,6,7,Brute Force,27209,2
+Grafo Escalera,4,8,10,Brute Force,42000,2
+Grafo Escalera,5,10,13,Brute Force,48667,2
+Grafo Escalera,6,12,16,Brute Force,46208,2
+Grafo Escalera,7,14,19,Brute Force,51667,2
+Grafo Escalera,8,16,22,Brute Force,56959,2
+Grafo Escalera,2,4,4,Brute Force,18334,2
+Grafo Escalera,3,6,7,Brute Force,25083,2
+Grafo Escalera,4,8,10,Brute Force,31417,2
+Grafo Escalera,5,10,13,Brute Force,40708,2
+Grafo Escalera,6,12,16,Brute Force,48833,2
+Grafo Escalera,7,14,19,Brute Force,52500,2
+Grafo Escalera,8,16,22,Brute Force,57000,2
+Grafo Escalera,2,4,4,Brute Force,18708,2
+Grafo Escalera,3,6,7,Brute Force,24833,2
+Grafo Escalera,4,8,10,Brute Force,31125,2
+Grafo Escalera,5,10,13,Brute Force,39708,2
+Grafo Escalera,6,12,16,Brute Force,46166,2
+Grafo Escalera,7,14,19,Brute Force,53042,2
+Grafo Escalera,8,16,22,Brute Force,56958,2
+Grafo Escalera,2,4,4,Brute Force,18250,2
+Grafo Escalera,3,6,7,Brute Force,24667,2
+Grafo Escalera,4,8,10,Brute Force,31042,2
+Grafo Escalera,5,10,13,Brute Force,39334,2
+Grafo Escalera,6,12,16,Brute Force,46791,2
+Grafo Escalera,7,14,19,Brute Force,51917,2
+Grafo Escalera,8,16,22,Brute Force,56209,2
+Grafo Escalera,2,4,4,Brute Force,17959,2
+Grafo Escalera,3,6,7,Brute Force,23958,2
+Grafo Escalera,4,8,10,Brute Force,31667,2
+Grafo Escalera,5,10,13,Brute Force,39417,2
+Grafo Escalera,6,12,16,Brute Force,45708,2
+Grafo Escalera,7,14,19,Brute Force,52209,2
+Grafo Escalera,8,16,22,Brute Force,57166,2
+Grafo Escalera,2,4,4,Brute Force,18291,2
+Grafo Escalera,3,6,7,Brute Force,28209,2
+Grafo Escalera,4,8,10,Brute Force,31625,2
+Grafo Escalera,5,10,13,Brute Force,38916,2
+Grafo Escalera,6,12,16,Brute Force,45958,2
+Grafo Escalera,7,14,19,Brute Force,54500,2
+Grafo Escalera,8,16,22,Brute Force,56583,2
+Grafo Prisma,3,6,9,Brute Force,64625,3
+Grafo Prisma,4,8,12,Brute Force,33833,2
+Grafo Prisma,5,10,15,Brute Force,134667,3
+Grafo Prisma,6,12,18,Brute Force,48584,2
+Grafo Prisma,7,14,21,Brute Force,280917,3
+Grafo Prisma,8,16,24,Brute Force,92042,2
+Grafo Prisma,3,6,9,Brute Force,65708,3
+Grafo Prisma,4,8,12,Brute Force,34500,2
+Grafo Prisma,5,10,15,Brute Force,133375,3
+Grafo Prisma,6,12,18,Brute Force,48542,2
+Grafo Prisma,7,14,21,Brute Force,284875,3
+Grafo Prisma,8,16,24,Brute Force,97916,2
+Grafo Prisma,3,6,9,Brute Force,66083,3
+Grafo Prisma,4,8,12,Brute Force,35333,2
+Grafo Prisma,5,10,15,Brute Force,134416,3
+Grafo Prisma,6,12,18,Brute Force,48375,2
+Grafo Prisma,7,14,21,Brute Force,288084,3
+Grafo Prisma,8,16,24,Brute Force,90541,2
+Grafo Prisma,3,6,9,Brute Force,64334,3
+Grafo Prisma,4,8,12,Brute Force,34000,2
+Grafo Prisma,5,10,15,Brute Force,145250,3
+Grafo Prisma,6,12,18,Brute Force,48375,2
+Grafo Prisma,7,14,21,Brute Force,279292,3
+Grafo Prisma,8,16,24,Brute Force,93000,2
+Grafo Prisma,3,6,9,Brute Force,63959,3
+Grafo Prisma,4,8,12,Brute Force,37166,2
+Grafo Prisma,5,10,15,Brute Force,141542,3
+Grafo Prisma,6,12,18,Brute Force,48458,2
+Grafo Prisma,7,14,21,Brute Force,280417,3
+Grafo Prisma,8,16,24,Brute Force,94000,2
+Grafo Prisma,3,6,9,Brute Force,66417,3
+Grafo Prisma,4,8,12,Brute Force,33792,2
+Grafo Prisma,5,10,15,Brute Force,132667,3
+Grafo Prisma,6,12,18,Brute Force,48417,2
+Grafo Prisma,7,14,21,Brute Force,276250,3
+Grafo Prisma,8,16,24,Brute Force,92416,2
+Grafo Prisma,3,6,9,Brute Force,64125,3
+Grafo Prisma,4,8,12,Brute Force,34166,2
+Grafo Prisma,5,10,15,Brute Force,133250,3
+Grafo Prisma,6,12,18,Brute Force,48584,2
+Grafo Prisma,7,14,21,Brute Force,349417,3
+Grafo Prisma,8,16,24,Brute Force,91208,2
+Grafo Prisma,3,6,9,Brute Force,63916,3
+Grafo Prisma,4,8,12,Brute Force,33458,2
+Grafo Prisma,5,10,15,Brute Force,132708,3
+Grafo Prisma,6,12,18,Brute Force,48375,2
+Grafo Prisma,7,14,21,Brute Force,278166,3
+Grafo Prisma,8,16,24,Brute Force,89667,2
+Grafo Prisma,3,6,9,Brute Force,64375,3
+Grafo Prisma,4,8,12,Brute Force,33250,2
+Grafo Prisma,5,10,15,Brute Force,139708,3
+Grafo Prisma,6,12,18,Brute Force,47625,2
+Grafo Prisma,7,14,21,Brute Force,275542,3
+Grafo Prisma,8,16,24,Brute Force,91375,2
+Grafo Prisma,3,6,9,Brute Force,64000,3
+Grafo Prisma,4,8,12,Brute Force,33583,2
+Grafo Prisma,5,10,15,Brute Force,131542,3
+Grafo Prisma,6,12,18,Brute Force,48041,2
+Grafo Prisma,7,14,21,Brute Force,278000,3
+Grafo Prisma,8,16,24,Brute Force,89625,2

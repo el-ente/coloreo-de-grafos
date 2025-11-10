@@ -1,0 +1,785 @@
+graph_type,n,num_nodes,num_edges,algorithm,time_ns,num_colors
+Grafo Cíclico,3,3,3,Greedy,12208,3
+Grafo Cíclico,3,3,3,Welsh-Powell,12208,3
+Grafo Cíclico,4,4,4,Greedy,7667,2
+Grafo Cíclico,4,4,4,Welsh-Powell,10917,2
+Grafo Cíclico,5,5,5,Greedy,8250,3
+Grafo Cíclico,5,5,5,Welsh-Powell,12666,3
+Grafo Cíclico,6,6,6,Greedy,9542,3
+Grafo Cíclico,6,6,6,Welsh-Powell,14292,2
+Grafo Cíclico,7,7,7,Greedy,10583,3
+Grafo Cíclico,7,7,7,Welsh-Powell,16166,3
+Grafo Cíclico,8,8,8,Greedy,12166,2
+Grafo Cíclico,8,8,8,Welsh-Powell,18417,2
+Grafo Cíclico,9,9,9,Greedy,13375,3
+Grafo Cíclico,9,9,9,Welsh-Powell,20375,3
+Grafo Cíclico,10,10,10,Greedy,14584,2
+Grafo Cíclico,10,10,10,Welsh-Powell,22167,2
+Grafo Cíclico,11,11,11,Greedy,15667,3
+Grafo Cíclico,11,11,11,Welsh-Powell,23542,3
+Grafo Cíclico,12,12,12,Greedy,16333,2
+Grafo Cíclico,12,12,12,Welsh-Powell,26000,2
+Grafo Cíclico,13,13,13,Greedy,17583,3
+Grafo Cíclico,13,13,13,Welsh-Powell,28333,3
+Grafo Cíclico,14,14,14,Greedy,18417,2
+Grafo Cíclico,14,14,14,Welsh-Powell,29875,2
+Grafo Cíclico,15,15,15,Greedy,19833,3
+Grafo Cíclico,15,15,15,Welsh-Powell,31708,3
+Grafo Cíclico,16,16,16,Greedy,22209,3
+Grafo Cíclico,16,16,16,Welsh-Powell,34667,2
+Grafo Cíclico,17,17,17,Greedy,22916,3
+Grafo Cíclico,17,17,17,Welsh-Powell,36750,3
+Grafo Cíclico,18,18,18,Greedy,23833,3
+Grafo Cíclico,18,18,18,Welsh-Powell,37583,2
+Grafo Cíclico,19,19,19,Greedy,25042,3
+Grafo Cíclico,19,19,19,Welsh-Powell,40083,3
+Grafo Cíclico,20,20,20,Greedy,26542,2
+Grafo Cíclico,20,20,20,Welsh-Powell,41500,2
+Grafo Cíclico,21,21,21,Greedy,27750,3
+Grafo Cíclico,21,21,21,Welsh-Powell,44292,3
+Grafo Cíclico,22,22,22,Greedy,29000,2
+Grafo Cíclico,22,22,22,Welsh-Powell,46375,2
+Grafo Cíclico,23,23,23,Greedy,30333,3
+Grafo Cíclico,23,23,23,Welsh-Powell,48541,3
+Grafo Cíclico,24,24,24,Greedy,31209,2
+Grafo Cíclico,24,24,24,Welsh-Powell,50083,2
+Grafo Cíclico,25,25,25,Greedy,32542,3
+Grafo Cíclico,25,25,25,Welsh-Powell,51708,3
+Grafo Cíclico,26,26,26,Greedy,33958,3
+Grafo Cíclico,26,26,26,Welsh-Powell,53958,2
+Grafo Cíclico,27,27,27,Greedy,34583,3
+Grafo Cíclico,27,27,27,Welsh-Powell,55750,3
+Grafo Cíclico,28,28,28,Greedy,35792,3
+Grafo Cíclico,28,28,28,Welsh-Powell,57500,2
+Grafo Cíclico,29,29,29,Greedy,36583,3
+Grafo Cíclico,29,29,29,Welsh-Powell,59375,3
+Grafo Cíclico,30,30,30,Greedy,38500,3
+Grafo Cíclico,30,30,30,Welsh-Powell,61792,2
+Grafo Cíclico,31,31,31,Greedy,39791,3
+Grafo Cíclico,31,31,31,Welsh-Powell,64042,3
+Grafo Cíclico,32,32,32,Greedy,42167,3
+Grafo Cíclico,32,32,32,Welsh-Powell,67375,2
+Grafo Cíclico,33,33,33,Greedy,41833,3
+Grafo Cíclico,33,33,33,Welsh-Powell,68333,3
+Grafo Cíclico,34,34,34,Greedy,42750,3
+Grafo Cíclico,34,34,34,Welsh-Powell,69834,2
+Grafo Cíclico,35,35,35,Greedy,44166,3
+Grafo Cíclico,35,35,35,Welsh-Powell,72375,3
+Grafo Cíclico,36,36,36,Greedy,44917,3
+Grafo Cíclico,36,36,36,Welsh-Powell,74417,2
+Grafo Cíclico,37,37,37,Greedy,46083,3
+Grafo Cíclico,37,37,37,Welsh-Powell,76459,3
+Grafo Cíclico,38,38,38,Greedy,47917,3
+Grafo Cíclico,38,38,38,Welsh-Powell,78042,2
+Grafo Cíclico,39,39,39,Greedy,48584,3
+Grafo Cíclico,39,39,39,Welsh-Powell,80791,3
+Grafo Cíclico,40,40,40,Greedy,49125,3
+Grafo Cíclico,40,40,40,Welsh-Powell,82709,2
+Grafo Cíclico,41,41,41,Greedy,51750,3
+Grafo Cíclico,41,41,41,Welsh-Powell,85041,3
+Grafo Cíclico,42,42,42,Greedy,52625,3
+Grafo Cíclico,42,42,42,Welsh-Powell,86125,2
+Grafo Cíclico,43,43,43,Greedy,53542,3
+Grafo Cíclico,43,43,43,Welsh-Powell,88375,3
+Grafo Cíclico,44,44,44,Greedy,54166,3
+Grafo Cíclico,44,44,44,Welsh-Powell,89667,2
+Grafo Cíclico,45,45,45,Greedy,56000,3
+Grafo Cíclico,45,45,45,Welsh-Powell,93500,3
+Grafo Cíclico,46,46,46,Greedy,57500,3
+Grafo Cíclico,46,46,46,Welsh-Powell,92666,2
+Grafo Cíclico,47,47,47,Greedy,58792,3
+Grafo Cíclico,47,47,47,Welsh-Powell,96000,3
+Grafo Cíclico,48,48,48,Greedy,59666,3
+Grafo Cíclico,48,48,48,Welsh-Powell,96708,2
+Grafo Cíclico,49,49,49,Greedy,61542,3
+Grafo Cíclico,49,49,49,Welsh-Powell,99208,3
+Grafo Completo,1,1,0,Greedy,3791,1
+Grafo Completo,1,1,0,Welsh-Powell,5083,1
+Grafo Completo,2,2,1,Greedy,5084,2
+Grafo Completo,2,2,1,Welsh-Powell,5834,2
+Grafo Completo,3,3,3,Greedy,5459,3
+Grafo Completo,3,3,3,Welsh-Powell,8083,3
+Grafo Completo,4,4,6,Greedy,7875,4
+Grafo Completo,4,4,6,Welsh-Powell,10958,4
+Grafo Completo,5,5,10,Greedy,10666,5
+Grafo Completo,5,5,10,Welsh-Powell,14250,5
+Grafo Completo,6,6,15,Greedy,13875,6
+Grafo Completo,6,6,15,Welsh-Powell,18292,6
+Grafo Completo,7,7,21,Greedy,17458,7
+Grafo Completo,7,7,21,Welsh-Powell,22958,7
+Grafo Completo,8,8,28,Greedy,21750,8
+Grafo Completo,8,8,28,Welsh-Powell,27791,8
+Grafo Completo,9,9,36,Greedy,26209,9
+Grafo Completo,9,9,36,Welsh-Powell,32917,9
+Grafo Completo,10,10,45,Greedy,31667,10
+Grafo Completo,10,10,45,Welsh-Powell,39292,10
+Grafo Completo,11,11,55,Greedy,37959,11
+Grafo Completo,11,11,55,Welsh-Powell,45583,11
+Grafo Completo,12,12,66,Greedy,44333,12
+Grafo Completo,12,12,66,Welsh-Powell,55458,12
+Grafo Completo,13,13,78,Greedy,50875,13
+Grafo Completo,13,13,78,Welsh-Powell,61125,13
+Grafo Completo,14,14,91,Greedy,58042,14
+Grafo Completo,14,14,91,Welsh-Powell,68333,14
+Grafo Completo,15,15,105,Greedy,64875,15
+Grafo Completo,15,15,105,Welsh-Powell,77041,15
+Grafo Completo,16,16,120,Greedy,73416,16
+Grafo Completo,16,16,120,Welsh-Powell,85584,16
+Grafo Completo,17,17,136,Greedy,89667,17
+Grafo Completo,17,17,136,Welsh-Powell,101083,17
+Grafo Completo,18,18,153,Greedy,93041,18
+Grafo Completo,18,18,153,Welsh-Powell,108917,18
+Grafo Completo,19,19,171,Greedy,101416,19
+Grafo Completo,19,19,171,Welsh-Powell,116958,19
+Grafo Completo,20,20,190,Greedy,113875,20
+Grafo Completo,20,20,190,Welsh-Powell,129292,20
+Grafo Completo,21,21,210,Greedy,122333,21
+Grafo Completo,21,21,210,Welsh-Powell,139917,21
+Grafo Completo,22,22,231,Greedy,134000,22
+Grafo Completo,22,22,231,Welsh-Powell,151417,22
+Grafo Completo,23,23,253,Greedy,144375,23
+Grafo Completo,23,23,253,Welsh-Powell,209750,23
+Grafo Completo,24,24,276,Greedy,164958,24
+Grafo Completo,24,24,276,Welsh-Powell,180958,24
+Grafo Completo,25,25,300,Greedy,172708,25
+Grafo Completo,25,25,300,Welsh-Powell,189834,25
+Grafo Completo,26,26,325,Greedy,181750,26
+Grafo Completo,26,26,325,Welsh-Powell,201917,26
+Grafo Completo,27,27,351,Greedy,197083,27
+Grafo Completo,27,27,351,Welsh-Powell,216000,27
+Grafo Completo,28,28,378,Greedy,207000,28
+Grafo Completo,28,28,378,Welsh-Powell,231125,28
+Grafo Completo,29,29,406,Greedy,220958,29
+Grafo Completo,29,29,406,Welsh-Powell,245500,29
+Grafo Completo,30,30,435,Greedy,242208,30
+Grafo Completo,30,30,435,Welsh-Powell,265750,30
+Grafo Completo,31,31,465,Greedy,251167,31
+Grafo Completo,31,31,465,Welsh-Powell,275500,31
+Grafo Completo,32,32,496,Greedy,271333,32
+Grafo Completo,32,32,496,Welsh-Powell,297084,32
+Grafo Completo,33,33,528,Greedy,287542,33
+Grafo Completo,33,33,528,Welsh-Powell,311125,33
+Grafo Completo,34,34,561,Greedy,303166,34
+Grafo Completo,34,34,561,Welsh-Powell,327709,34
+Grafo Completo,35,35,595,Greedy,316709,35
+Grafo Completo,35,35,595,Welsh-Powell,349625,35
+Grafo Completo,36,36,630,Greedy,338667,36
+Grafo Completo,36,36,630,Welsh-Powell,365542,36
+Grafo Completo,37,37,666,Greedy,355917,37
+Grafo Completo,37,37,666,Welsh-Powell,385875,37
+Grafo Completo,38,38,703,Greedy,377959,38
+Grafo Completo,38,38,703,Welsh-Powell,410083,38
+Grafo Completo,39,39,741,Greedy,400250,39
+Grafo Completo,39,39,741,Welsh-Powell,432208,39
+Grafo Completo,40,40,780,Greedy,425833,40
+Grafo Completo,40,40,780,Welsh-Powell,457084,40
+Grafo Completo,41,41,820,Greedy,459291,41
+Grafo Completo,41,41,820,Welsh-Powell,499375,41
+Grafo Completo,42,42,861,Greedy,473000,42
+Grafo Completo,42,42,861,Welsh-Powell,507084,42
+Grafo Completo,43,43,903,Greedy,509708,43
+Grafo Completo,43,43,903,Welsh-Powell,527208,43
+Grafo Completo,44,44,946,Greedy,505416,44
+Grafo Completo,44,44,946,Welsh-Powell,547875,44
+Grafo Completo,45,45,990,Greedy,586375,45
+Grafo Completo,45,45,990,Welsh-Powell,632875,45
+Grafo Completo,46,46,1035,Greedy,549250,46
+Grafo Completo,46,46,1035,Welsh-Powell,590708,46
+Grafo Completo,47,47,1081,Greedy,594833,47
+Grafo Completo,47,47,1081,Welsh-Powell,654625,47
+Grafo Completo,48,48,1128,Greedy,650000,48
+Grafo Completo,48,48,1128,Welsh-Powell,652541,48
+Grafo Completo,49,49,1176,Greedy,647833,49
+Grafo Completo,49,49,1176,Welsh-Powell,698709,49
+Grafo Estrella,2,2,1,Greedy,5083,2
+Grafo Estrella,2,2,1,Welsh-Powell,6583,2
+Grafo Estrella,3,3,2,Greedy,5250,2
+Grafo Estrella,3,3,2,Welsh-Powell,7833,2
+Grafo Estrella,4,4,3,Greedy,6458,2
+Grafo Estrella,4,4,3,Welsh-Powell,9625,2
+Grafo Estrella,5,5,4,Greedy,7792,2
+Grafo Estrella,5,5,4,Welsh-Powell,11500,2
+Grafo Estrella,6,6,5,Greedy,8750,2
+Grafo Estrella,6,6,5,Welsh-Powell,13417,2
+Grafo Estrella,7,7,6,Greedy,10166,2
+Grafo Estrella,7,7,6,Welsh-Powell,15542,2
+Grafo Estrella,8,8,7,Greedy,11083,2
+Grafo Estrella,8,8,7,Welsh-Powell,17167,2
+Grafo Estrella,9,9,8,Greedy,12083,2
+Grafo Estrella,9,9,8,Welsh-Powell,19125,2
+Grafo Estrella,10,10,9,Greedy,13083,2
+Grafo Estrella,10,10,9,Welsh-Powell,20375,2
+Grafo Estrella,11,11,10,Greedy,15167,2
+Grafo Estrella,11,11,10,Welsh-Powell,22583,2
+Grafo Estrella,12,12,11,Greedy,15917,2
+Grafo Estrella,12,12,11,Welsh-Powell,24458,2
+Grafo Estrella,13,13,12,Greedy,17167,2
+Grafo Estrella,13,13,12,Welsh-Powell,26125,2
+Grafo Estrella,14,14,13,Greedy,18458,2
+Grafo Estrella,14,14,13,Welsh-Powell,28000,2
+Grafo Estrella,15,15,14,Greedy,20208,2
+Grafo Estrella,15,15,14,Welsh-Powell,31750,2
+Grafo Estrella,16,16,15,Greedy,24959,2
+Grafo Estrella,16,16,15,Welsh-Powell,33500,2
+Grafo Estrella,17,17,16,Greedy,22083,2
+Grafo Estrella,17,17,16,Welsh-Powell,41208,2
+Grafo Estrella,18,18,17,Greedy,29375,2
+Grafo Estrella,18,18,17,Welsh-Powell,35959,2
+Grafo Estrella,19,19,18,Greedy,24833,2
+Grafo Estrella,19,19,18,Welsh-Powell,38667,2
+Grafo Estrella,20,20,19,Greedy,31167,2
+Grafo Estrella,20,20,19,Welsh-Powell,40125,2
+Grafo Estrella,21,21,20,Greedy,26959,2
+Grafo Estrella,21,21,20,Welsh-Powell,42500,2
+Grafo Estrella,22,22,21,Greedy,28542,2
+Grafo Estrella,22,22,21,Welsh-Powell,47375,2
+Grafo Estrella,23,23,22,Greedy,29250,2
+Grafo Estrella,23,23,22,Welsh-Powell,52875,2
+Grafo Estrella,24,24,23,Greedy,30125,2
+Grafo Estrella,24,24,23,Welsh-Powell,54542,2
+Grafo Estrella,25,25,24,Greedy,39042,2
+Grafo Estrella,25,25,24,Welsh-Powell,51042,2
+Grafo Estrella,26,26,25,Greedy,38500,2
+Grafo Estrella,26,26,25,Welsh-Powell,54875,2
+Grafo Estrella,27,27,26,Greedy,33375,2
+Grafo Estrella,27,27,26,Welsh-Powell,53375,2
+Grafo Estrella,28,28,27,Greedy,34791,2
+Grafo Estrella,28,28,27,Welsh-Powell,55750,2
+Grafo Estrella,29,29,28,Greedy,35458,2
+Grafo Estrella,29,29,28,Welsh-Powell,67250,2
+Grafo Estrella,30,30,29,Greedy,43875,2
+Grafo Estrella,30,30,29,Welsh-Powell,63375,2
+Grafo Estrella,31,31,30,Greedy,37667,2
+Grafo Estrella,31,31,30,Welsh-Powell,67750,2
+Grafo Estrella,32,32,31,Greedy,45833,2
+Grafo Estrella,32,32,31,Welsh-Powell,64875,2
+Grafo Estrella,33,33,32,Greedy,45250,2
+Grafo Estrella,33,33,32,Welsh-Powell,68375,2
+Grafo Estrella,34,34,33,Greedy,41250,2
+Grafo Estrella,34,34,33,Welsh-Powell,74583,2
+Grafo Estrella,35,35,34,Greedy,51875,2
+Grafo Estrella,35,35,34,Welsh-Powell,76083,2
+Grafo Estrella,36,36,35,Greedy,49833,2
+Grafo Estrella,36,36,35,Welsh-Powell,78209,2
+Grafo Estrella,37,37,36,Greedy,50292,2
+Grafo Estrella,37,37,36,Welsh-Powell,73333,2
+Grafo Estrella,38,38,37,Greedy,45584,2
+Grafo Estrella,38,38,37,Welsh-Powell,81833,2
+Grafo Estrella,39,39,38,Greedy,45958,2
+Grafo Estrella,39,39,38,Welsh-Powell,76792,2
+Grafo Estrella,40,40,39,Greedy,47000,2
+Grafo Estrella,40,40,39,Welsh-Powell,79084,2
+Grafo Estrella,41,41,40,Greedy,48375,2
+Grafo Estrella,41,41,40,Welsh-Powell,81333,2
+Grafo Estrella,42,42,41,Greedy,49292,2
+Grafo Estrella,42,42,41,Welsh-Powell,89625,2
+Grafo Estrella,43,43,42,Greedy,51125,2
+Grafo Estrella,43,43,42,Welsh-Powell,87209,2
+Grafo Estrella,44,44,43,Greedy,52417,2
+Grafo Estrella,44,44,43,Welsh-Powell,87791,2
+Grafo Estrella,45,45,44,Greedy,53500,2
+Grafo Estrella,45,45,44,Welsh-Powell,99500,2
+Grafo Estrella,46,46,45,Greedy,60250,2
+Grafo Estrella,46,46,45,Welsh-Powell,104917,2
+Grafo Estrella,47,47,46,Greedy,61375,2
+Grafo Estrella,47,47,46,Welsh-Powell,99458,2
+Grafo Estrella,48,48,47,Greedy,56875,2
+Grafo Estrella,48,48,47,Welsh-Powell,104041,2
+Grafo Estrella,49,49,48,Greedy,57083,2
+Grafo Estrella,49,49,48,Welsh-Powell,95958,2
+Grafo Camino,1,1,0,Greedy,2833,1
+Grafo Camino,1,1,0,Welsh-Powell,3875,1
+Grafo Camino,2,2,1,Greedy,3750,2
+Grafo Camino,2,2,1,Welsh-Powell,5375,2
+Grafo Camino,3,3,2,Greedy,4583,2
+Grafo Camino,3,3,2,Welsh-Powell,7084,2
+Grafo Camino,4,4,3,Greedy,6042,2
+Grafo Camino,4,4,3,Welsh-Powell,9167,2
+Grafo Camino,5,5,4,Greedy,7583,2
+Grafo Camino,5,5,4,Welsh-Powell,11333,2
+Grafo Camino,6,6,5,Greedy,8333,2
+Grafo Camino,6,6,5,Welsh-Powell,12875,2
+Grafo Camino,7,7,6,Greedy,9708,2
+Grafo Camino,7,7,6,Welsh-Powell,15041,2
+Grafo Camino,8,8,7,Greedy,11000,2
+Grafo Camino,8,8,7,Welsh-Powell,16791,2
+Grafo Camino,9,9,8,Greedy,12291,2
+Grafo Camino,9,9,8,Welsh-Powell,18417,2
+Grafo Camino,10,10,9,Greedy,13291,2
+Grafo Camino,10,10,9,Welsh-Powell,31208,2
+Grafo Camino,11,11,10,Greedy,21208,2
+Grafo Camino,11,11,10,Welsh-Powell,29000,2
+Grafo Camino,12,12,11,Greedy,15750,2
+Grafo Camino,12,12,11,Welsh-Powell,31458,3
+Grafo Camino,13,13,12,Greedy,17125,2
+Grafo Camino,13,13,12,Welsh-Powell,26875,3
+Grafo Camino,14,14,13,Greedy,18333,2
+Grafo Camino,14,14,13,Welsh-Powell,34583,3
+Grafo Camino,15,15,14,Greedy,19458,2
+Grafo Camino,15,15,14,Welsh-Powell,36958,3
+Grafo Camino,16,16,15,Greedy,21542,3
+Grafo Camino,16,16,15,Welsh-Powell,39041,3
+Grafo Camino,17,17,16,Greedy,22042,3
+Grafo Camino,17,17,16,Welsh-Powell,40375,3
+Grafo Camino,18,18,17,Greedy,23125,3
+Grafo Camino,18,18,17,Welsh-Powell,36792,3
+Grafo Camino,19,19,18,Greedy,30667,3
+Grafo Camino,19,19,18,Welsh-Powell,38875,3
+Grafo Camino,20,20,19,Greedy,25833,3
+Grafo Camino,20,20,19,Welsh-Powell,43125,3
+Grafo Camino,21,21,20,Greedy,29541,3
+Grafo Camino,21,21,20,Welsh-Powell,48375,3
+Grafo Camino,22,22,21,Greedy,33958,3
+Grafo Camino,22,22,21,Welsh-Powell,44209,3
+Grafo Camino,23,23,22,Greedy,29458,3
+Grafo Camino,23,23,22,Welsh-Powell,46209,3
+Grafo Camino,24,24,23,Greedy,37084,3
+Grafo Camino,24,24,23,Welsh-Powell,51000,3
+Grafo Camino,25,25,24,Greedy,31500,3
+Grafo Camino,25,25,24,Welsh-Powell,56500,3
+Grafo Camino,26,26,25,Greedy,32500,3
+Grafo Camino,26,26,25,Welsh-Powell,51917,3
+Grafo Camino,27,27,26,Greedy,39709,3
+Grafo Camino,27,27,26,Welsh-Powell,56833,3
+Grafo Camino,28,28,27,Greedy,34667,3
+Grafo Camino,28,28,27,Welsh-Powell,62042,3
+Grafo Camino,29,29,28,Greedy,42541,3
+Grafo Camino,29,29,28,Welsh-Powell,66708,3
+Grafo Camino,30,30,29,Greedy,43459,3
+Grafo Camino,30,30,29,Welsh-Powell,62125,3
+Grafo Camino,31,31,30,Greedy,37958,3
+Grafo Camino,31,31,30,Welsh-Powell,71042,3
+Grafo Camino,32,32,31,Greedy,40625,3
+Grafo Camino,32,32,31,Welsh-Powell,64584,3
+Grafo Camino,33,33,32,Greedy,48709,3
+Grafo Camino,33,33,32,Welsh-Powell,69625,3
+Grafo Camino,34,34,33,Greedy,47542,3
+Grafo Camino,34,34,33,Welsh-Powell,74500,3
+Grafo Camino,35,35,34,Greedy,42750,3
+Grafo Camino,35,35,34,Welsh-Powell,76542,3
+Grafo Camino,36,36,35,Greedy,44292,3
+Grafo Camino,36,36,35,Welsh-Powell,81458,3
+Grafo Camino,37,37,36,Greedy,49292,3
+Grafo Camino,37,37,36,Welsh-Powell,80917,3
+Grafo Camino,38,38,37,Greedy,52750,3
+Grafo Camino,38,38,37,Welsh-Powell,81875,3
+Grafo Camino,39,39,38,Greedy,47333,3
+Grafo Camino,39,39,38,Welsh-Powell,84166,3
+Grafo Camino,40,40,39,Greedy,49333,3
+Grafo Camino,40,40,39,Welsh-Powell,80833,3
+Grafo Camino,41,41,40,Greedy,50542,3
+Grafo Camino,41,41,40,Welsh-Powell,88583,3
+Grafo Camino,42,42,41,Greedy,51625,3
+Grafo Camino,42,42,41,Welsh-Powell,94250,3
+Grafo Camino,43,43,42,Greedy,52416,3
+Grafo Camino,43,43,42,Welsh-Powell,89000,3
+Grafo Camino,44,44,43,Greedy,56125,3
+Grafo Camino,44,44,43,Welsh-Powell,93959,3
+Grafo Camino,45,45,44,Greedy,63375,3
+Grafo Camino,45,45,44,Welsh-Powell,101750,3
+Grafo Camino,46,46,45,Greedy,61333,3
+Grafo Camino,46,46,45,Welsh-Powell,98084,3
+Grafo Camino,47,47,46,Greedy,57500,3
+Grafo Camino,47,47,46,Welsh-Powell,101125,3
+Grafo Camino,48,48,47,Greedy,67291,3
+Grafo Camino,48,48,47,Welsh-Powell,104791,3
+Grafo Camino,49,49,48,Greedy,60916,3
+Grafo Camino,49,49,48,Welsh-Powell,107958,3
+Árbol Binario (altura),1,3,2,Greedy,5500,2
+Árbol Binario (altura),1,3,2,Welsh-Powell,7625,2
+Árbol Binario (altura),2,7,6,Greedy,10416,3
+Árbol Binario (altura),2,7,6,Welsh-Powell,15250,2
+Árbol Binario (altura),3,15,14,Greedy,20292,3
+Árbol Binario (altura),3,15,14,Welsh-Powell,31416,2
+Árbol Binario (altura),4,31,30,Greedy,40167,4
+Árbol Binario (altura),4,31,30,Welsh-Powell,62833,2
+"Grafo Bipartito K(n,n)",1,2,1,Greedy,3917,2
+"Grafo Bipartito K(n,n)",1,2,1,Welsh-Powell,5666,2
+"Grafo Bipartito K(n,n)",2,4,4,Greedy,6292,2
+"Grafo Bipartito K(n,n)",2,4,4,Welsh-Powell,9875,2
+"Grafo Bipartito K(n,n)",3,6,9,Greedy,10875,2
+"Grafo Bipartito K(n,n)",3,6,9,Welsh-Powell,22125,2
+"Grafo Bipartito K(n,n)",4,8,16,Greedy,15500,2
+"Grafo Bipartito K(n,n)",4,8,16,Welsh-Powell,21333,2
+"Grafo Bipartito K(n,n)",5,10,25,Greedy,23250,2
+"Grafo Bipartito K(n,n)",5,10,25,Welsh-Powell,31084,2
+"Grafo Bipartito K(n,n)",6,12,36,Greedy,28792,2
+"Grafo Bipartito K(n,n)",6,12,36,Welsh-Powell,38083,2
+"Grafo Bipartito K(n,n)",7,14,49,Greedy,34459,2
+"Grafo Bipartito K(n,n)",7,14,49,Welsh-Powell,44708,2
+"Grafo Bipartito K(n,n)",8,16,64,Greedy,50125,2
+"Grafo Bipartito K(n,n)",8,16,64,Welsh-Powell,61584,2
+"Grafo Bipartito K(n,n)",9,18,81,Greedy,53000,2
+"Grafo Bipartito K(n,n)",9,18,81,Welsh-Powell,66000,2
+"Grafo Bipartito K(n,n)",10,20,100,Greedy,71542,2
+"Grafo Bipartito K(n,n)",10,20,100,Welsh-Powell,85167,2
+"Grafo Bipartito K(n,n)",11,22,121,Greedy,80625,2
+"Grafo Bipartito K(n,n)",11,22,121,Welsh-Powell,90959,2
+"Grafo Bipartito K(n,n)",12,24,144,Greedy,90666,2
+"Grafo Bipartito K(n,n)",12,24,144,Welsh-Powell,102250,2
+"Grafo Bipartito K(n,n)",13,26,169,Greedy,107083,2
+"Grafo Bipartito K(n,n)",13,26,169,Welsh-Powell,130958,2
+"Grafo Bipartito K(n,n)",14,28,196,Greedy,120042,2
+"Grafo Bipartito K(n,n)",14,28,196,Welsh-Powell,144042,2
+"Grafo Bipartito K(n,n)",15,30,225,Greedy,130958,2
+"Grafo Bipartito K(n,n)",15,30,225,Welsh-Powell,146625,2
+"Grafo Bipartito K(n,n)",16,32,256,Greedy,142416,2
+"Grafo Bipartito K(n,n)",16,32,256,Welsh-Powell,167292,2
+"Grafo Bipartito K(n,n)",17,34,289,Greedy,156209,2
+"Grafo Bipartito K(n,n)",17,34,289,Welsh-Powell,179959,2
+"Grafo Bipartito K(n,n)",18,36,324,Greedy,173250,2
+"Grafo Bipartito K(n,n)",18,36,324,Welsh-Powell,197875,2
+"Grafo Bipartito K(n,n)",19,38,361,Greedy,191041,2
+"Grafo Bipartito K(n,n)",19,38,361,Welsh-Powell,216792,2
+"Grafo Bipartito K(n,n)",20,40,400,Greedy,208834,2
+"Grafo Bipartito K(n,n)",20,40,400,Welsh-Powell,239167,2
+"Grafo Bipartito K(n,n)",21,42,441,Greedy,244958,2
+"Grafo Bipartito K(n,n)",21,42,441,Welsh-Powell,280709,2
+"Grafo Bipartito K(n,n)",22,44,484,Greedy,257500,2
+"Grafo Bipartito K(n,n)",22,44,484,Welsh-Powell,297708,2
+"Grafo Bipartito K(n,n)",23,46,529,Greedy,285792,2
+"Grafo Bipartito K(n,n)",23,46,529,Welsh-Powell,323750,2
+"Grafo Bipartito K(n,n)",24,48,576,Greedy,314333,2
+"Grafo Bipartito K(n,n)",24,48,576,Welsh-Powell,354208,2
+"Grafo Bipartito K(n,n)",25,50,625,Greedy,317417,2
+"Grafo Bipartito K(n,n)",25,50,625,Welsh-Powell,351709,2
+"Grafo Bipartito K(n,n)",26,52,676,Greedy,339750,2
+"Grafo Bipartito K(n,n)",26,52,676,Welsh-Powell,377083,2
+"Grafo Bipartito K(n,n)",27,54,729,Greedy,380250,2
+"Grafo Bipartito K(n,n)",27,54,729,Welsh-Powell,425750,2
+"Grafo Bipartito K(n,n)",28,56,784,Greedy,419916,2
+"Grafo Bipartito K(n,n)",28,56,784,Welsh-Powell,458208,2
+"Grafo Bipartito K(n,n)",29,58,841,Greedy,446875,2
+"Grafo Bipartito K(n,n)",29,58,841,Welsh-Powell,480917,2
+"Grafo Bipartito K(n,n)",30,60,900,Greedy,476417,2
+"Grafo Bipartito K(n,n)",30,60,900,Welsh-Powell,503416,2
+"Grafo Bipartito K(n,n)",31,62,961,Greedy,477208,2
+"Grafo Bipartito K(n,n)",31,62,961,Welsh-Powell,516667,2
+"Grafo Bipartito K(n,n)",32,64,1024,Greedy,544625,2
+"Grafo Bipartito K(n,n)",32,64,1024,Welsh-Powell,571125,2
+"Grafo Bipartito K(n,n)",33,66,1089,Greedy,566583,2
+"Grafo Bipartito K(n,n)",33,66,1089,Welsh-Powell,600166,2
+"Grafo Bipartito K(n,n)",34,68,1156,Greedy,605584,2
+"Grafo Bipartito K(n,n)",34,68,1156,Welsh-Powell,642500,2
+"Grafo Bipartito K(n,n)",35,70,1225,Greedy,600792,2
+"Grafo Bipartito K(n,n)",35,70,1225,Welsh-Powell,643708,2
+"Grafo Bipartito K(n,n)",36,72,1296,Greedy,638208,2
+"Grafo Bipartito K(n,n)",36,72,1296,Welsh-Powell,680833,2
+"Grafo Bipartito K(n,n)",37,74,1369,Greedy,671666,2
+"Grafo Bipartito K(n,n)",37,74,1369,Welsh-Powell,714708,2
+"Grafo Bipartito K(n,n)",38,76,1444,Greedy,748916,2
+"Grafo Bipartito K(n,n)",38,76,1444,Welsh-Powell,780667,2
+"Grafo Bipartito K(n,n)",39,78,1521,Greedy,740916,2
+"Grafo Bipartito K(n,n)",39,78,1521,Welsh-Powell,795042,2
+"Grafo Bipartito K(n,n)",40,80,1600,Greedy,807000,2
+"Grafo Bipartito K(n,n)",40,80,1600,Welsh-Powell,866750,2
+"Grafo Bipartito K(n,n)",41,82,1681,Greedy,853667,2
+"Grafo Bipartito K(n,n)",41,82,1681,Welsh-Powell,913625,2
+"Grafo Bipartito K(n,n)",42,84,1764,Greedy,861708,2
+"Grafo Bipartito K(n,n)",42,84,1764,Welsh-Powell,904250,2
+"Grafo Bipartito K(n,n)",43,86,1849,Greedy,893917,2
+"Grafo Bipartito K(n,n)",43,86,1849,Welsh-Powell,944041,2
+"Grafo Bipartito K(n,n)",44,88,1936,Greedy,939709,2
+"Grafo Bipartito K(n,n)",44,88,1936,Welsh-Powell,985584,2
+"Grafo Bipartito K(n,n)",45,90,2025,Greedy,977916,2
+"Grafo Bipartito K(n,n)",45,90,2025,Welsh-Powell,1029167,2
+"Grafo Bipartito K(n,n)",46,92,2116,Greedy,1021250,2
+"Grafo Bipartito K(n,n)",46,92,2116,Welsh-Powell,1083166,2
+"Grafo Bipartito K(n,n)",47,94,2209,Greedy,1080250,2
+"Grafo Bipartito K(n,n)",47,94,2209,Welsh-Powell,1140084,2
+"Grafo Bipartito K(n,n)",48,96,2304,Greedy,1110792,2
+"Grafo Bipartito K(n,n)",48,96,2304,Welsh-Powell,1166375,2
+"Grafo Bipartito K(n,n)",49,98,2401,Greedy,1150875,2
+"Grafo Bipartito K(n,n)",49,98,2401,Welsh-Powell,1236333,2
+Grafo Rueda,3,4,6,Greedy,11458,4
+Grafo Rueda,3,4,6,Welsh-Powell,13208,4
+Grafo Rueda,4,5,8,Greedy,10083,3
+Grafo Rueda,4,5,8,Welsh-Powell,14041,3
+Grafo Rueda,5,6,10,Greedy,11458,4
+Grafo Rueda,5,6,10,Welsh-Powell,15958,4
+Grafo Rueda,6,7,12,Greedy,13166,4
+Grafo Rueda,6,7,12,Welsh-Powell,18375,3
+Grafo Rueda,7,8,14,Greedy,14500,4
+Grafo Rueda,7,8,14,Welsh-Powell,20875,4
+Grafo Rueda,8,9,16,Greedy,16334,4
+Grafo Rueda,8,9,16,Welsh-Powell,23583,3
+Grafo Rueda,9,10,18,Greedy,17583,4
+Grafo Rueda,9,10,18,Welsh-Powell,31708,4
+Grafo Rueda,10,11,20,Greedy,19791,4
+Grafo Rueda,10,11,20,Welsh-Powell,28042,3
+Grafo Rueda,11,12,22,Greedy,21459,4
+Grafo Rueda,11,12,22,Welsh-Powell,29875,4
+Grafo Rueda,12,13,24,Greedy,22917,4
+Grafo Rueda,12,13,24,Welsh-Powell,32459,3
+Grafo Rueda,13,14,26,Greedy,24292,4
+Grafo Rueda,13,14,26,Welsh-Powell,40875,4
+Grafo Rueda,14,15,28,Greedy,26000,4
+Grafo Rueda,14,15,28,Welsh-Powell,48708,3
+Grafo Rueda,15,16,30,Greedy,29833,4
+Grafo Rueda,15,16,30,Welsh-Powell,40292,4
+Grafo Rueda,16,17,32,Greedy,30375,3
+Grafo Rueda,16,17,32,Welsh-Powell,42333,3
+Grafo Rueda,17,18,34,Greedy,31792,4
+Grafo Rueda,17,18,34,Welsh-Powell,44583,4
+Grafo Rueda,18,19,36,Greedy,33708,3
+Grafo Rueda,18,19,36,Welsh-Powell,47334,3
+Grafo Rueda,19,20,38,Greedy,34917,4
+Grafo Rueda,19,20,38,Welsh-Powell,49500,4
+Grafo Rueda,20,21,40,Greedy,42250,3
+Grafo Rueda,20,21,40,Welsh-Powell,51459,3
+Grafo Rueda,21,22,42,Greedy,41625,4
+Grafo Rueda,21,22,42,Welsh-Powell,54459,4
+Grafo Rueda,22,23,44,Greedy,39750,3
+Grafo Rueda,22,23,44,Welsh-Powell,56875,3
+Grafo Rueda,23,24,46,Greedy,41875,4
+Grafo Rueda,23,24,46,Welsh-Powell,59375,4
+Grafo Rueda,24,25,48,Greedy,43875,4
+Grafo Rueda,24,25,48,Welsh-Powell,61792,3
+Grafo Rueda,25,26,50,Greedy,49334,4
+Grafo Rueda,25,26,50,Welsh-Powell,65000,4
+Grafo Rueda,26,27,52,Greedy,47666,4
+Grafo Rueda,26,27,52,Welsh-Powell,67125,3
+Grafo Rueda,27,28,54,Greedy,49708,4
+Grafo Rueda,27,28,54,Welsh-Powell,76041,4
+Grafo Rueda,28,29,56,Greedy,58167,4
+Grafo Rueda,28,29,56,Welsh-Powell,72042,3
+Grafo Rueda,29,30,58,Greedy,52750,4
+Grafo Rueda,29,30,58,Welsh-Powell,73792,4
+Grafo Rueda,30,31,60,Greedy,54750,4
+Grafo Rueda,30,31,60,Welsh-Powell,77750,3
+Grafo Rueda,31,32,62,Greedy,55667,4
+Grafo Rueda,31,32,62,Welsh-Powell,79958,4
+Grafo Rueda,32,33,64,Greedy,56791,4
+Grafo Rueda,32,33,64,Welsh-Powell,81500,3
+Grafo Rueda,33,34,66,Greedy,58083,4
+Grafo Rueda,33,34,66,Welsh-Powell,84125,4
+Grafo Rueda,34,35,68,Greedy,65667,4
+Grafo Rueda,34,35,68,Welsh-Powell,85708,3
+Grafo Rueda,35,36,70,Greedy,62708,4
+Grafo Rueda,35,36,70,Welsh-Powell,89541,4
+Grafo Rueda,36,37,72,Greedy,63292,4
+Grafo Rueda,36,37,72,Welsh-Powell,91042,3
+Grafo Rueda,37,38,74,Greedy,64750,4
+Grafo Rueda,37,38,74,Welsh-Powell,93834,4
+Grafo Rueda,38,39,76,Greedy,71000,4
+Grafo Rueda,38,39,76,Welsh-Powell,97875,3
+Grafo Rueda,39,40,78,Greedy,67958,4
+Grafo Rueda,39,40,78,Welsh-Powell,99417,4
+Grafo Rueda,40,41,80,Greedy,75125,4
+Grafo Rueda,40,41,80,Welsh-Powell,105917,3
+Grafo Rueda,41,42,82,Greedy,73625,4
+Grafo Rueda,41,42,82,Welsh-Powell,106958,4
+Grafo Rueda,42,43,84,Greedy,82208,4
+Grafo Rueda,42,43,84,Welsh-Powell,115167,3
+Grafo Rueda,43,44,86,Greedy,75292,4
+Grafo Rueda,43,44,86,Welsh-Powell,109791,4
+Grafo Rueda,44,45,88,Greedy,80875,4
+Grafo Rueda,44,45,88,Welsh-Powell,115500,3
+Grafo Rueda,45,46,90,Greedy,79209,4
+Grafo Rueda,45,46,90,Welsh-Powell,115042,4
+Grafo Rueda,46,47,92,Greedy,84708,4
+Grafo Rueda,46,47,92,Welsh-Powell,120041,3
+Grafo Rueda,47,48,94,Greedy,81417,4
+Grafo Rueda,47,48,94,Welsh-Powell,118333,4
+Grafo Rueda,48,49,96,Greedy,84000,4
+Grafo Rueda,48,49,96,Welsh-Powell,121292,3
+Grafo Rueda,49,50,98,Greedy,86792,4
+Grafo Rueda,49,50,98,Welsh-Powell,123625,4
+Grafo Cuadrícula n×n,2,4,4,Greedy,9834,2
+Grafo Cuadrícula n×n,2,4,4,Welsh-Powell,12208,2
+Grafo Cuadrícula n×n,3,9,12,Greedy,16250,4
+Grafo Cuadrícula n×n,3,9,12,Welsh-Powell,22750,2
+Grafo Cuadrícula n×n,4,16,24,Greedy,28666,2
+Grafo Cuadrícula n×n,4,16,24,Welsh-Powell,39417,2
+Grafo Cuadrícula n×n,5,25,40,Greedy,42125,4
+Grafo Cuadrícula n×n,5,25,40,Welsh-Powell,60208,2
+Grafo Escalera,2,4,4,Greedy,6916,2
+Grafo Escalera,2,4,4,Welsh-Powell,10541,2
+Grafo Escalera,3,6,7,Greedy,9958,2
+Grafo Escalera,3,6,7,Welsh-Powell,14417,2
+Grafo Escalera,4,8,10,Greedy,13417,4
+Grafo Escalera,4,8,10,Welsh-Powell,18958,2
+Grafo Escalera,5,10,13,Greedy,16125,2
+Grafo Escalera,5,10,13,Welsh-Powell,23750,2
+Grafo Escalera,6,12,16,Greedy,18875,2
+Grafo Escalera,6,12,16,Welsh-Powell,28000,2
+Grafo Escalera,7,14,19,Greedy,22083,2
+Grafo Escalera,7,14,19,Welsh-Powell,32209,2
+Grafo Escalera,8,16,22,Greedy,26292,3
+Grafo Escalera,8,16,22,Welsh-Powell,37292,2
+Grafo Escalera,9,18,25,Greedy,28333,3
+Grafo Escalera,9,18,25,Welsh-Powell,41416,2
+Grafo Escalera,10,20,28,Greedy,31209,3
+Grafo Escalera,10,20,28,Welsh-Powell,46250,2
+Grafo Escalera,11,22,31,Greedy,34458,3
+Grafo Escalera,11,22,31,Welsh-Powell,56708,2
+Grafo Escalera,12,24,34,Greedy,37875,3
+Grafo Escalera,12,24,34,Welsh-Powell,55458,4
+Grafo Escalera,13,26,37,Greedy,41167,3
+Grafo Escalera,13,26,37,Welsh-Powell,60250,4
+Grafo Escalera,14,28,40,Greedy,43417,3
+Grafo Escalera,14,28,40,Welsh-Powell,64000,4
+Grafo Escalera,15,30,43,Greedy,46458,3
+Grafo Escalera,15,30,43,Welsh-Powell,68417,4
+Grafo Escalera,16,32,46,Greedy,49625,4
+Grafo Escalera,16,32,46,Welsh-Powell,72625,4
+Grafo Escalera,17,34,49,Greedy,51750,4
+Grafo Escalera,17,34,49,Welsh-Powell,78041,4
+Grafo Escalera,18,36,52,Greedy,54000,4
+Grafo Escalera,18,36,52,Welsh-Powell,81500,4
+Grafo Escalera,19,38,55,Greedy,55792,4
+Grafo Escalera,19,38,55,Welsh-Powell,85875,4
+Grafo Escalera,20,40,58,Greedy,63083,4
+Grafo Escalera,20,40,58,Welsh-Powell,98708,4
+Grafo Escalera,21,42,61,Greedy,62833,4
+Grafo Escalera,21,42,61,Welsh-Powell,95541,4
+Grafo Escalera,22,44,64,Greedy,66125,4
+Grafo Escalera,22,44,64,Welsh-Powell,100375,4
+Grafo Escalera,23,46,67,Greedy,69000,4
+Grafo Escalera,23,46,67,Welsh-Powell,104041,4
+Grafo Escalera,24,48,70,Greedy,77792,4
+Grafo Escalera,24,48,70,Welsh-Powell,109875,4
+Grafo Escalera,25,50,73,Greedy,74041,4
+Grafo Escalera,25,50,73,Welsh-Powell,113042,4
+Grafo Escalera,26,52,76,Greedy,81875,4
+Grafo Escalera,26,52,76,Welsh-Powell,116334,4
+Grafo Escalera,27,54,79,Greedy,79583,4
+Grafo Escalera,27,54,79,Welsh-Powell,121500,4
+Grafo Escalera,28,56,82,Greedy,82750,4
+Grafo Escalera,28,56,82,Welsh-Powell,128041,4
+Grafo Escalera,29,58,85,Greedy,85084,4
+Grafo Escalera,29,58,85,Welsh-Powell,131292,4
+Grafo Escalera,30,60,88,Greedy,87541,4
+Grafo Escalera,30,60,88,Welsh-Powell,136625,4
+Grafo Escalera,31,62,91,Greedy,91417,4
+Grafo Escalera,31,62,91,Welsh-Powell,138834,4
+Grafo Escalera,32,64,94,Greedy,96208,4
+Grafo Escalera,32,64,94,Welsh-Powell,146500,4
+Grafo Escalera,33,66,97,Greedy,98000,4
+Grafo Escalera,33,66,97,Welsh-Powell,151625,4
+Grafo Escalera,34,68,100,Greedy,101125,4
+Grafo Escalera,34,68,100,Welsh-Powell,160917,4
+Grafo Escalera,35,70,103,Greedy,102500,4
+Grafo Escalera,35,70,103,Welsh-Powell,158500,4
+Grafo Escalera,36,72,106,Greedy,107833,4
+Grafo Escalera,36,72,106,Welsh-Powell,163708,4
+Grafo Escalera,37,74,109,Greedy,109917,4
+Grafo Escalera,37,74,109,Welsh-Powell,168458,4
+Grafo Escalera,38,76,112,Greedy,111458,4
+Grafo Escalera,38,76,112,Welsh-Powell,173500,4
+Grafo Escalera,39,78,115,Greedy,115125,4
+Grafo Escalera,39,78,115,Welsh-Powell,176084,4
+Grafo Escalera,40,80,118,Greedy,116208,4
+Grafo Escalera,40,80,118,Welsh-Powell,181000,4
+Grafo Escalera,41,82,121,Greedy,120834,4
+Grafo Escalera,41,82,121,Welsh-Powell,186334,4
+Grafo Escalera,42,84,124,Greedy,122125,4
+Grafo Escalera,42,84,124,Welsh-Powell,190084,4
+Grafo Escalera,43,86,127,Greedy,124542,4
+Grafo Escalera,43,86,127,Welsh-Powell,191875,4
+Grafo Escalera,44,88,130,Greedy,127667,4
+Grafo Escalera,44,88,130,Welsh-Powell,198958,4
+Grafo Escalera,45,90,133,Greedy,131208,4
+Grafo Escalera,45,90,133,Welsh-Powell,204208,4
+Grafo Escalera,46,92,136,Greedy,132541,4
+Grafo Escalera,46,92,136,Welsh-Powell,215375,4
+Grafo Escalera,47,94,139,Greedy,136791,4
+Grafo Escalera,47,94,139,Welsh-Powell,212667,4
+Grafo Escalera,48,96,142,Greedy,139583,4
+Grafo Escalera,48,96,142,Welsh-Powell,219833,4
+Grafo Escalera,49,98,145,Greedy,140792,4
+Grafo Escalera,49,98,145,Welsh-Powell,220625,4
+Grafo Prisma,3,6,9,Greedy,13583,4
+Grafo Prisma,3,6,9,Welsh-Powell,17709,4
+Grafo Prisma,4,8,12,Greedy,14625,3
+Grafo Prisma,4,8,12,Welsh-Powell,19833,2
+Grafo Prisma,5,10,15,Greedy,16625,4
+Grafo Prisma,5,10,15,Welsh-Powell,23750,4
+Grafo Prisma,6,12,18,Greedy,19417,2
+Grafo Prisma,6,12,18,Welsh-Powell,28375,2
+Grafo Prisma,7,14,21,Greedy,22042,4
+Grafo Prisma,7,14,21,Welsh-Powell,32458,4
+Grafo Prisma,8,16,24,Greedy,26834,4
+Grafo Prisma,8,16,24,Welsh-Powell,37542,2
+Grafo Prisma,9,18,27,Greedy,35042,4
+Grafo Prisma,9,18,27,Welsh-Powell,41167,4
+Grafo Prisma,10,20,30,Greedy,30833,4
+Grafo Prisma,10,20,30,Welsh-Powell,45667,2
+Grafo Prisma,11,22,33,Greedy,35750,4
+Grafo Prisma,11,22,33,Welsh-Powell,50667,4
+Grafo Prisma,12,24,36,Greedy,37333,4
+Grafo Prisma,12,24,36,Welsh-Powell,54625,2
+Grafo Prisma,13,26,39,Greedy,39500,4
+Grafo Prisma,13,26,39,Welsh-Powell,58959,4
+Grafo Prisma,14,28,42,Greedy,42167,4
+Grafo Prisma,14,28,42,Welsh-Powell,69334,2
+Grafo Prisma,15,30,45,Greedy,45958,4
+Grafo Prisma,15,30,45,Welsh-Powell,68250,4
+Grafo Prisma,16,32,48,Greedy,48833,4
+Grafo Prisma,16,32,48,Welsh-Powell,72458,2
+Grafo Prisma,17,34,51,Greedy,50584,3
+Grafo Prisma,17,34,51,Welsh-Powell,80375,4
+Grafo Prisma,18,36,54,Greedy,52625,3
+Grafo Prisma,18,36,54,Welsh-Powell,81292,2
+Grafo Prisma,19,38,57,Greedy,56292,3
+Grafo Prisma,19,38,57,Welsh-Powell,88000,4
+Grafo Prisma,20,40,60,Greedy,58167,3
+Grafo Prisma,20,40,60,Welsh-Powell,89958,2
+Grafo Prisma,21,42,63,Greedy,61250,3
+Grafo Prisma,21,42,63,Welsh-Powell,94667,4
+Grafo Prisma,22,44,66,Greedy,66000,3
+Grafo Prisma,22,44,66,Welsh-Powell,100125,2
+Grafo Prisma,23,46,69,Greedy,70542,4
+Grafo Prisma,23,46,69,Welsh-Powell,110708,4
+Grafo Prisma,24,48,72,Greedy,70875,3
+Grafo Prisma,24,48,72,Welsh-Powell,107250,2
+Grafo Prisma,25,50,75,Greedy,71750,4
+Grafo Prisma,25,50,75,Welsh-Powell,111875,4
+Grafo Prisma,26,52,78,Greedy,75750,3
+Grafo Prisma,26,52,78,Welsh-Powell,117291,2
+Grafo Prisma,27,54,81,Greedy,78625,3
+Grafo Prisma,27,54,81,Welsh-Powell,121541,4
+Grafo Prisma,28,56,84,Greedy,80916,3
+Grafo Prisma,28,56,84,Welsh-Powell,125084,2
+Grafo Prisma,29,58,87,Greedy,84500,3
+Grafo Prisma,29,58,87,Welsh-Powell,130458,4
+Grafo Prisma,30,60,90,Greedy,87083,3
+Grafo Prisma,30,60,90,Welsh-Powell,136209,2
+Grafo Prisma,31,62,93,Greedy,90625,4
+Grafo Prisma,31,62,93,Welsh-Powell,140125,4
+Grafo Prisma,32,64,96,Greedy,97958,4
+Grafo Prisma,32,64,96,Welsh-Powell,147083,2
+Grafo Prisma,33,66,99,Greedy,97541,4
+Grafo Prisma,33,66,99,Welsh-Powell,150458,4
+Grafo Prisma,34,68,102,Greedy,99916,4
+Grafo Prisma,34,68,102,Welsh-Powell,154250,2
+Grafo Prisma,35,70,105,Greedy,102500,4
+Grafo Prisma,35,70,105,Welsh-Powell,157541,4
+Grafo Prisma,36,72,108,Greedy,105708,4
+Grafo Prisma,36,72,108,Welsh-Powell,162375,2
+Grafo Prisma,37,74,111,Greedy,108042,4
+Grafo Prisma,37,74,111,Welsh-Powell,166167,4
+Grafo Prisma,38,76,114,Greedy,111750,4
+Grafo Prisma,38,76,114,Welsh-Powell,171250,2
+Grafo Prisma,39,78,117,Greedy,115417,4
+Grafo Prisma,39,78,117,Welsh-Powell,177083,4
+Grafo Prisma,40,80,120,Greedy,120125,4
+Grafo Prisma,40,80,120,Welsh-Powell,197583,2
+Grafo Prisma,41,82,123,Greedy,126500,4
+Grafo Prisma,41,82,123,Welsh-Powell,198583,4
+Grafo Prisma,42,84,126,Greedy,124042,4
+Grafo Prisma,42,84,126,Welsh-Powell,187959,2
+Grafo Prisma,43,86,129,Greedy,125417,4
+Grafo Prisma,43,86,129,Welsh-Powell,193750,4
+Grafo Prisma,44,88,132,Greedy,129416,4
+Grafo Prisma,44,88,132,Welsh-Powell,198250,2
+Grafo Prisma,45,90,135,Greedy,130708,4
+Grafo Prisma,45,90,135,Welsh-Powell,202334,4
+Grafo Prisma,46,92,138,Greedy,133208,4
+Grafo Prisma,46,92,138,Welsh-Powell,206250,2
+Grafo Prisma,47,94,141,Greedy,147291,4
+Grafo Prisma,47,94,141,Welsh-Powell,220583,4
+Grafo Prisma,48,96,144,Greedy,140250,4
+Grafo Prisma,48,96,144,Welsh-Powell,214916,2
+Grafo Prisma,49,98,147,Greedy,141500,4
+Grafo Prisma,49,98,147,Welsh-Powell,233333,4
